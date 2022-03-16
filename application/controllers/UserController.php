@@ -76,4 +76,23 @@ class UserController extends CI_Controller
         }
         redirect('/');
     }
+
+    public function output($view, $data = null)
+	{
+		$this->load->view('template/header');
+		// $this->load->view('template/javascript');
+		// $this->load->view('template/crs_template/crs_css');
+		// $this->load->view('template/crs_template/crs_js');
+		$this->load->view($view, $data);
+		$this->load->view('template/footer');
+	}
+
+
+    function show_cluster_checklist($_id)
+    {
+        $this->output('v_cluster_checklist');
+    }
+
+
+    
 }
