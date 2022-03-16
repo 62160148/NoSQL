@@ -20,7 +20,7 @@ class UserController extends CI_Controller
     public function output($view, $data = null)
 	{
 		$this->load->view('template/header');
-		// $this->load->view('template/javascript');
+		$this->load->view('template/javascript');
 		// $this->load->view('template/crs_template/crs_css');
 		// $this->load->view('template/crs_template/crs_js');
 		$this->load->view($view, $data);

@@ -1,4 +1,14 @@
 
+<style>
+    .card.card-profile-bottom{
+        margin-top: 5em;
+    }
+</style>
+
+
+
+
+
   <div class="position-absolute w-100 min-height-300 top-0" style="background-image: url('https://raw.githubusercontent.com/creativetimofficial/public-assets/master/argon-dashboard-pro/assets/img/profile-layout-header.jpg'); background-position-y: 50%;">
     <span class="mask bg-primary opacity-6"></span>
   </div>
@@ -6,96 +16,46 @@
     <div class="sidenav-header">
       <i class="fas fa-times p-3 cursor-pointer text-secondary opacity-5 position-absolute end-0 top-0 d-none d-xl-none" aria-hidden="true" id="iconSidenav"></i>
       <a class="navbar-brand m-0" href=" https://demos.creative-tim.com/argon-dashboard/pages/dashboard.html " target="_blank">
-        <img src="../assets/img/logo-ct-dark.png" class="navbar-brand-img h-100" alt="main_logo">
-        <span class="ms-1 font-weight-bold">Argon Dashboard 2</span>
+
+        <span class="ms-1 font-weight-bold"> Scrum</span>
       </a>
     </div>
     <hr class="horizontal dark mt-0">
     <div class="collapse navbar-collapse  w-auto " id="sidenav-collapse-main">
       <ul class="navbar-nav">
         <li class="nav-item">
-          <a class="nav-link " href="../pages/dashboard.html">
+        <a class="nav-link active" href="../pages/profile.html">
             <div class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
-              <i class="ni ni-tv-2 text-primary text-sm opacity-10"></i>
+              <i class="ni ni-tv-2 text-primary text-dark  text-sm opacity-10"></i>
             </div>
-            <span class="nav-link-text ms-1">Dashboard</span>
-          </a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link " href="../pages/tables.html">
-            <div class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
-              <i class="ni ni-calendar-grid-58 text-warning text-sm opacity-10"></i>
-            </div>
-            <span class="nav-link-text ms-1">Tables</span>
-          </a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link " href="../pages/billing.html">
-            <div class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
-              <i class="ni ni-credit-card text-success text-sm opacity-10"></i>
-            </div>
-            <span class="nav-link-text ms-1">Billing</span>
-          </a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link " href="../pages/virtual-reality.html">
-            <div class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
-              <i class="ni ni-app text-info text-sm opacity-10"></i>
-            </div>
-            <span class="nav-link-text ms-1">Virtual Reality</span>
-          </a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link " href="../pages/rtl.html">
-            <div class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
-              <i class="ni ni-world-2 text-danger text-sm opacity-10"></i>
-            </div>
-            <span class="nav-link-text ms-1">RTL</span>
-          </a>
-        </li>
-        <li class="nav-item mt-3">
-          <h6 class="ps-4 ms-2 text-uppercase text-xs font-weight-bolder opacity-6">Account pages</h6>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link active" href="../pages/profile.html">
-            <div class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
-              <i class="ni ni-single-02 text-dark text-sm opacity-10"></i>
-            </div>
-            <span class="nav-link-text ms-1">Profile</span>
+            <span class="nav-link-text ms-1"> Cluster</span>
           </a>
         </li>
         <li class="nav-item">
           <a class="nav-link " href="../pages/sign-in.html">
             <div class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
-              <i class="ni ni-single-copy-04 text-warning text-sm opacity-10"></i>
+              <i class="ni ni-single-copy-04 text-dark text-sm opacity-10"></i>
             </div>
-            <span class="nav-link-text ms-1">Sign In</span>
+            <span class="nav-link-text ms-1"> Ativity</span>
           </a>
         </li>
+
+
         <li class="nav-item">
-          <a class="nav-link " href="../pages/sign-up.html">
+          <a class="nav-link " href="../pages/profile.html">
             <div class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
-              <i class="ni ni-collection text-info text-sm opacity-10"></i>
+              <i class="ni ni-single-02 text-dark text-sm opacity-10"></i>
             </div>
-            <span class="nav-link-text ms-1">Sign Up</span>
+            <span class="nav-link-text ms-1">User</span>
           </a>
         </li>
-      </ul>
-    </div>
-    <div class="sidenav-footer mx-3 ">
-      <div class="card card-plain shadow-none" id="sidenavCard">
-        <img class="w-50 mx-auto" src="../assets/img/illustrations/icon-documentation.svg" alt="sidebar_illustration">
-        <div class="card-body text-center p-3 w-100 pt-0">
-          <div class="docs-info">
-            <h6 class="mb-0">Need help?</h6>
-            <p class="text-xs font-weight-bold mb-0">Please check our docs</p>
-          </div>
-        </div>
-      </div>
-      <a href="https://www.creative-tim.com/learning-lab/bootstrap/license/argon-dashboard" target="_blank" class="btn btn-dark btn-sm w-100 mb-3">Documentation</a>
-      <a class="btn btn-primary btn-sm mb-0 w-100" href="https://www.creative-tim.com/product/argon-dashboard-pro?ref=sidebarfree" type="button">Upgrade to pro</a>
-    </div>
+
+
+
+
   </aside>
+
+  
   <div class="main-content position-relative max-height-vh-100 h-100">
     <!-- Navbar -->
     <nav class="navbar navbar-main navbar-expand-lg bg-transparent shadow-none position-absolute px-4 w-100 z-index-2 mt-n11">
@@ -230,7 +190,7 @@
                 Cluster 1
               </h5>
               <p class="mb-0 font-weight-bold text-sm">
-                Score 100 $E
+                Total Score : 100 $E
               </p>
             </div>
           </div>
@@ -238,26 +198,27 @@
             <div class="nav-wrapper position-relative end-0">
               <ul class="nav nav-pills nav-fill p-1" role="tablist">
                 <li class="nav-item">
-                  <a class="nav-link mb-0 px-0 py-1 active d-flex align-items-center justify-content-center " data-bs-toggle="tab" href="javascript:;" role="tab" aria-selected="true">
-                    <i class="ni ni-app"></i>
-                    <span class="ms-2">App</span>
+                  <a class="nav-link mb-0 px-0 py-1 active d-flex align-items-center justify-content-center " id="custom-tabs-one-home-tab" data-toggle="pill" href="#custom-tabs-one-home" role="tab" aria-controls="custom-tabs-one-home" aria-selected="true">
+                    <i class="ni ni-calendar-grid-58"></i>
+                    <span class="ms-2">Sprint 1</span>
                   </a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link mb-0 px-0 py-1 d-flex align-items-center justify-content-center " data-bs-toggle="tab" href="javascript:;" role="tab" aria-selected="false">
-                    <i class="ni ni-email-83"></i>
-                    <span class="ms-2">Messages</span>
+                  <a class="nav-link mb-0 px-0 py-1 d-flex align-items-center justify-content-center " id="custom-tabs-one-profile-tab" data-toggle="pill" href="#custom-tabs-one-profile" role="tab" aria-controls="custom-tabs-one-profile" aria-selected="false">
+                  <i class="ni ni-calendar-grid-58"></i>
+                    <span class="ms-2">Sprint 2</span>
                   </a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link mb-0 px-0 py-1 d-flex align-items-center justify-content-center " data-bs-toggle="tab" href="javascript:;" role="tab" aria-selected="false">
-                    <i class="ni ni-settings-gear-65"></i>
-                    <span class="ms-2">Settings</span>
+                  <a class="nav-link mb-0 px-0 py-1 d-flex align-items-center justify-content-center " id="custom-tabs-one-messages-tab" data-toggle="pill" href="#custom-tabs-one-messages" role="tab" aria-controls="custom-tabs-one-messages" aria-selected="false">
+                  <i class="ni ni-calendar-grid-58"></i>
+                    <span class="ms-2">Sprint 3</span>
                   </a>
                 </li>
               </ul>
             </div>
           </div>
+          
         </div>
       </div>
     </div>
@@ -265,202 +226,958 @@
     
     <div class="container-fluid py-4">
 
-
     <div class="row">
-<div class="col-12 col-sm-6">
+<div class="col-md-12 ">
+
 <div class="card card-primary card-tabs">
-<div class="card-header p-0 pt-1">
+
+<!-- <div class="card-header p-0 pt-1">
 <ul class="nav nav-tabs" id="custom-tabs-one-tab" role="tablist">
 <li class="nav-item">
-<a class="nav-link active" id="custom-tabs-one-home-tab" data-toggle="pill" href="#custom-tabs-one-home" role="tab" aria-controls="custom-tabs-one-home" aria-selected="true">Home</a>
+<a class="nav-link active" id="custom-tabs-one-home-tab" data-toggle="pill" href="#custom-tabs-one-home" role="tab" aria-controls="custom-tabs-one-home" aria-selected="true">Sprint 1 </a>
 </li>
 <li class="nav-item">
-<a class="nav-link" id="custom-tabs-one-profile-tab" data-toggle="pill" href="#custom-tabs-one-profile" role="tab" aria-controls="custom-tabs-one-profile" aria-selected="false">Profile</a>
+<a class="nav-link" id="custom-tabs-one-profile-tab" data-toggle="pill" href="#custom-tabs-one-profile" role="tab" aria-controls="custom-tabs-one-profile" aria-selected="false">Sprint 2</a>
 </li>
 <li class="nav-item">
-<a class="nav-link" id="custom-tabs-one-messages-tab" data-toggle="pill" href="#custom-tabs-one-messages" role="tab" aria-controls="custom-tabs-one-messages" aria-selected="false">Messages</a>
+<a class="nav-link" id="custom-tabs-one-messages-tab" data-toggle="pill" href="#custom-tabs-one-messages" role="tab" aria-controls="custom-tabs-one-messages" aria-selected="false">Sprint 3</a>
 </li>
 <li class="nav-item">
-<a class="nav-link" id="custom-tabs-one-settings-tab" data-toggle="pill" href="#custom-tabs-one-settings" role="tab" aria-controls="custom-tabs-one-settings" aria-selected="false">Settings</a>
+<a class="nav-link" id="custom-tabs-one-settings-tab" data-toggle="pill" href="#custom-tabs-one-settings" role="tab" aria-controls="custom-tabs-one-settings" aria-selected="false">Sprint 4</a>
 </li>
 </ul>
-</div>
+</div> -->
 <div class="card-body">
-<div class="tab-content" id="custom-tabs-one-tabContent">
-<div class="tab-pane fade show active" id="custom-tabs-one-home" role="tabpanel" aria-labelledby="custom-tabs-one-home-tab">
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin malesuada lacus ullamcorper dui molestie, sit amet congue quam finibus. Etiam ultricies nunc non magna feugiat commodo. Etiam odio magna, mollis auctor felis vitae, ullamcorper ornare ligula. Proin pellentesque tincidunt nisi, vitae ullamcorper felis aliquam id. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Proin id orci eu lectus blandit suscipit. Phasellus porta, ante et varius ornare, sem enim sollicitudin eros, at commodo leo est vitae lacus. Etiam ut porta sem. Proin porttitor porta nisl, id tempor risus rhoncus quis. In in quam a nibh cursus pulvinar non consequat neque. Mauris lacus elit, condimentum ac condimentum at, semper vitae lectus. Cras lacinia erat eget sapien porta consectetur.
-</div>
-<div class="tab-pane fade" id="custom-tabs-one-profile" role="tabpanel" aria-labelledby="custom-tabs-one-profile-tab">
-Mauris tincidunt mi at erat gravida, eget tristique urna bibendum. Mauris pharetra purus ut ligula tempor, et vulputate metus facilisis. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Maecenas sollicitudin, nisi a luctus interdum, nisl ligula placerat mi, quis posuere purus ligula eu lectus. Donec nunc tellus, elementum sit amet ultricies at, posuere nec nunc. Nunc euismod pellentesque diam.
-</div>
-<div class="tab-pane fade" id="custom-tabs-one-messages" role="tabpanel" aria-labelledby="custom-tabs-one-messages-tab">
-Morbi turpis dolor, vulputate vitae felis non, tincidunt congue mauris. Phasellus volutpat augue id mi placerat mollis. Vivamus faucibus eu massa eget condimentum. Fusce nec hendrerit sem, ac tristique nulla. Integer vestibulum orci odio. Cras nec augue ipsum. Suspendisse ut velit condimentum, mattis urna a, malesuada nunc. Curabitur eleifend facilisis velit finibus tristique. Nam vulputate, eros non luctus efficitur, ipsum odio volutpat massa, sit amet sollicitudin est libero sed ipsum. Nulla lacinia, ex vitae gravida fermentum, lectus ipsum gravida arcu, id fermentum metus arcu vel metus. Curabitur eget sem eu risus tincidunt eleifend ac ornare magna.
-</div>
-<div class="tab-pane fade" id="custom-tabs-one-settings" role="tabpanel" aria-labelledby="custom-tabs-one-settings-tab">
-Pellentesque vestibulum commodo nibh nec blandit. Maecenas neque magna, iaculis tempus turpis ac, ornare sodales tellus. Mauris eget blandit dolor. Quisque tincidunt venenatis vulputate. Morbi euismod molestie tristique. Vestibulum consectetur dolor a vestibulum pharetra. Donec interdum placerat urna nec pharetra. Etiam eget dapibus orci, eget aliquet urna. Nunc at consequat diam. Nunc et felis ut nisl commodo dignissim. In hac habitasse platea dictumst. Praesent imperdiet accumsan ex sit amet facilisis.
-</div>
-</div>
-</div>
+    <div class="tab-content" id="custom-tabs-one-tabContent">
+        <div class="tab-pane fade show active" id="custom-tabs-one-home" role="tabpanel" aria-labelledby="custom-tabs-one-home-tab">
+    
+    
+        <div class="row">
+        <div class="col-md-12">
+          <div class="card">
+            <div class="card-header pb-0">
+              <div class="d-flex align-items-center">
+                <p class="mb-0"> Thursday 07 April 2022</p>
+              </div>
+            </div>
+            <div class="card-body">
 
-</div>
-</div>
-<div class="col-12 col-sm-6">
-<div class="card card-primary card-tabs">
-<div class="card-header p-0 pt-1">
-<ul class="nav nav-tabs" id="custom-tabs-two-tab" role="tablist">
-<li class="pt-2 px-3"><h3 class="card-title">Card Title</h3></li>
-<li class="nav-item">
-<a class="nav-link active" id="custom-tabs-two-home-tab" data-toggle="pill" href="#custom-tabs-two-home" role="tab" aria-controls="custom-tabs-two-home" aria-selected="true">Home</a>
-</li>
-<li class="nav-item">
-<a class="nav-link" id="custom-tabs-two-profile-tab" data-toggle="pill" href="#custom-tabs-two-profile" role="tab" aria-controls="custom-tabs-two-profile" aria-selected="false">Profile</a>
-</li>
-<li class="nav-item">
-<a class="nav-link" id="custom-tabs-two-messages-tab" data-toggle="pill" href="#custom-tabs-two-messages" role="tab" aria-controls="custom-tabs-two-messages" aria-selected="false">Messages</a>
-</li>
-<li class="nav-item">
-<a class="nav-link" id="custom-tabs-two-settings-tab" data-toggle="pill" href="#custom-tabs-two-settings" role="tab" aria-controls="custom-tabs-two-settings" aria-selected="false">Settings</a>
-</li>
-</ul>
-</div>
-<div class="card-body">
-<div class="tab-content" id="custom-tabs-two-tabContent">
-<div class="tab-pane fade show active" id="custom-tabs-two-home" role="tabpanel" aria-labelledby="custom-tabs-two-home-tab">
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin malesuada lacus ullamcorper dui molestie, sit amet congue quam finibus. Etiam ultricies nunc non magna feugiat commodo. Etiam odio magna, mollis auctor felis vitae, ullamcorper ornare ligula. Proin pellentesque tincidunt nisi, vitae ullamcorper felis aliquam id. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Proin id orci eu lectus blandit suscipit. Phasellus porta, ante et varius ornare, sem enim sollicitudin eros, at commodo leo est vitae lacus. Etiam ut porta sem. Proin porttitor porta nisl, id tempor risus rhoncus quis. In in quam a nibh cursus pulvinar non consequat neque. Mauris lacus elit, condimentum ac condimentum at, semper vitae lectus. Cras lacinia erat eget sapien porta consectetur.
-</div>
-<div class="tab-pane fade" id="custom-tabs-two-profile" role="tabpanel" aria-labelledby="custom-tabs-two-profile-tab">
-Mauris tincidunt mi at erat gravida, eget tristique urna bibendum. Mauris pharetra purus ut ligula tempor, et vulputate metus facilisis. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Maecenas sollicitudin, nisi a luctus interdum, nisl ligula placerat mi, quis posuere purus ligula eu lectus. Donec nunc tellus, elementum sit amet ultricies at, posuere nec nunc. Nunc euismod pellentesque diam.
-</div>
-<div class="tab-pane fade" id="custom-tabs-two-messages" role="tabpanel" aria-labelledby="custom-tabs-two-messages-tab">
-Morbi turpis dolor, vulputate vitae felis non, tincidunt congue mauris. Phasellus volutpat augue id mi placerat mollis. Vivamus faucibus eu massa eget condimentum. Fusce nec hendrerit sem, ac tristique nulla. Integer vestibulum orci odio. Cras nec augue ipsum. Suspendisse ut velit condimentum, mattis urna a, malesuada nunc. Curabitur eleifend facilisis velit finibus tristique. Nam vulputate, eros non luctus efficitur, ipsum odio volutpat massa, sit amet sollicitudin est libero sed ipsum. Nulla lacinia, ex vitae gravida fermentum, lectus ipsum gravida arcu, id fermentum metus arcu vel metus. Curabitur eget sem eu risus tincidunt eleifend ac ornare magna.
-</div>
-<div class="tab-pane fade" id="custom-tabs-two-settings" role="tabpanel" aria-labelledby="custom-tabs-two-settings-tab">
-Pellentesque vestibulum commodo nibh nec blandit. Maecenas neque magna, iaculis tempus turpis ac, ornare sodales tellus. Mauris eget blandit dolor. Quisque tincidunt venenatis vulputate. Morbi euismod molestie tristique. Vestibulum consectetur dolor a vestibulum pharetra. Donec interdum placerat urna nec pharetra. Etiam eget dapibus orci, eget aliquet urna. Nunc at consequat diam. Nunc et felis ut nisl commodo dignissim. In hac habitasse platea dictumst. Praesent imperdiet accumsan ex sit amet facilisis.
-</div>
-</div>
-</div>
+            <table class="table align-items-center mb-0">
+                  <thead>
+                    <tr>
+                      <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7"> Ativity </th>
+                      <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Score</th>
+                      <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Update By</th>
+                      <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-3">Update Date</th>
+                      <th class="text-secondary opacity-7"></th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                  <tr>
+                      <td>
+                        <div class="d-flex px-2 py-1">
 
-</div>
-</div>
-</div>
+                          <div class="d-flex flex-column justify-content-center">
+                            <h6 class="mb-0 text-sm">Best Team</h6>
+                            <!-- <p class="text-xs text-secondary mb-0">alexa@creative-tim.com</p> -->
+                          </div>
+                        </div>
+                      </td>
+                      <td>
+                      <p class="text-xs font-weight-bold mb-0"> 100 $E </p>
+
+                      </td>
+
+                      <td>
+                        <div class="d-flex px-2 py-1">
+
+                          <div class="d-flex flex-column justify-content-center">
+                            <span class="text-secondary text-xs font-weight-bold">62160011@go.buu.ac.th</span>
+
+                          </div>
+                        </div>
+                      </td>
+
+                      <td>
+                        <div class="d-flex px-2 py-1">
+                        <span class="text-secondary text-xs font-weight-bold">16/03/2020</span>
+                      </td>
+                      <td class="align-middle">
+                      <div class="form-check form-switch">
+                                <input class="form-check-input" type="checkbox" id="rememberMe" checked>
+                            </div>
+                      </td>
+                    </tr>
+
+                    <tr>
+                      <td>
+                        <div class="d-flex px-2 py-1">
+
+                          <div class="d-flex flex-column justify-content-center">
+                            <h6 class="mb-0 text-sm">ทีมพี่เลี้ยงหน้าตาดี</h6>
+                            <!-- <p class="text-xs text-secondary mb-0">alexa@creative-tim.com</p> -->
+                          </div>
+                        </div>
+                      </td>
+                      <td>
+                      <p class="text-xs font-weight-bold mb-0"> 999 $E </p>
+
+                      </td>
+
+                      <td>
+                        <div class="d-flex px-2 py-1">
+
+                          <div class="d-flex flex-column justify-content-center">
+                            <p class="text-xs text-secondary mb-0"></p>
+                          </div>
+                        </div>
+                      </td>
+
+                      <td>
+                        <div class="d-flex px-2 py-1">
+                        <span class="text-secondary text-xs font-weight-bold"></span>
+                      </td>
+
+                      
 
 
+                      <td class="align-middle">
+                      <div class="form-check form-switch">
+                                <input class="form-check-input" type="checkbox" id="rememberMe">
+                            </div>
+                      </td>
+                    </tr>
 
+
+                    <tr>
+                      <td>
+                        <div class="d-flex px-2 py-1">
+
+                          <div class="d-flex flex-column justify-content-center">
+                            <h6 class="mb-0 text-sm">ทีมขายเก่ง</h6>
+                            <!-- <p class="text-xs text-secondary mb-0">alexa@creative-tim.com</p> -->
+                          </div>
+                        </div>
+                      </td>
+                      <td>
+                      <p class="text-xs font-weight-bold mb-0"> 50 $E </p>
+
+                      </td>
+
+                      <td>
+                        <div class="d-flex px-2 py-1">
+
+                          <div class="d-flex flex-column justify-content-center">
+                            <p class="text-xs text-secondary mb-0"></p>
+                          </div>
+                        </div>
+                      </td>
+
+                      <td>
+                        <div class="d-flex px-2 py-1">
+                        <span class="text-secondary text-xs font-weight-bold"></span>
+                      </td>
+
+                      
+
+
+                      <td class="align-middle">
+                      <div class="form-check form-switch">
+                                <input class="form-check-input" type="checkbox" id="rememberMe">
+                            </div>
+                      </td>
+                    </tr>
+
+                    
+                  </tbody>
+                </table>
+
+  
+
+            </div>
+          </div>
+        </div>
+      </div>     
+      
+        
+      <br>
       <div class="row">
         <div class="col-md-12">
           <div class="card">
             <div class="card-header pb-0">
               <div class="d-flex align-items-center">
-                <p class="mb-0">Edit Profile</p>
-                <button class="btn btn-primary btn-sm ms-auto">Settings</button>
+                <p class="mb-0"> Friday 08 April 2022</p>
               </div>
             </div>
             <div class="card-body">
-              <p class="text-uppercase text-sm">User Information</p>
-              <div class="row">
-                <div class="col-md-6">
-                  <div class="form-group">
-                    <label for="example-text-input" class="form-control-label">Username</label>
-                    <input class="form-control" type="text" value="lucky.jesse">
-                  </div>
-                </div>
-                <div class="col-md-6">
-                  <div class="form-group">
-                    <label for="example-text-input" class="form-control-label">Email address</label>
-                    <input class="form-control" type="email" value="jesse@example.com">
-                  </div>
-                </div>
-                <div class="col-md-6">
-                  <div class="form-group">
-                    <label for="example-text-input" class="form-control-label">First name</label>
-                    <input class="form-control" type="text" value="Jesse">
-                  </div>
-                </div>
-                <div class="col-md-6">
-                  <div class="form-group">
-                    <label for="example-text-input" class="form-control-label">Last name</label>
-                    <input class="form-control" type="text" value="Lucky">
-                  </div>
-                </div>
-              </div>
-              <hr class="horizontal dark">
-              <p class="text-uppercase text-sm">Contact Information</p>
-              <div class="row">
-                <div class="col-md-12">
-                  <div class="form-group">
-                    <label for="example-text-input" class="form-control-label">Address</label>
-                    <input class="form-control" type="text" value="Bld Mihail Kogalniceanu, nr. 8 Bl 1, Sc 1, Ap 09">
-                  </div>
-                </div>
-                <div class="col-md-4">
-                  <div class="form-group">
-                    <label for="example-text-input" class="form-control-label">City</label>
-                    <input class="form-control" type="text" value="New York">
-                  </div>
-                </div>
-                <div class="col-md-4">
-                  <div class="form-group">
-                    <label for="example-text-input" class="form-control-label">Country</label>
-                    <input class="form-control" type="text" value="United States">
-                  </div>
-                </div>
-                <div class="col-md-4">
-                  <div class="form-group">
-                    <label for="example-text-input" class="form-control-label">Postal code</label>
-                    <input class="form-control" type="text" value="437300">
-                  </div>
-                </div>
-              </div>
-              <hr class="horizontal dark">
-              <p class="text-uppercase text-sm">About me</p>
-              <div class="row">
-                <div class="col-md-12">
-                  <div class="form-group">
-                    <label for="example-text-input" class="form-control-label">About me</label>
-                    <input class="form-control" type="text" value="A beautiful Dashboard for Bootstrap 5. It is Free and Open Source.">
-                  </div>
-                </div>
-              </div>
+
+            <table class="table align-items-center mb-0">
+                  <thead>
+                    <tr>
+                      <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7"> Ativity </th>
+                      <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Score</th>
+                      <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Update By</th>
+                      <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Update Date</th>
+                      <th class="text-secondary opacity-7"></th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                  <tr>
+                      <td>
+                        <div class="d-flex px-2 py-1">
+
+                          <div class="d-flex flex-column justify-content-center">
+                            <h6 class="mb-0 text-sm">Best Team</h6>
+                            <!-- <p class="text-xs text-secondary mb-0">alexa@creative-tim.com</p> -->
+                          </div>
+                        </div>
+                      </td>
+                      <td>
+                      <p class="text-xs font-weight-bold mb-0"> 100 $E </p>
+
+                      </td>
+
+                      <td>
+                        <div class="d-flex px-2 py-1">
+
+                          <div class="d-flex flex-column justify-content-center">
+                            <p class="text-xs text-secondary mb-0"></p>
+                          </div>
+                        </div>
+                      </td>
+
+                      <td>
+                        <div class="d-flex px-2 py-1">
+                        <span class="text-secondary text-xs font-weight-bold"></span>
+                      </td>
+                      <td class="align-middle">
+                      <div class="form-check form-switch">
+                                <input class="form-check-input" type="checkbox" id="rememberMe">
+                            </div>
+                      </td>
+                    </tr>
+
+                    <tr>
+                      <td>
+                        <div class="d-flex px-2 py-1">
+
+                          <div class="d-flex flex-column justify-content-center">
+                            <h6 class="mb-0 text-sm">ทีมพี่เลี้ยงหน้าตาดี</h6>
+                            <!-- <p class="text-xs text-secondary mb-0">alexa@creative-tim.com</p> -->
+                          </div>
+                        </div>
+                      </td>
+                      <td>
+                      <p class="text-xs font-weight-bold mb-0"> 999 $E </p>
+
+                      </td>
+
+                      <td>
+                        <div class="d-flex px-2 py-1">
+
+                          <div class="d-flex flex-column justify-content-center">
+                            <p class="text-xs text-secondary mb-0"></p>
+                          </div>
+                        </div>
+                      </td>
+
+                      <td>
+                        <div class="d-flex px-2 py-1">
+                        <span class="text-secondary text-xs font-weight-bold"></span>
+                      </td>
+
+                      
+
+
+                      <td class="align-middle">
+                      <div class="form-check form-switch">
+                                <input class="form-check-input" type="checkbox" id="rememberMe">
+                            </div>
+                      </td>
+                    </tr>
+
+
+                    <tr>
+                      <td>
+                        <div class="d-flex px-2 py-1">
+
+                          <div class="d-flex flex-column justify-content-center">
+                            <h6 class="mb-0 text-sm">ทีมขายเก่ง</h6>
+                            <!-- <p class="text-xs text-secondary mb-0">alexa@creative-tim.com</p> -->
+                          </div>
+                        </div>
+                      </td>
+                      <td>
+                      <p class="text-xs font-weight-bold mb-0"> 50 $E </p>
+
+                      </td>
+
+                      <td>
+                        <div class="d-flex px-2 py-1">
+
+                          <div class="d-flex flex-column justify-content-center">
+                            <p class="text-xs text-secondary mb-0"></p>
+                          </div>
+                        </div>
+                      </td>
+
+                      <td>
+                        <div class="d-flex px-2 py-1">
+                        <span class="text-secondary text-xs font-weight-bold"></span>
+                      </td>
+
+                      
+
+
+                      <td class="align-middle">
+                      <div class="form-check form-switch">
+                                <input class="form-check-input" type="checkbox" id="rememberMe">
+                            </div>
+                      </td>
+                    </tr>
+
+                    
+                  </tbody>
+                </table>
+
+
+
             </div>
           </div>
         </div>
 
+        
+                <div class="d-flex align-items-center" style="margin-top : 20px;">
+                <p class="mb-0"> </p>
+                <button class="btn btn-primary btn-sm ms-auto"> Save</button>
+              </div>
+              </div>
 
+    </div>
+    <div class="tab-pane fade" id="custom-tabs-one-profile" role="tabpanel" aria-labelledby="custom-tabs-one-profile-tab">
 
-      </div>
-
-      <footer class="footer pt-3  ">
-        <div class="container-fluid">
-          <div class="row align-items-center justify-content-lg-between">
-            <div class="col-lg-6 mb-lg-0 mb-4">
-              <div class="copyright text-center text-sm text-muted text-lg-start">
-                © <script>
-                  document.write(new Date().getFullYear())
-                </script>,
-                made with <i class="fa fa-heart"></i> by
-                <a href="https://www.creative-tim.com" class="font-weight-bold" target="_blank">Creative Tim</a>
-                for a better web.
+        
+    <div class="row">
+        <div class="col-md-12">
+          <div class="card">
+            <div class="card-header pb-0">
+              <div class="d-flex align-items-center">
+                <p class="mb-0"> Saturday 09 April 2022</p>
               </div>
             </div>
-            <div class="col-lg-6">
-              <ul class="nav nav-footer justify-content-center justify-content-lg-end">
-                <li class="nav-item">
-                  <a href="https://www.creative-tim.com" class="nav-link text-muted" target="_blank">Creative Tim</a>
-                </li>
-                <li class="nav-item">
-                  <a href="https://www.creative-tim.com/presentation" class="nav-link text-muted" target="_blank">About Us</a>
-                </li>
-                <li class="nav-item">
-                  <a href="https://www.creative-tim.com/blog" class="nav-link text-muted" target="_blank">Blog</a>
-                </li>
-                <li class="nav-item">
-                  <a href="https://www.creative-tim.com/license" class="nav-link pe-0 text-muted" target="_blank">License</a>
-                </li>
-              </ul>
+            <div class="card-body">
+
+            <table class="table align-items-center mb-0">
+                  <thead>
+                    <tr>
+                      <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7"> Ativity </th>
+                      <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Score</th>
+                      <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Update By</th>
+                      <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Update Date</th>
+                      <th class="text-secondary opacity-7"></th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                  <tr>
+                      <td>
+                        <div class="d-flex px-2 py-1">
+
+                          <div class="d-flex flex-column justify-content-center">
+                            <h6 class="mb-0 text-sm">Best Team</h6>
+                            <!-- <p class="text-xs text-secondary mb-0">alexa@creative-tim.com</p> -->
+                          </div>
+                        </div>
+                      </td>
+                      <td>
+                      <p class="text-xs font-weight-bold mb-0"> 100 $E </p>
+
+                      </td>
+
+                      <td>
+                        <div class="d-flex px-2 py-1">
+
+                          <div class="d-flex flex-column justify-content-center">
+                            <p class="text-xs text-secondary mb-0"></p>
+                          </div>
+                        </div>
+                      </td>
+
+                      <td>
+                        <div class="d-flex px-2 py-1">
+                        <span class="text-secondary text-xs font-weight-bold"></span>
+                      </td>
+                      <td class="align-middle">
+                      <div class="form-check form-switch">
+                                <input class="form-check-input" type="checkbox" id="rememberMe" >
+                            </div>
+                      </td>
+                    </tr>
+
+                    <tr>
+                      <td>
+                        <div class="d-flex px-2 py-1">
+
+                          <div class="d-flex flex-column justify-content-center">
+                            <h6 class="mb-0 text-sm">ทีมพี่เลี้ยงหน้าตาดี</h6>
+                            <!-- <p class="text-xs text-secondary mb-0">alexa@creative-tim.com</p> -->
+                          </div>
+                        </div>
+                      </td>
+                      <td>
+                      <p class="text-xs font-weight-bold mb-0"> 999 $E </p>
+
+                      </td>
+
+                      <td>
+                        <div class="d-flex px-2 py-1">
+
+                          <div class="d-flex flex-column justify-content-center">
+                            <p class="text-xs text-secondary mb-0"></p>
+                          </div>
+                        </div>
+                      </td>
+
+                      <td>
+                        <div class="d-flex px-2 py-1">
+                        <span class="text-secondary text-xs font-weight-bold"></span>
+                      </td>
+
+                      
+
+
+                      <td class="align-middle">
+                      <div class="form-check form-switch">
+                                <input class="form-check-input" type="checkbox" id="rememberMe">
+                            </div>
+                      </td>
+                    </tr>
+
+
+                    <tr>
+                      <td>
+                        <div class="d-flex px-2 py-1">
+
+                          <div class="d-flex flex-column justify-content-center">
+                            <h6 class="mb-0 text-sm">ทีมขายเก่ง</h6>
+                            <!-- <p class="text-xs text-secondary mb-0">alexa@creative-tim.com</p> -->
+                          </div>
+                        </div>
+                      </td>
+                      <td>
+                      <p class="text-xs font-weight-bold mb-0"> 50 $E </p>
+
+                      </td>
+
+                      <td>
+                        <div class="d-flex px-2 py-1">
+
+                          <div class="d-flex flex-column justify-content-center">
+                            <p class="text-xs text-secondary mb-0"></p>
+                          </div>
+                        </div>
+                      </td>
+
+                      <td>
+                        <div class="d-flex px-2 py-1">
+                        <span class="text-secondary text-xs font-weight-bold"></span>
+                      </td>
+
+                      
+
+
+                      <td class="align-middle">
+                      <div class="form-check form-switch">
+                                <input class="form-check-input" type="checkbox" id="rememberMe">
+                            </div>
+                      </td>
+                    </tr>
+
+                    
+                  </tbody>
+                </table>
+
+  
+
             </div>
           </div>
         </div>
-      </footer>
+      </div>     
+      
+        
+      <br>
+      <div class="row">
+        <div class="col-md-12">
+          <div class="card">
+            <div class="card-header pb-0">
+              <div class="d-flex align-items-center">
+                <p class="mb-0"> Sunday 10 April 2022</p>
+              </div>
+            </div>
+            <div class="card-body">
+
+            <table class="table align-items-center mb-0">
+                  <thead>
+                    <tr>
+                      <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7"> Ativity </th>
+                      <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Score</th>
+                      <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Update By</th>
+                      <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Update Date</th>
+                      <th class="text-secondary opacity-7"></th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                  <tr>
+                      <td>
+                        <div class="d-flex px-2 py-1">
+
+                          <div class="d-flex flex-column justify-content-center">
+                            <h6 class="mb-0 text-sm">Best Team</h6>
+                            <!-- <p class="text-xs text-secondary mb-0">alexa@creative-tim.com</p> -->
+                          </div>
+                        </div>
+                      </td>
+                      <td>
+                      <p class="text-xs font-weight-bold mb-0"> 100 $E </p>
+
+                      </td>
+
+                      <td>
+                        <div class="d-flex px-2 py-1">
+
+                          <div class="d-flex flex-column justify-content-center">
+                            <p class="text-xs text-secondary mb-0"></p>
+                          </div>
+                        </div>
+                      </td>
+
+                      <td>
+                        <div class="d-flex px-2 py-1">
+                        <span class="text-secondary text-xs font-weight-bold"></span>
+                      </td>
+                      <td class="align-middle">
+                      <div class="form-check form-switch">
+                                <input class="form-check-input" type="checkbox" id="rememberMe">
+                            </div>
+                      </td>
+                    </tr>
+
+                    <tr>
+                      <td>
+                        <div class="d-flex px-2 py-1">
+
+                          <div class="d-flex flex-column justify-content-center">
+                            <h6 class="mb-0 text-sm">ทีมพี่เลี้ยงหน้าตาดี</h6>
+                            <!-- <p class="text-xs text-secondary mb-0">alexa@creative-tim.com</p> -->
+                          </div>
+                        </div>
+                      </td>
+                      <td>
+                      <p class="text-xs font-weight-bold mb-0"> 999 $E </p>
+
+                      </td>
+
+                      <td>
+                        <div class="d-flex px-2 py-1">
+
+                          <div class="d-flex flex-column justify-content-center">
+                            <p class="text-xs text-secondary mb-0"></p>
+                          </div>
+                        </div>
+                      </td>
+
+                      <td>
+                        <div class="d-flex px-2 py-1">
+                        <span class="text-secondary text-xs font-weight-bold"></span>
+                      </td>
+
+                      
+
+
+                      <td class="align-middle">
+                      <div class="form-check form-switch">
+                                <input class="form-check-input" type="checkbox" id="rememberMe">
+                            </div>
+                      </td>
+                    </tr>
+
+
+                    <tr>
+                      <td>
+                        <div class="d-flex px-2 py-1">
+
+                          <div class="d-flex flex-column justify-content-center">
+                            <h6 class="mb-0 text-sm">ทีมขายเก่ง</h6>
+                            <!-- <p class="text-xs text-secondary mb-0">alexa@creative-tim.com</p> -->
+                          </div>
+                        </div>
+                      </td>
+                      <td>
+                      <p class="text-xs font-weight-bold mb-0"> 50 $E </p>
+
+                      </td>
+
+                      <td>
+                        <div class="d-flex px-2 py-1">
+
+                          <div class="d-flex flex-column justify-content-center">
+                            <p class="text-xs text-secondary mb-0"></p>
+                          </div>
+                        </div>
+                      </td>
+
+                      <td>
+                        <div class="d-flex px-2 py-1">
+                        <span class="text-secondary text-xs font-weight-bold"></span>
+                      </td>
+
+                      
+
+
+                      <td class="align-middle">
+                      <div class="form-check form-switch">
+                                <input class="form-check-input" type="checkbox" id="rememberMe">
+                            </div>
+                      </td>
+                    </tr>
+
+                    
+                  </tbody>
+                </table>
+
+
+
+            </div>
+          </div>
+        </div>
+
+        
+                <div class="d-flex align-items-center" style="margin-top : 20px;">
+                <p class="mb-0"> </p>
+                <button class="btn btn-primary btn-sm ms-auto"> Save</button>
+              </div>
+              </div>
+
+
+    </div>
+    <div class="tab-pane fade" id="custom-tabs-one-messages" role="tabpanel" aria-labelledby="custom-tabs-one-messages-tab">
+
+    <div class="row">
+        <div class="col-md-12">
+          <div class="card">
+            <div class="card-header pb-0">
+              <div class="d-flex align-items-center">
+                <p class="mb-0"> Monday 11 April 2022</p>
+              </div>
+            </div>
+            <div class="card-body">
+
+            <table class="table align-items-center mb-0">
+                  <thead>
+                    <tr>
+                      <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7"> Ativity </th>
+                      <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Score</th>
+                      <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Update By</th>
+                      <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Update Date</th>
+                      <th class="text-secondary opacity-7"></th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                  <tr>
+                      <td>
+                        <div class="d-flex px-2 py-1">
+
+                          <div class="d-flex flex-column justify-content-center">
+                            <h6 class="mb-0 text-sm">Best Team</h6>
+                            <!-- <p class="text-xs text-secondary mb-0">alexa@creative-tim.com</p> -->
+                          </div>
+                        </div>
+                      </td>
+                      <td>
+                      <p class="text-xs font-weight-bold mb-0"> 100 $E </p>
+
+                      </td>
+
+                      <td>
+                        <div class="d-flex px-2 py-1">
+
+                          <div class="d-flex flex-column justify-content-center">
+                            <p class="text-xs text-secondary mb-0"></p>
+                          </div>
+                        </div>
+                      </td>
+
+                      <td>
+                        <div class="d-flex px-2 py-1">
+                        <span class="text-secondary text-xs font-weight-bold"></span>
+                      </td>
+                      <td class="align-middle">
+                      <div class="form-check form-switch">
+                                <input class="form-check-input" type="checkbox" id="rememberMe" >
+                            </div>
+                      </td>
+                    </tr>
+
+                    <tr>
+                      <td>
+                        <div class="d-flex px-2 py-1">
+
+                          <div class="d-flex flex-column justify-content-center">
+                            <h6 class="mb-0 text-sm">ทีมพี่เลี้ยงหน้าตาดี</h6>
+                            <!-- <p class="text-xs text-secondary mb-0">alexa@creative-tim.com</p> -->
+                          </div>
+                        </div>
+                      </td>
+                      <td>
+                      <p class="text-xs font-weight-bold mb-0"> 999 $E </p>
+
+                      </td>
+
+                      <td>
+                        <div class="d-flex px-2 py-1">
+
+                          <div class="d-flex flex-column justify-content-center">
+                            <p class="text-xs text-secondary mb-0"></p>
+                          </div>
+                        </div>
+                      </td>
+
+                      <td>
+                        <div class="d-flex px-2 py-1">
+                        <span class="text-secondary text-xs font-weight-bold"></span>
+                      </td>
+
+                      
+
+
+                      <td class="align-middle">
+                      <div class="form-check form-switch">
+                                <input class="form-check-input" type="checkbox" id="rememberMe">
+                            </div>
+                      </td>
+                    </tr>
+
+
+                    <tr>
+                      <td>
+                        <div class="d-flex px-2 py-1">
+
+                          <div class="d-flex flex-column justify-content-center">
+                            <h6 class="mb-0 text-sm">ทีมขายเก่ง</h6>
+                            <!-- <p class="text-xs text-secondary mb-0">alexa@creative-tim.com</p> -->
+                          </div>
+                        </div>
+                      </td>
+                      <td>
+                      <p class="text-xs font-weight-bold mb-0"> 50 $E </p>
+
+                      </td>
+
+                      <td>
+                        <div class="d-flex px-2 py-1">
+
+                          <div class="d-flex flex-column justify-content-center">
+                            <p class="text-xs text-secondary mb-0"></p>
+                          </div>
+                        </div>
+                      </td>
+
+                      <td>
+                        <div class="d-flex px-2 py-1">
+                        <span class="text-secondary text-xs font-weight-bold"></span>
+                      </td>
+
+                      
+
+
+                      <td class="align-middle">
+                      <div class="form-check form-switch">
+                                <input class="form-check-input" type="checkbox" id="rememberMe">
+                            </div>
+                      </td>
+                    </tr>
+
+                    
+                  </tbody>
+                </table>
+
+  
+
+            </div>
+          </div>
+        </div>
+      </div>     
+      
+        
+      <br>
+      <div class="row">
+        <div class="col-md-12">
+          <div class="card">
+            <div class="card-header pb-0">
+              <div class="d-flex align-items-center">
+                <p class="mb-0"> Tuesday 12 April 2022</p>
+              </div>
+            </div>
+            <div class="card-body">
+
+            <table class="table align-items-center mb-0">
+                  <thead>
+                    <tr>
+                      <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7"> Ativity </th>
+                      <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Score</th>
+                      <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Update By</th>
+                      <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Update Date</th>
+                      <th class="text-secondary opacity-7"></th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                  <tr>
+                      <td>
+                        <div class="d-flex px-2 py-1">
+
+                          <div class="d-flex flex-column justify-content-center">
+                            <h6 class="mb-0 text-sm">Best Team</h6>
+                            <!-- <p class="text-xs text-secondary mb-0">alexa@creative-tim.com</p> -->
+                          </div>
+                        </div>
+                      </td>
+                      <td>
+                      <p class="text-xs font-weight-bold mb-0"> 100 $E </p>
+
+                      </td>
+
+                      <td>
+                        <div class="d-flex px-2 py-1">
+
+                          <div class="d-flex flex-column justify-content-center">
+                            <p class="text-xs text-secondary mb-0"></p>
+                          </div>
+                        </div>
+                      </td>
+
+                      <td>
+                        <div class="d-flex px-2 py-1">
+                        <span class="text-secondary text-xs font-weight-bold"></span>
+                      </td>
+                      <td class="align-middle">
+                      <div class="form-check form-switch">
+                                <input class="form-check-input" type="checkbox" id="rememberMe">
+                            </div>
+                      </td>
+                    </tr>
+
+                    <tr>
+                      <td>
+                        <div class="d-flex px-2 py-1">
+
+                          <div class="d-flex flex-column justify-content-center">
+                            <h6 class="mb-0 text-sm">ทีมพี่เลี้ยงหน้าตาดี</h6>
+                            <!-- <p class="text-xs text-secondary mb-0">alexa@creative-tim.com</p> -->
+                          </div>
+                        </div>
+                      </td>
+                      <td>
+                      <p class="text-xs font-weight-bold mb-0"> 999 $E </p>
+
+                      </td>
+
+                      <td>
+                        <div class="d-flex px-2 py-1">
+
+                          <div class="d-flex flex-column justify-content-center">
+                            <p class="text-xs text-secondary mb-0"></p>
+                          </div>
+                        </div>
+                      </td>
+
+                      <td>
+                        <div class="d-flex px-2 py-1">
+                        <span class="text-secondary text-xs font-weight-bold"></span>
+                      </td>
+
+                      
+
+
+                      <td class="align-middle">
+                      <div class="form-check form-switch">
+                                <input class="form-check-input" type="checkbox" id="rememberMe">
+                            </div>
+                      </td>
+                    </tr>
+
+
+                    <tr>
+                      <td>
+                        <div class="d-flex px-2 py-1">
+
+                          <div class="d-flex flex-column justify-content-center">
+                            <h6 class="mb-0 text-sm">ทีมขายเก่ง</h6>
+                            <!-- <p class="text-xs text-secondary mb-0">alexa@creative-tim.com</p> -->
+                          </div>
+                        </div>
+                      </td>
+                      <td>
+                      <p class="text-xs font-weight-bold mb-0"> 50 $E </p>
+
+                      </td>
+
+                      <td>
+                        <div class="d-flex px-2 py-1">
+
+                          <div class="d-flex flex-column justify-content-center">
+                            <p class="text-xs text-secondary mb-0"></p>
+                          </div>
+                        </div>
+                      </td>
+
+                      <td>
+                        <div class="d-flex px-2 py-1">
+                        <span class="text-secondary text-xs font-weight-bold"></span>
+                      </td>
+
+                      
+
+
+                      <td class="align-middle">
+                      <div class="form-check form-switch">
+                                <input class="form-check-input" type="checkbox" id="rememberMe">
+                            </div>
+                      </td>
+                    </tr>
+
+                    
+                  </tbody>
+                </table>
+
+
+
+            </div>
+          </div>
+        </div>
+
+        
+                <div class="d-flex align-items-center" style="margin-top : 20px;">
+                <p class="mb-0"> </p>
+                <button class="btn btn-primary btn-sm ms-auto"> Save</button>
+              </div>
+              </div>
+
+
+
+    </div>
+    <div class="tab-pane fade" id="custom-tabs-one-settings" role="tabpanel" aria-labelledby="custom-tabs-one-settings-tab">
+    Pellentesque vestibulum commodo nibh nec blandit. Maecenas neque magna, iaculis tempus turpis ac, ornare sodales tellus. Mauris eget blandit dolor. Quisque tincidunt venenatis vulputate. Morbi euismod molestie tristique. Vestibulum consectetur dolor a vestibulum pharetra. Donec interdum placerat urna nec pharetra. Etiam eget dapibus orci, eget aliquet urna. Nunc at consequat diam. Nunc et felis ut nisl commodo dignissim. In hac habitasse platea dictumst. Praesent imperdiet accumsan ex sit amet facilisis.
+    </div>
+    </div>
+    </div>
+
+    </div>
+</div>
+
+
+</div>
+
+
+
     </div>
   </div>
   <div class="fixed-plugin">
