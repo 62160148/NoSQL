@@ -230,6 +230,16 @@
                         </p>
                     </div>
                 </div>
+                <div class="col align-self-end">
+                    <div class="h-100">
+                        <a href="<?php echo site_url() . '/UserController/show_cluster_checklist/1'; ?>">
+                            <button type="button" class="btn btn-default btn-sm">
+                                <i class="fa fa-home"></i>
+                            </button>
+                        </a>
+
+                    </div>
+                </div>
 
 
             </div>
