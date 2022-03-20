@@ -4,20 +4,20 @@ defined('BASEPATH') or exit('No direct script access allowed');
 class UserController extends CI_Controller
 {
 
-    function __construct()
-    {
+	function __construct()
+	{
 
-        parent::__construct();
-        $this->load->model('UserModel', 'userModel');
-    }
+		parent::__construct();
+		$this->load->model('UserModel', 'userModel');
+	}
 
-    function index()
-    {
-        $data['users'] = $this->userModel->get_user_list();
-        $this->load->view('users', $data);
-    }
+	function index()
+	{
+		$data['users'] = $this->userModel->get_user_list();
+		$this->load->view('users', $data);
+	}
 
-    public function output($view, $data = null)
+	public function output($view, $data = null)
 	{
 		$this->load->view('template/header');
 		$this->load->view('template/javascript');
@@ -28,14 +28,17 @@ class UserController extends CI_Controller
 	}
 
 
-    function show_cluster_checklist($_id)
-    {
-        $this->output('v_cluster_checklist');
-    }
+	function show_cluster_checklist($_id)
+	{
+		$this->output('v_cluster_checklist');
+	}
+	function show_cluster_detail($_id)
+	{
+		$this->output('v_cluster_detail');
+	}
 
-    function show_login()
-    {
-        $this->output('login');
-    }
-    
+	function show_login()
+	{
+		$this->output('login');
+	}
 }
