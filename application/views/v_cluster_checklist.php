@@ -217,7 +217,7 @@
                     <div class="h-100">
                         <a href="<?php echo site_url() . '/UserController/show_cluster_detail/1'; ?>">
                             <button type="button" class="btn btn-default btn-sm">
-                                <i class="fa fa-users"> สมาชิกมกุล</i>
+                                <i class="fa fa-users"></i>
                             </button>
                         </a>
 
