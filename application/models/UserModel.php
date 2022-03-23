@@ -5,7 +5,7 @@ class UserModel extends CI_Model
 {
 
 	private $database = 'nosqlproject';
-	private $collection = 'cluster';
+	private $collection = 'user';
 	private $conn;
 
 	function __construct()
@@ -49,6 +49,7 @@ class UserModel extends CI_Model
 	}
 
 
+	/* Creating a new user. */
 	function create_user($name, $email)
 	{
 		try {

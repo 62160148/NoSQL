@@ -36,16 +36,9 @@ if (win && document.querySelector('#sidenav-scrollbar')) {
                                             aria-label="Password" aria-describedby="password-addon">
                                     </div>
                                     <div class="text-center">
-                                        <button type="button" class="btn bg-gradient-info w-100 mt-4 mb-0">Sign
-                                            in</button>
+                                        <button type="button" class="btn bg-gradient-info w-100 mt-4 mb-0">Login</button>
                                     </div>
                                 </form>
-                            </div>
-                            <div class="card-footer text-center pt-0 px-lg-2 px-1">
-                                <p class="mb-4 text-sm mx-auto">
-                                    Don't have an account?
-                                    <a href="javascript:;" class="text-info text-gradient font-weight-bold">Sign up</a>
-                                </p>
                             </div>
                         </div>
                     </div>
@@ -61,6 +54,8 @@ if (win && document.querySelector('#sidenav-scrollbar')) {
     </section>
 </main>
 <!-- -------- START FOOTER 3 w/ COMPANY DESCRIPTION WITH LINKS & SOCIAL ICONS & COPYRIGHT ------- -->
+<br>
+<br>
 <footer class="footer py-5">
     <div class="container">
         <div class="row">
