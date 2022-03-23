@@ -28,11 +28,19 @@ class UserController extends CI_Controller
 		$this->load->view('template/footer');
 	}
 
+	public function output_login($view, $data=null)
+	{
+		$this->load->view('template/header');
+		$this->load->view($view, $data);
+		$this->load->view('template/javascript');
+		$this->load->view('template/footer');
+	}
 
 	function show_cluster_checklist($_id)
 	{
 		$this->output('v_cluster_checklist');
 	}
+
 	function show_cluster_detail($_id)
 	{
 		$this->output('v_cluster_detail');
@@ -40,8 +48,9 @@ class UserController extends CI_Controller
 
 	function show_login()
 	{
-		$this->output('login');
+		$this->output_login('login');
 	}
+	
 	function show_item_manage()
 	{
 		$this->output('v_item_manage');
