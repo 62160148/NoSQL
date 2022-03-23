@@ -58,7 +58,7 @@ class SqlController extends UserController
 		// $this->item->item_name = "หมา";
 		// $this->item->item_price = 12;
 		// $this->item->item_num = 14;
-		$this->item->insert();
+		$this->item->update();
 		$this->load->model('M_item_list', 'ite');
 		$data['arr_item'] = $this->ite->get_item_all()->result();
 		echo json_encode($data);

@@ -569,17 +569,23 @@ $(document).ready(function() {
 </script>
 <script>
 function add_item() {
-    var item_name = document.getElementById('name').value;
-    var item_price = document.getElementById("price").value;
-    var item_num = document.getElementById("num").value;
-    var item_id = document.getElementById("id").value;
+    var item_name = document.getElementById('name1').value;
+    var item_price = document.getElementById("price1").value;
+    var item_num = document.getElementById("num1").value;
+    // document.getElementById('name1').value = null;
+    // document.getElementById("price1").value = null;
+    // document.getElementById("num1").value = null;
     console.log(item_name)
-    conso
-    le.log(item_price)
-    conso
-le.log(item_num)
+    console.log(item_price)
+    console.log(item_num)
     console.log(9999)
-    // ใช้ ajax 
+    // ใช
+    //
+
+
+
+
+
     $.ajax({
         type: "POST",
         url: "<?php echo base_url(); ?>index.php/SqlController/add_item",
@@ -596,12 +602,14 @@ le.log(item_num)
 }
 
 function edit_item() {
-    var item_name = document.getElementById('name1').value;
-    var item_price = document.getElementById("price1").value;
-    var item_num = document.getElementById("num1").value;
+    var item_name = document.getElementById('name').value;
+    var item_price = document.getElementById("price").value;
+    var item_num = document.getElementById("num").value;
+    var item_id = document.getElementById("id").value;
     console.log(item_name)
     console.log(item_price)
     console.log(item_num)
+    console.log(item_id)
     console.log(9999)
     // ใช้ ajax 
     $.ajax({
@@ -615,7 +623,7 @@ function edit_item() {
         },
         success: function(data) {
             console.log(data);
-            window.location.href = "<?php echo base_url(); ?>index.php/SqlController/show_item_manage";
+            // window.location.href = "<?php echo base_url(); ?>index.php/SqlController/show_item_manage";
         }
     })
 }
