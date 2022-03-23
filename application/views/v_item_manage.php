@@ -202,7 +202,21 @@
                                         </button>
                                     </div>
                                     <div class="modal-body">
-                                        <input type="text" id="item_name" placeholder="ชื่อ item"></input>
+                                        <div class="mb-3">
+                                            <label for="focusedinput" class="form-label">Item Name </label>
+                                            <input type="text" id="item_name" placeholder="ชื่อ item">
+                                        </div>
+                                        <div class="mb-3">
+                                            <label for="focusedinput" class="form-label">Item Price</label>
+                                            <input type="number" id="item_price" min="0" placeholder="ราคา item">
+                                        </div>
+                                        <div class="mb-3">
+                                            <label for="focusedinput" class="form-label">Item amount</label>
+                                            <input type="number" id="item_num" placeholder="จำนวน item คงเหลือ">
+                                        </div>
+
+
+
                                     </div>
                                     <div class="modal-footer">
                                         <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
@@ -478,6 +492,10 @@
 
 
 
+
+
+
+
                 <a class="github-button" href="https://github.com/creativetimofficial/argon-dashboard"
                     data-icon="octicon-star" data-size="large" data-show-count="true"
                     aria-label="Star creativetimofficial/argon-dashboard on GitHub">Star</a>
@@ -511,5 +529,4 @@ $(document).ready(function() {
     $("#myTable_filter").css('margin-right', '20px');
     $('#myTable').after('<br>');
 });
-
 </script>
