@@ -8,7 +8,7 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
 
 
-<div class="position-absolute w-100 min-height-300 top-0"
+<!-- <div class="position-absolute w-100 min-height-300 top-0"
     style="background-image: url('https://raw.githubusercontent.com/creativetimofficial/public-assets/master/argon-dashboard-pro/assets/img/profile-layout-header.jpg'); background-position-y: 50%;">
     <span class="mask bg-primary opacity-6"></span>
 </div>
@@ -54,7 +54,7 @@
                     </div>
                     <span class="nav-link-text ms-1">User</span>
                 </a>
-            </li>
+            </li> -->
 
 
 

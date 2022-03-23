@@ -23,6 +23,7 @@ class UserController extends CI_Controller
 		$this->load->view('template/javascript');
 		// $this->load->view('template/crs_template/crs_css');
 		// $this->load->view('template/crs_template/crs_js');
+		$this->load->view('template/sidebar');
 		$this->load->view($view, $data);
 		$this->load->view('template/footer');
 	}
@@ -40,5 +41,9 @@ class UserController extends CI_Controller
 	function show_login()
 	{
 		$this->output('login');
+	}
+	function show_item_manage()
+	{
+		$this->output('v_item_manage');
 	}
 }
