@@ -9,6 +9,7 @@ class UserController extends CI_Controller
 
 		parent::__construct();
 		$this->load->model('UserModel', 'userModel');
+
 	}
 
 	function index()
@@ -44,6 +45,8 @@ class UserController extends CI_Controller
 	}
 	function show_item_manage()
 	{
-		$this->output('v_item_manage');
+		$this->load->model('M_item_list', 'item');
+		$data['arr_item'] = $this->item->get_item_all()->result();
+		$this->output('v_item_manage', $data);
 	}
 }

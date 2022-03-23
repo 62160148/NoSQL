@@ -294,72 +294,37 @@
 
                                                 </tr>
 
-                                                <tr>
-                                                    <td>
-                                                        <div class="d-flex px-2 py-1">
 
-                                                            <div class="d-flex flex-column justify-content-center">
-                                                                <h6 class="mb-0 text-sm">John Michael</h6>
-                                                                <p class="text-xs text-secondary mb-0">
-                                                                    john@creative-tim.com</p>
+
+
+                                                <!-- Modal -->
+                                                <div class="modal fade" id="edit_modal" tabindex="-1" role="dialog"
+                                                    aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                                                    <div class="modal-dialog modal-dialog-centered" role="document">
+                                                        <div class="modal-content">
+                                                            <div class="modal-header">
+                                                                <h5 class="modal-title" id="exampleModalLongTitle">
+                                                                    แก้ไขข้อมูล Item
+                                                                </h5>
+                                                                <button type="button" class="close" data-dismiss="modal"
+                                                                    aria-label="Close">
+                                                                    <span aria-hidden="true">&times;</span>
+                                                                </button>
                                                             </div>
-                                                        </div>
-                                                    </td>
-                                                    <td>
-                                                        <p class="text-xs font-weight-bold mb-0">Manager</p>
-                                                        <p class="text-xs text-secondary mb-0">Organization</p>
-                                                    </td>
-                                                    <td class="align-middle text-center text-sm">
-                                                        <span class="badge badge-sm bg-gradient-success">Online</span>
-                                                    </td>
-                                                    <td class="align-middle text-center">
-                                                        <span
-                                                            class="text-secondary text-xs font-weight-bold">23/04/18</span>
-                                                    </td>
-                                                    <td class="align-middle text-center">
-
-                                                        <button type="button" class="btn btn-warning btn-sm"
-                                                            data-toggle="modal" data-target="#edit_modal"> <i
-                                                                class="fa fa-pencil"></i></button>
-
-
-                                                        <a href="javascript:;">
-                                                            <button type="button" class="btn btn-danger btn-sm"> <i
-                                                                    class="fa fa-trash-o"></i></button>
-                                                        </a>
-                                                    </td>
-
-                                                </tr>
-
-
-                                                                                                    <!-- Modal -->
-                                                    <div class="modal fade" id="edit_modal" tabindex="-1" role="dialog"
-                                                        aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-                                                        <div class="modal-dialog modal-dialog-centered" role="document">
-                                                            <div class="modal-content">
-                                                                <div class="modal-header">
-                                                                    <h5 class="modal-title" id="exampleModalLongTitle">
-                                                                        แก้ไขข้อมูล Item
-                                                                    </h5>
-                                                                    <button type="button" class="close"
-                                                                        data-dismiss="modal" aria-label="Close">
-                                                                        <span aria-hidden="true">&times;</span>
-                                                                    </button>
-                                                                </div>
-                                                                <div class="modal-body">
-                                                                    <input type="text" id="item_name"
-                                                                        placeholder="ชื่อ item"></input>
-                                                                </div>
-                                                                <div class="modal-footer">
-                                                                    <button type="button" class="btn btn-danger"
-                                                                        data-dismiss="modal">Close</button>
-                                                                    <button type="button"
-                                                                        class="btn btn-success">Save</button>
-                                                                </div>
+                                                            <div class="modal-body">
+                                                                <input type="text" id="item_name"
+                                                                    placeholder="ชื่อ item"></input>
+                                                            </div>
+                                                            <div class="modal-footer">
+                                                                <button type="button" class="btn btn-danger"
+                                                                    data-dismiss="modal">Close</button>
+                                                                <button type="button"
+                                                                    class="btn btn-success">Save</button>
                                                             </div>
                                                         </div>
                                                     </div>
-                                                    <!-- Modal -->
+                                                </div>
+                                                <!-- Modal -->
 
 
                                             </tbody>
@@ -496,6 +461,9 @@
 
 
 
+
+
+
                 <a class="github-button" href="https://github.com/creativetimofficial/argon-dashboard"
                     data-icon="octicon-star" data-size="large" data-show-count="true"
                     aria-label="Star creativetimofficial/argon-dashboard on GitHub">Star</a>
@@ -521,7 +489,6 @@
 </div>
 
 <script>
-
 $(document).ready(function() {
     $('#myTable').DataTable();
     $("#myTable_length").css('margin-left', '20px');

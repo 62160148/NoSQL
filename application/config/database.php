@@ -96,7 +96,7 @@ $db['default'] = array(
 );
 $db['scs'] = array(
 	'dsn'	=> '',
-	'hostname' => $host_db,
+	'hostname' => 'localhost',
 	'username' => 'root',
 	'password' => 'root123456',
 	'database' => 'scs_database',
