@@ -28,11 +28,6 @@
 
 
 
-
-
-
-
-
 </aside>
 
 
@@ -226,7 +221,7 @@
                                 </div>
                                 <div class="card-body px-0 pt-0 pb-2">
                                     <div class="table-responsive p-0">
-                                        <table class="table align-items-center mb-0">
+                                        <table class="table align-items-center mb-0" id="myTable">
                                             <thead>
                                                 <tr>
                                                     <th
@@ -247,13 +242,11 @@
                                                 </tr>
                                             </thead>
                                             <tbody>
+
                                                 <tr>
                                                     <td>
                                                         <div class="d-flex px-2 py-1">
-                                                            <div>
-                                                                <img src="../assets/img/team-2.jpg"
-                                                                    class="avatar avatar-sm me-3" alt="user1">
-                                                            </div>
+
                                                             <div class="d-flex flex-column justify-content-center">
                                                                 <h6 class="mb-0 text-sm">John Michael</h6>
                                                                 <p class="text-xs text-secondary mb-0">
@@ -284,7 +277,48 @@
                                                                     class="fa fa-trash-o"></i></button>
                                                         </a>
                                                     </td>
-                                                    <!-- Modal -->
+
+                                                </tr>
+
+                                                <tr>
+                                                    <td>
+                                                        <div class="d-flex px-2 py-1">
+
+                                                            <div class="d-flex flex-column justify-content-center">
+                                                                <h6 class="mb-0 text-sm">John Michael</h6>
+                                                                <p class="text-xs text-secondary mb-0">
+                                                                    john@creative-tim.com</p>
+                                                            </div>
+                                                        </div>
+                                                    </td>
+                                                    <td>
+                                                        <p class="text-xs font-weight-bold mb-0">Manager</p>
+                                                        <p class="text-xs text-secondary mb-0">Organization</p>
+                                                    </td>
+                                                    <td class="align-middle text-center text-sm">
+                                                        <span class="badge badge-sm bg-gradient-success">Online</span>
+                                                    </td>
+                                                    <td class="align-middle text-center">
+                                                        <span
+                                                            class="text-secondary text-xs font-weight-bold">23/04/18</span>
+                                                    </td>
+                                                    <td class="align-middle text-center">
+
+                                                        <button type="button" class="btn btn-warning btn-sm"
+                                                            data-toggle="modal" data-target="#edit_modal"> <i
+                                                                class="fa fa-pencil"></i></button>
+
+
+                                                        <a href="javascript:;">
+                                                            <button type="button" class="btn btn-danger btn-sm"> <i
+                                                                    class="fa fa-trash-o"></i></button>
+                                                        </a>
+                                                    </td>
+
+                                                </tr>
+
+
+                                                                                                    <!-- Modal -->
                                                     <div class="modal fade" id="edit_modal" tabindex="-1" role="dialog"
                                                         aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
                                                         <div class="modal-dialog modal-dialog-centered" role="document">
@@ -312,7 +346,7 @@
                                                         </div>
                                                     </div>
                                                     <!-- Modal -->
-                                                </tr>
+
 
                                             </tbody>
                                         </table>
@@ -469,7 +503,13 @@
 </div>
 
 <script>
+
 $(document).ready(function() {
     $('#myTable').DataTable();
+    $("#myTable_length").css('margin-left', '20px');
+    $("#myTable_info").css('margin-left', '20px');
+    $("#myTable_filter").css('margin-right', '20px');
+    $('#myTable').after('<br>');
 });
+
 </script>

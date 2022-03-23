@@ -29,6 +29,8 @@
     <!-- <link rel="stylesheet" type="text/css" href="<?= base_url() ?>assets/css/style.css"/> -->
     <!-- <meta charset="utf-8"> -->
 
+
+
 </head>
 
 <body class="g-sidenav-show   bg-gray-100">
