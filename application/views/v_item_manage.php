@@ -201,27 +201,27 @@
                                             <span aria-hidden="true">&times;</span>
                                         </button>
                                     </div>
+
                                     <div class="modal-body">
+                                        <!-- <form action="<?php echo site_url() . '/SqlController/add_item/' ?> " method="post" enctype="multipart/form-data"> -->
                                         <div class="mb-3">
                                             <label for="focusedinput" class="form-label">Item Name </label>
-                                            <input type="text" id="item_name" placeholder="ชื่อ item">
+                                            <input type="text" id="name1">
                                         </div>
                                         <div class="mb-3">
                                             <label for="focusedinput" class="form-label">Item Price</label>
-                                            <input type="number" id="item_price" min="0" placeholder="ราคา item">
+                                            <input type="number" id="price1" min="0">
                                         </div>
                                         <div class="mb-3">
                                             <label for="focusedinput" class="form-label">Item amount</label>
-                                            <input type="number" id="item_num" placeholder="จำนวน item คงเหลือ">
+                                            <input type="number" id="num1">
                                         </div>
-
-
-
                                     </div>
                                     <div class="modal-footer">
                                         <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
-                                        <button type="button" class="btn btn-success">Save</button>
+                                        <button type="button" onclick="add_item()" class="btn btn-success">Save</button>
                                     </div>
+                                    <!-- </form> -->
                                 </div>
                             </div>
                         </div>
@@ -240,49 +240,52 @@
                                                 <tr>
                                                     <th
                                                         class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
-                                                        Author</th>
+                                                        #</th>
                                                     <th
                                                         class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">
-                                                        Function</th>
+                                                        Item Name</th>
                                                     <th
                                                         class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
-                                                        Status</th>
+                                                        Item Price</th>
                                                     <th
                                                         class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
-                                                        Employed</th>
+                                                        Item Amount</th>
                                                     <th
                                                         class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
                                                         Action</th>
                                                 </tr>
                                             </thead>
                                             <tbody>
-
+                                                <?php for ($i = 0; $i < count($arr_item); $i++) { ?>
                                                 <tr>
                                                     <td>
                                                         <div class="d-flex px-2 py-1">
 
                                                             <div class="d-flex flex-column justify-content-center">
-                                                                <h6 class="mb-0 text-sm">John Michael</h6>
-                                                                <p class="text-xs text-secondary mb-0">
-                                                                    john@creative-tim.com</p>
+                                                                <p class="text-xs font-weight-bold mb-0">
+                                                                    <?php echo $i + 1 ?></p>
+
                                                             </div>
                                                         </div>
                                                     </td>
                                                     <td>
-                                                        <p class="text-xs font-weight-bold mb-0">Manager</p>
-                                                        <p class="text-xs text-secondary mb-0">Organization</p>
+                                                        <p class="text-xs font-weight-bold mb-0">
+                                                            <?php echo $arr_item[$i]->item_name ?></p>
+
                                                     </td>
                                                     <td class="align-middle text-center text-sm">
-                                                        <span class="badge badge-sm bg-gradient-success">Online</span>
+                                                        <p class="text-xs font-weight-bold mb-0">
+                                                            <?php echo $arr_item[$i]->item_price ?></p>
                                                     </td>
                                                     <td class="align-middle text-center">
-                                                        <span
-                                                            class="text-secondary text-xs font-weight-bold">23/04/18</span>
+                                                        <p class="text-xs font-weight-bold mb-0">
+                                                            <?php echo $arr_item[$i]->item_num ?></p>
                                                     </td>
                                                     <td class="align-middle text-center">
 
                                                         <button type="button" class="btn btn-warning btn-sm"
-                                                            data-toggle="modal" data-target="#edit_modal"> <i
+                                                            data-toggle="modal"
+                                                            data-target="#edit_modal<?php echo $i ?>"> <i
                                                                 class="fa fa-pencil"></i></button>
 
 
@@ -298,8 +301,9 @@
 
 
                                                 <!-- Modal -->
-                                                <div class="modal fade" id="edit_modal" tabindex="-1" role="dialog"
-                                                    aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                                                <div class="modal fade" id="edit_modal<?php echo $i ?>" tabindex="-1"
+                                                    role="dialog" aria-labelledby="exampleModalCenterTitle"
+                                                    aria-hidden="true">
                                                     <div class="modal-dialog modal-dialog-centered" role="document">
                                                         <div class="modal-content">
                                                             <div class="modal-header">
@@ -311,14 +315,40 @@
                                                                     <span aria-hidden="true">&times;</span>
                                                                 </button>
                                                             </div>
+
                                                             <div class="modal-body">
-                                                                <input type="text" id="item_name"
-                                                                    placeholder="ชื่อ item"></input>
+                                                                <div class="mb-3">
+                                                                    <label for="focusedinput" class="form-label">Item
+                                                                        Name </label>
+                                                                    <input type="text" id="id"
+                                                                        value="<?php echo $arr_item[$i]->item_id ?>"
+                                                                        placeholder="ชื่อ item" hidden>
+                                                                    <input type="text" id="name"
+                                                                        value="<?php echo $arr_item[$i]->item_name ?>"
+                                                                        placeholder="ชื่อ item">
+                                                                </div>
+                                                                <div class="mb-3">
+                                                                    <label for="focusedinput" class="form-label">Item
+                                                                        Price</label>
+                                                                    <input type="number" id="price" min="0"
+                                                                        value="<?php echo $arr_item[$i]->item_price ?>"
+                                                                        placeholder="ราคา item">
+                                                                </div>
+                                                                <div class="mb-3">
+                                                                    <label for="focusedinput" class="form-label">Item
+                                                                        amount</label>
+                                                                    <input type="number" id="num"
+                                                                        value="<?php echo $arr_item[$i]->item_num ?>"
+                                                                        placeholder="จำนวน item คงเหลือ">
+                                                                </div>
+
+
+
                                                             </div>
                                                             <div class="modal-footer">
                                                                 <button type="button" class="btn btn-danger"
                                                                     data-dismiss="modal">Close</button>
-                                                                <button type="button"
+                                                                <button type="button" onclick="edit_item()"
                                                                     class="btn btn-success">Save</button>
                                                             </div>
                                                         </div>
@@ -326,7 +356,7 @@
                                                 </div>
                                                 <!-- Modal -->
 
-
+                                                <?php } ?>
                                             </tbody>
                                         </table>
                                     </div>
@@ -464,9 +494,49 @@
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
                 <a class="github-button" href="https://github.com/creativetimofficial/argon-dashboard"
                     data-icon="octicon-star" data-size="large" data-show-count="true"
                     aria-label="Star creativetimofficial/argon-dashboard on GitHub">Star</a>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -496,4 +566,57 @@ $(document).ready(function() {
     $("#myTable_filter").css('margin-right', '20px');
     $('#myTable').after('<br>');
 });
+</script>
+<script>
+function add_item() {
+    var item_name = document.getElementById('name').value;
+    var item_price = document.getElementById("price").value;
+    var item_num = document.getElementById("num").value;
+    var item_id = document.getElementById("id").value;
+    console.log(item_name)
+    conso
+    le.log(item_price)
+    conso
+le.log(item_num)
+    console.log(9999)
+    // ใช้ ajax 
+    $.ajax({
+        type: "POST",
+        url: "<?php echo base_url(); ?>index.php/SqlController/add_item",
+        data: {
+            "item_name": item_name,
+            "item_price": item_price,
+            "item_num": item_num,
+        },
+        success: function(data) {
+            console.log(data);
+            window.location.href = "<?php echo base_url(); ?>index.php/SqlController/show_item_manage";
+        }
+    })
+}
+
+function edit_item() {
+    var item_name = document.getElementById('name1').value;
+    var item_price = document.getElementById("price1").value;
+    var item_num = document.getElementById("num1").value;
+    console.log(item_name)
+    console.log(item_price)
+    console.log(item_num)
+    console.log(9999)
+    // ใช้ ajax 
+    $.ajax({
+        type: "POST",
+        url: "<?php echo base_url(); ?>index.php/SqlController/edit_item",
+        data: {
+            "item_name": item_name,
+            "item_price": item_price,
+            "item_num": item_num,
+            "item_id": item_id,
+        },
+        success: function(data) {
+            console.log(data);
+            window.location.href = "<?php echo base_url(); ?>index.php/SqlController/show_item_manage";
+        }
+    })
+}
 </script>
