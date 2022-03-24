@@ -47,31 +47,22 @@
                 </a>
             </li>
             <li class="nav-item">
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-       
-         <a class="nav-link " href="../show_item_manage/">
+                <a class="nav-link " href="../show_item_manage/">
                     <div
                         class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
                         <i class="ni ni-basket text-dark text-sm opacity-10"></i>
                     </div>
                     <span class="nav-link-text ms-1">Item management</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <!-- <a class="nav-link " href="../show_activity_manage/"> -->
+                <a class="nav-link " href="../SqlController/show_activity_manage/">
+                    <div
+                        class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
+                        <i class="ni ni-basket text-dark text-sm opacity-10"></i>
+                    </div>
+                    <span class="nav-link-text ms-1">Activity management</span>
                 </a>
             </li>
     </div>

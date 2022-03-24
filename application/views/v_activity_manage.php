@@ -169,7 +169,7 @@
                 <div class="col-auto my-auto">
                     <div class="h-100">
                         <h2 class="mb-1">
-                            Item Management
+                            Activity Management
                         </h2>
                     </div>
                 </div>
@@ -189,39 +189,36 @@
                     <div class="col text">
                         <br>
                         <button id="add_item" class="btn btn-primary float-end" data-toggle="modal"
-                            data-target="#exampleModalCenter">Add Item</button>
+                            data-target="#exampleModalCenter">Add Activity</button>
                         <!-- Modal -->
                         <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog"
                             aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
                             <div class="modal-dialog modal-dialog-centered" role="document">
                                 <div class="modal-content">
                                     <div class="modal-header">
-                                        <h5 class="modal-title" id="exampleModalLongTitle">เพิ่มข้อมูล Item</h5>
+                                        <h5 class="modal-title" id="exampleModalLongTitle">เพิ่มข้อมูล Activity</h5>
                                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                             <span aria-hidden="true">&times;</span>
                                         </button>
                                     </div>
 
                                     <div class="modal-body">
-                                        <!-- <form action="<?php echo site_url() . '/SqlController/add_item/' ?> " method="post" enctype="multipart/form-data"> -->
+
                                         <div class="mb-3">
-                                            <label for="focusedinput" class="form-label">Item Name </label>
+                                            <label for="focusedinput" class="form-label">Activity Name </label>
                                             <input type="text" id="name1">
                                         </div>
                                         <div class="mb-3">
-                                            <label for="focusedinput" class="form-label">Item Price</label>
-                                            <input type="number" id="price1" min="0">
-                                        </div>
-                                        <div class="mb-3">
-                                            <label for="focusedinput" class="form-label">Item amount</label>
-                                            <input type="number" id="num1">
+                                            <label for="focusedinput" class="form-label">Activity Score</label>
+                                            <input type="number" id="score1" min="0">
                                         </div>
                                     </div>
                                     <div class="modal-footer">
                                         <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
-                                        <button type="button" onclick="add_item()" class="btn btn-success">Save</button>
+                                        <button type="button" onclick="add_activity()"
+                                            class="btn btn-success">Save</button>
                                     </div>
-                                    <!-- </form> -->
+
                                 </div>
                             </div>
                         </div>
@@ -231,7 +228,7 @@
                         <div class="col-12">
                             <div class="card mb-4">
                                 <div class="card-header pb-0">
-                                    <h4>Item List</h4>
+                                    <h4>Activity List</h4>
                                 </div>
                                 <div class="card-body px-0 pt-0 pb-2">
                                     <div class="table-responsive p-0">
@@ -243,20 +240,18 @@
                                                         #</th>
                                                     <th
                                                         class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">
-                                                        Item Name</th>
+                                                        Activity Name</th>
                                                     <th
                                                         class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
-                                                        Item Price</th>
-                                                    <th
-                                                        class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
-                                                        Item Amount</th>
+                                                        Activity Score</th>
+
                                                     <th
                                                         class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
                                                         Action</th>
                                                 </tr>
                                             </thead>
                                             <tbody>
-                                                <?php for ($i = 0; $i < count($arr_item); $i++) { ?>
+                                                <?php for ($i = 0; $i < count($arr_act); $i++) { ?>
                                                 <tr>
                                                     <td>
                                                         <div class="d-flex px-2 py-1">
@@ -270,17 +265,14 @@
                                                     </td>
                                                     <td>
                                                         <p class="text-xs font-weight-bold mb-0">
-                                                            <?php echo $arr_item[$i]->item_name ?></p>
+                                                            <?php echo $arr_act[$i]->activity_name ?></p>
 
                                                     </td>
                                                     <td class="align-middle text-center text-sm">
                                                         <p class="text-xs font-weight-bold mb-0">
-                                                            <?php echo $arr_item[$i]->item_price ?></p>
+                                                            <?php echo $arr_act[$i]->activity_score ?></p>
                                                     </td>
-                                                    <td class="align-middle text-center">
-                                                        <p class="text-xs font-weight-bold mb-0">
-                                                            <?php echo $arr_item[$i]->item_num ?></p>
-                                                    </td>
+
                                                     <td class="align-middle text-center">
 
                                                         <button type="button" class="btn btn-warning btn-sm"
@@ -290,7 +282,7 @@
 
 
                                                         <a
-                                                            href="<?php echo site_url() . '/SqlController/delete_item/' . $arr_item[$i]->item_id; ?>">
+                                                            href="<?php echo site_url() . '/SqlController/delete_activity/' . $arr_act[$i]->activity_id; ?>">
                                                             <button type="button" class="btn btn-danger btn-sm"> <i
                                                                     class="fa fa-trash-o"></i></button>
                                                         </a>
@@ -309,7 +301,7 @@
                                                         <div class="modal-content">
                                                             <div class="modal-header">
                                                                 <h5 class="modal-title" id="exampleModalLongTitle">
-                                                                    แก้ไขข้อมูล Item
+                                                                    แก้ไขข้อมูล Activity
                                                                 </h5>
                                                                 <button type="button" class="close" data-dismiss="modal"
                                                                     aria-label="Close">
@@ -319,34 +311,25 @@
 
                                                             <div class="modal-body">
                                                                 <div class="mb-3">
-                                                                    <label for="focusedinput" class="form-label">Item
-                                                                        Name </label>
+                                                                    <label for="focusedinput"
+                                                                        class="form-label">Activity Name</label>
                                                                     <input type="text"
-                                                                        id="id_<?php echo $arr_item[$i]->item_id ?>"
-                                                                        value="<?php echo $arr_item[$i]->item_id ?>"
-                                                                        placeholder="ชื่อ item" hidden>
+                                                                        id="id_<?php echo $arr_act[$i]->activity_id ?>"
+                                                                        value="<?php echo $arr_act[$i]->activity_id ?>"
+                                                                        hidden>
                                                                     <input type="text"
-                                                                        id="name_<?php echo $arr_item[$i]->item_id ?>"
-                                                                        value="<?php echo $arr_item[$i]->item_name ?>"
-                                                                        placeholder="ชื่อ item">
+                                                                        id="name_<?php echo $arr_act[$i]->activity_id ?>"
+                                                                        value="<?php echo $arr_act[$i]->activity_name ?>">
                                                                 </div>
                                                                 <div class="mb-3">
-                                                                    <label for="focusedinput" class="form-label">Item
-                                                                        Price</label>
+                                                                    <label for="focusedinput"
+                                                                        class="form-label">Activity Score</label>
                                                                     <input type="number"
-                                                                        id="price_<?php echo $arr_item[$i]->item_id ?>"
+                                                                        id="price_<?php echo $arr_act[$i]->activity_id ?>"
                                                                         min="0"
-                                                                        value="<?php echo $arr_item[$i]->item_price ?>"
-                                                                        placeholder="ราคา item">
+                                                                        value="<?php echo $arr_act[$i]->activity_score ?>">
                                                                 </div>
-                                                                <div class="mb-3">
-                                                                    <label for="focusedinput" class="form-label">Item
-                                                                        amount</label>
-                                                                    <input type="number"
-                                                                        id="num_<?php echo $arr_item[$i]->item_id ?>"
-                                                                        value="<?php echo $arr_item[$i]->item_num ?>"
-                                                                        placeholder="จำนวน item คงเหลือ">
-                                                                </div>
+
 
 
 
@@ -355,7 +338,7 @@
                                                                 <button type="button" class="btn btn-danger"
                                                                     data-dismiss="modal">Close</button>
                                                                 <button type="button"
-                                                                    onclick="edit_item(<?php echo $arr_item[$i]->item_id ?>)"
+                                                                    onclick="edit_item(<?php echo $arr_act[$i]->activity_id ?>)"
                                                                     class="btn btn-success">Save</button>
                                                             </div>
                                                         </div>
@@ -575,33 +558,26 @@ $(document).ready(function() {
 });
 </script>
 <script>
-function add_item() {
-    var item_name = document.getElementById('name1').value;
-    var item_price = document.getElementById("price1").value;
-    var item_num = document.getElementById("num1").value;
+function add_activity() {
+    var activity_name = document.getElementById('name1').value;
+    var activity_score = document.getElementById("score1").value;
     // document.getElementById('name1').value = null;
     // document.getElementById("price1").value = null;
     // document.getElementById("num1").value = null;
-    console.log(item_name)
-    console.log(item_price)
-    console.log(item_num)
-
-
-
-
+    console.log(activity_name)
+    console.log(activity_score)
     // ใช
     //
     $.ajax({
         type: "POST",
-        url: "<?php echo base_url(); ?>index.php/SqlController/add_item",
+        url: "<?php echo base_url(); ?>index.php/SqlController/add_activity",
         data: {
-            "item_name": item_name,
-            "item_price": item_price,
-            "item_num": item_num,
+            "activity_name": activity_name,
+            "activity_score": activity_score,
         },
         success: function(data) {
             console.log(data);
-            window.location.href = "<?php echo base_url(); ?>index.php/SqlController/show_item_manage";
+            window.location.href = "<?php echo base_url(); ?>index.php/SqlController/show_activity_manage";
         }
     })
 }
@@ -609,27 +585,24 @@ function add_item() {
 function edit_item(i) {
     // i = i - 1;
     console.log(i)
-    var item_name = document.getElementById('name_' + i).value;
-    var item_price = document.getElementById("price_" + i).value;
-    var item_num = document.getElementById("num_" + i).value;
-    var item_id = document.getElementById("id_" + i).value;
-    console.log(item_name)
-    console.log(item_price)
-    console.log(item_num)
+    var activity_name = document.getElementById('name_' + i).value;
+    var activity_score = document.getElementById("price_" + i).value;
+    var activity_id = document.getElementById("id_" + i).value;
+    console.log(activity_name)
+    console.log(activity_score)
     console.log(9999)
     // ใช้ ajax 
     $.ajax({
         type: "POST",
-        url: "<?php echo base_url(); ?>index.php/SqlController/edit_item",
+        url: "<?php echo base_url(); ?>index.php/SqlController/edit_activity",
         data: {
-            "item_name": item_name,
-            "item_price": item_price,
-            "item_num": item_num,
-            "item_id": item_id,
+            "activity_name": activity_name,
+            "activity_score": activity_score,
+            "activity_id": activity_id,
         },
         success: function(data) {
             console.log(data);
-            window.location.href = "<?php echo base_url(); ?>index.php/SqlController/show_item_manage";
+            window.location.href = "<?php echo base_url(); ?>index.php/SqlController/show_activity_manage";
         }
     })
 }

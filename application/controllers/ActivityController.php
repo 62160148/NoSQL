@@ -11,7 +11,7 @@
 defined('BASEPATH') or exit('No direct script access allowed');
 require_once(dirname(__FILE__) . "/UserController.php");
 
-class SqlController extends UserController
+class ActivityController extends UserController
 {
 
 	public function __construct()
@@ -20,6 +20,12 @@ class SqlController extends UserController
 		date_default_timezone_set('Asia/Bangkok');
 		$this->load->model('scs_model');
 	}
+	function show_item_manage2()
+	{
+		$this->load->model('M_item_list', 'item');
+		$data['arr_item'] = $this->item->get_item_all()->result();
+		$this->output('v_item_manage', $data);
+	}
 	function show_item_manage()
 	{
 		$this->load->model('M_item_list', 'item');
@@ -27,50 +33,13 @@ class SqlController extends UserController
 		$this->output('v_item_manage', $data);
 	}
 
-	function show_activity_manage()
-	{
-		$this->load->model('M_activity_list', 'act');
-		$data['arr_act'] = $this->act->get_activity_all()->result();
-		$this->output('v_activity_manage', $data);
-	}
-	function add_activity()
-	{
-		// echo $this->input->post('name');
-		$this->load->model('Da_activity_list', 'act');
-		$this->act->activity_name = $this->input->post('activity_name');
-		$this->act->activity_score = $this->input->post('activity_score');
-		// $this->item->item_name = "หมา";
-		// $this->item->item_price = 12;
-		// $this->item->item_num = 14;
-		$this->act->insert();
-		$this->load->model('M_activity_list', 'acl');
-		$data['arr_act'] = $this->acl->get_activity_all()->result();
-		echo json_encode($data);
-	}
-	function edit_activity()
-	{
-		// echo $this->input->post('name');
-		$this->load->model('Da_activity_list', 'act');
-		$this->act->activity_name = $this->input->post('activity_name');
-		$this->act->activity_score = $this->input->post('activity_score');
-		$this->act->activity_id = $this->input->post('activity_id');
-		// $id = $this->input->post('item_id');
-		// $this->item->item_name = "หมา";
-		// $this->item->item_price = 12;
-		// $this->item->item_num = 14;
-		$this->act->update();
-		//$this->item->insert();
-		$this->load->model('M_activity_list', 'acl');
-		$data['arr_act'] = $this->acl->get_activity_all()->result();
-		echo json_encode($data);
-	}
-	function delete_activity($id)
-	{
-		$this->load->model('Da_activity_list', 'act');
-		$this->act->activity_id = $id;
-		$this->act->delete();
-		redirect('SqlController/show_activity_manage');
-	}
+	// function show_item_manage2()
+	// {
+	// 	$this->load->model('M_activity_list', 'act');
+	// 	$data['arr_act'] = $this->act->get_activity_all()->result();
+
+	// 	//$this->output('v_activity_manage', $data);
+	// }
 	function add_item()
 	{
 		// echo $this->input->post('name');
