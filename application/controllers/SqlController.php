@@ -50,15 +50,14 @@ class SqlController extends UserController
 	{
 		// echo $this->input->post('name');
 		$this->load->model('Da_item_list', 'item');
-
 		$this->item->item_name = $this->input->post('item_name');
 		$this->item->item_price = $this->input->post('item_price');
 		$this->item->item_num = $this->input->post('item_num');
-		$this->item->item_id = $this->input->post('item_id');
+		$id = $this->input->post('item_id');
 		// $this->item->item_name = "หมา";
 		// $this->item->item_price = 12;
 		// $this->item->item_num = 14;
-		$this->item->update();
+		$this->item->update($id);
 		$this->load->model('M_item_list', 'ite');
 		$data['arr_item'] = $this->ite->get_item_all()->result();
 		echo json_encode($data);

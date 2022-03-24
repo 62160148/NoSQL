@@ -320,24 +320,25 @@
                                                                 <div class="mb-3">
                                                                     <label for="focusedinput" class="form-label">Item
                                                                         Name </label>
-                                                                    <input type="text" id="id"
+                                                                    <input type="text" id="id_<?php echo $i ?>"
                                                                         value="<?php echo $arr_item[$i]->item_id ?>"
                                                                         placeholder="ชื่อ item" hidden>
-                                                                    <input type="text" id="name"
+                                                                    <input type="text" id="name_<?php echo $i ?>"
                                                                         value="<?php echo $arr_item[$i]->item_name ?>"
                                                                         placeholder="ชื่อ item">
                                                                 </div>
                                                                 <div class="mb-3">
                                                                     <label for="focusedinput" class="form-label">Item
                                                                         Price</label>
-                                                                    <input type="number" id="price" min="0"
+                                                                    <input type="number" id="price_<?php echo $i ?>"
+                                                                        min="0"
                                                                         value="<?php echo $arr_item[$i]->item_price ?>"
                                                                         placeholder="ราคา item">
                                                                 </div>
                                                                 <div class="mb-3">
                                                                     <label for="focusedinput" class="form-label">Item
                                                                         amount</label>
-                                                                    <input type="number" id="num"
+                                                                    <input type="number" id="num_<?php echo $i ?>"
                                                                         value="<?php echo $arr_item[$i]->item_num ?>"
                                                                         placeholder="จำนวน item คงเหลือ">
                                                                 </div>
@@ -348,7 +349,8 @@
                                                             <div class="modal-footer">
                                                                 <button type="button" class="btn btn-danger"
                                                                     data-dismiss="modal">Close</button>
-                                                                <button type="button" onclick="edit_item()"
+                                                                <button type="button"
+                                                                    onclick="edit_item(<?php echo $i ?>)"
                                                                     class="btn btn-success">Save</button>
                                                             </div>
                                                         </div>
@@ -578,14 +580,12 @@ function add_item() {
     console.log(item_name)
     console.log(item_price)
     console.log(item_num)
-    console.log(9999)
+
+
+
+
     // ใช
     //
-
-
-
-
-
     $.ajax({
         type: "POST",
         url: "<?php echo base_url(); ?>index.php/SqlController/add_item",
@@ -601,11 +601,11 @@ function add_item() {
     })
 }
 
-function edit_item() {
-    var item_name = document.getElementById('name').value;
-    var item_price = document.getElementById("price").value;
-    var item_num = document.getElementById("num").value;
-    var item_id = document.getElementById("id").value;
+function edit_item(i) {
+    var item_name = document.getElementById('name_' + i).value;
+    var item_price = document.getElementById("price_" + i).value;
+    var item_num = document.getElementById("num_" + i).value;
+    var item_id = document.getElementById("id_" + i).value;
     console.log(item_name)
     console.log(item_price)
     console.log(item_num)
@@ -623,7 +623,7 @@ function edit_item() {
         },
         success: function(data) {
             console.log(data);
-            // window.location.href = "<?php echo base_url(); ?>index.php/SqlController/show_item_manage";
+            window.location.href = "<?php echo base_url(); ?>index.php/SqlController/show_item_manage";
         }
     })
 }

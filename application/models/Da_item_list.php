@@ -14,12 +14,9 @@ class Da_item_list extends scs_model
                 VALUES (?,?,?)";
 		$this->db->query($sql, array($this->item_name, $this->item_price, $this->item_num));
 	}
-	function update()
+	function update($id)
 	{
-		$sql = "UPDATE scs_database.scs_item
-        SET item_name=? ,item_price=?,item_num=?
-        WHERE item_id = ?";
-
+		$sql = " UPDATE scs_database.scs_item SET item_name=?,item_price=?,item_num=? WHERE item_id=$id;";
 		$this->db->query($sql, array($this->item_id, $this->item_name, $this->item_price, $this->item_num));
 	}
 }
