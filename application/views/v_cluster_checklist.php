@@ -62,7 +62,7 @@
 </aside>
 
 
-<div class="main-content position-relative max-height-vh-100 h-100">
+<div class="main-content position-relative max-height-vh-100 h-100" id="cheacklist">
     <!-- Navbar -->
     <nav
         class="navbar navbar-main navbar-expand-lg bg-transparent shadow-none position-absolute px-4 w-100 z-index-2 mt-n11">
@@ -116,7 +116,7 @@
                                 <a class="dropdown-item border-radius-md" href="javascript:;">
                                     <div class="d-flex py-1">
                                         <div class="my-auto">
-                                            <img src="../assets/img/team-2.jpg" class="avatar avatar-sm me-3">
+                                            <img src="" id="" class="avatar avatar-sm me-3">
                                         </div>
                                         <div class="d-flex flex-column justify-content-center">
                                             <h6 class="text-sm font-weight-normal mb-1">
@@ -199,30 +199,61 @@
                 <div class="col-auto">
 
                     <div class="avatar avatar-xl position-relative">
-                        <img src="https://se.buu.ac.th/gami_ossd/assets/dist/img/cluster/cluster0.png"
-                            alt="profile_image" class="w-100 border-radius-lg shadow-sm">
+                        <img id="cluster_image" src="<?php echo base_url().'/uploads/image_demo.jpg' ?>" alt="profile_image" class="w-100 border-radius-lg shadow-sm">
                     </div>
                 </div>
                 <div class="col-auto my-auto">
                     <div class="h-100">
                         <h5 class="mb-1">
-                            Cluster 1
+                            <?php echo 'Cluster '.$cluster_id ?>
                         </h5>
-                        <p class="mb-0 font-weight-bold text-sm">
-                            Total Score : 100 $E
+                        <p class="mb-0 font-weight-bold text-sm" id="score_total">
+                            
                         </p>
                     </div>
                 </div>
-                <div class="col align-self-end">
-                    <div class="h-100">
+
+
+                <div class="col-auto my-auto">
+                    <!-- <div class="h-100"> -->
                         <a href="<?php echo site_url() . '/UserController/show_cluster_detail/1'; ?>">
-                            <button type="button" class="btn btn-default btn-sm">
-                                <i class="fa fa-users"></i>
+
+                            <button class="btn" type="button" style="margin-bottom: 0px;" >
+                            <i class="fa fa-users"></i> challenger
                             </button>
                         </a>
+                    <!-- </div> -->
+                </div>
 
+
+                <div class="col-auto my-auto">
+                    <div class="dropdown">
+                        <button class="btn dropdown-toggle" type="button" style="margin-bottom: 0px;" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
+                            Choose Cluster
+                        </button>
+                        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                            <li><a class="dropdown-item" href="../show_cluster_checklist/0">Cluster 0</a></li>
+                            <li><a class="dropdown-item" href="../show_cluster_checklist/1">Cluster 1</a></li>
+                            <li><a class="dropdown-item" href="../show_cluster_checklist/2">Cluster 2</a></li>
+                            <li><a class="dropdown-item" href="../show_cluster_checklist/3">Cluster 3</a></li>
+                            <li><a class="dropdown-item" href="../show_cluster_checklist/4">Cluster 4</a></li>
+                            <li><a class="dropdown-item" href="../show_cluster_checklist/5">Cluster 5</a></li>
+                            <li><a class="dropdown-item" href="../show_cluster_checklist/6">Cluster 6</a></li>
+                            <li><a class="dropdown-item" href="../show_cluster_checklist/7">Cluster 7</a></li>
+                            <li><a class="dropdown-item" href="../show_cluster_checklist/8">Cluster 8</a></li>
+                            <li><a class="dropdown-item" href="../show_cluster_checklist/9">Cluster 9</a></li>
+
+                        </ul>
                     </div>
                 </div>
+
+                
+
+
+
+
+
+
                 <div class="col-lg-4 col-md-6 my-sm-auto ms-sm-auto me-sm-0 mx-auto mt-3">
                     <div class="nav-wrapper position-relative end-0">
                         <ul class="nav nav-pills nav-fill p-1" role="tablist">
@@ -297,7 +328,7 @@
                                                     <p class="mb-0"> Thursday 07 April 2022</p>
                                                 </div>
                                             </div>
-                                            <div class="card-body">
+                                            <div class="card-body" >
 
                                                 <table class="table align-items-center mb-0">
                                                     <thead>
@@ -317,135 +348,8 @@
                                                             <th class="text-secondary opacity-7"></th>
                                                         </tr>
                                                     </thead>
-                                                    <tbody>
-                                                        <tr>
-                                                            <td>
-                                                                <div class="d-flex px-2 py-1">
+                                                    <tbody id="table_2022-04-07">
 
-                                                                    <div
-                                                                        class="d-flex flex-column justify-content-center">
-                                                                        <h6 class="mb-0 text-sm">Best Team</h6>
-                                                                        <!-- <p class="text-xs text-secondary mb-0">alexa@creative-tim.com</p> -->
-                                                                    </div>
-                                                                </div>
-                                                            </td>
-                                                            <td>
-                                                                <p class="text-xs font-weight-bold mb-0"> 100 $E </p>
-
-                                                            </td>
-
-                                                            <td>
-                                                                <div class="d-flex px-2 py-1">
-
-                                                                    <div
-                                                                        class="d-flex flex-column justify-content-center">
-                                                                        <span
-                                                                            class="text-secondary text-xs font-weight-bold">62160011@go.buu.ac.th</span>
-
-                                                                    </div>
-                                                                </div>
-                                                            </td>
-
-                                                            <td>
-                                                                <div class="d-flex px-2 py-1">
-                                                                    <span
-                                                                        class="text-secondary text-xs font-weight-bold">16/03/2020</span>
-                                                            </td>
-                                                            <td class="align-middle">
-                                                                <div class="form-check form-switch">
-                                                                    <input class="form-check-input" type="checkbox"
-                                                                        id="rememberMe" checked>
-                                                                </div>
-                                                            </td>
-                                                        </tr>
-
-                                                        <tr>
-                                                            <td>
-                                                                <div class="d-flex px-2 py-1">
-
-                                                                    <div
-                                                                        class="d-flex flex-column justify-content-center">
-                                                                        <h6 class="mb-0 text-sm">ทีมพี่เลี้ยงหน้าตาดี
-                                                                        </h6>
-                                                                        <!-- <p class="text-xs text-secondary mb-0">alexa@creative-tim.com</p> -->
-                                                                    </div>
-                                                                </div>
-                                                            </td>
-                                                            <td>
-                                                                <p class="text-xs font-weight-bold mb-0"> 999 $E </p>
-
-                                                            </td>
-
-                                                            <td>
-                                                                <div class="d-flex px-2 py-1">
-
-                                                                    <div
-                                                                        class="d-flex flex-column justify-content-center">
-                                                                        <p class="text-xs text-secondary mb-0"></p>
-                                                                    </div>
-                                                                </div>
-                                                            </td>
-
-                                                            <td>
-                                                                <div class="d-flex px-2 py-1">
-                                                                    <span
-                                                                        class="text-secondary text-xs font-weight-bold"></span>
-                                                            </td>
-
-
-
-
-                                                            <td class="align-middle">
-                                                                <div class="form-check form-switch">
-                                                                    <input class="form-check-input" type="checkbox"
-                                                                        id="rememberMe">
-                                                                </div>
-                                                            </td>
-                                                        </tr>
-
-
-                                                        <tr>
-                                                            <td>
-                                                                <div class="d-flex px-2 py-1">
-
-                                                                    <div
-                                                                        class="d-flex flex-column justify-content-center">
-                                                                        <h6 class="mb-0 text-sm">ทีมขายเก่ง</h6>
-                                                                        <!-- <p class="text-xs text-secondary mb-0">alexa@creative-tim.com</p> -->
-                                                                    </div>
-                                                                </div>
-                                                            </td>
-                                                            <td>
-                                                                <p class="text-xs font-weight-bold mb-0"> 50 $E </p>
-
-                                                            </td>
-
-                                                            <td>
-                                                                <div class="d-flex px-2 py-1">
-
-                                                                    <div
-                                                                        class="d-flex flex-column justify-content-center">
-                                                                        <p class="text-xs text-secondary mb-0"></p>
-                                                                    </div>
-                                                                </div>
-                                                            </td>
-
-                                                            <td>
-                                                                <div class="d-flex px-2 py-1">
-                                                                    <span
-                                                                        class="text-secondary text-xs font-weight-bold"></span>
-                                                            </td>
-
-
-
-
-                                                            <td class="align-middle">
-                                                                <div class="form-check form-switch">
-                                                                    <input class="form-check-input" type="checkbox"
-                                                                        id="rememberMe">
-                                                                </div>
-                                                            </td>
-                                                        </tr>
 
 
                                                     </tbody>
@@ -468,7 +372,7 @@
                                                     <p class="mb-0"> Friday 08 April 2022</p>
                                                 </div>
                                             </div>
-                                            <div class="card-body">
+                                            <div class="card-body" >
 
                                                 <table class="table align-items-center mb-0">
                                                     <thead>
@@ -488,134 +392,7 @@
                                                             <th class="text-secondary opacity-7"></th>
                                                         </tr>
                                                     </thead>
-                                                    <tbody>
-                                                        <tr>
-                                                            <td>
-                                                                <div class="d-flex px-2 py-1">
-
-                                                                    <div
-                                                                        class="d-flex flex-column justify-content-center">
-                                                                        <h6 class="mb-0 text-sm">Best Team</h6>
-                                                                        <!-- <p class="text-xs text-secondary mb-0">alexa@creative-tim.com</p> -->
-                                                                    </div>
-                                                                </div>
-                                                            </td>
-                                                            <td>
-                                                                <p class="text-xs font-weight-bold mb-0"> 100 $E </p>
-
-                                                            </td>
-
-                                                            <td>
-                                                                <div class="d-flex px-2 py-1">
-
-                                                                    <div
-                                                                        class="d-flex flex-column justify-content-center">
-                                                                        <p class="text-xs text-secondary mb-0"></p>
-                                                                    </div>
-                                                                </div>
-                                                            </td>
-
-                                                            <td>
-                                                                <div class="d-flex px-2 py-1">
-                                                                    <span
-                                                                        class="text-secondary text-xs font-weight-bold"></span>
-                                                            </td>
-                                                            <td class="align-middle">
-                                                                <div class="form-check form-switch">
-                                                                    <input class="form-check-input" type="checkbox"
-                                                                        id="rememberMe">
-                                                                </div>
-                                                            </td>
-                                                        </tr>
-
-                                                        <tr>
-                                                            <td>
-                                                                <div class="d-flex px-2 py-1">
-
-                                                                    <div
-                                                                        class="d-flex flex-column justify-content-center">
-                                                                        <h6 class="mb-0 text-sm">ทีมพี่เลี้ยงหน้าตาดี
-                                                                        </h6>
-                                                                        <!-- <p class="text-xs text-secondary mb-0">alexa@creative-tim.com</p> -->
-                                                                    </div>
-                                                                </div>
-                                                            </td>
-                                                            <td>
-                                                                <p class="text-xs font-weight-bold mb-0"> 999 $E </p>
-
-                                                            </td>
-
-                                                            <td>
-                                                                <div class="d-flex px-2 py-1">
-
-                                                                    <div
-                                                                        class="d-flex flex-column justify-content-center">
-                                                                        <p class="text-xs text-secondary mb-0"></p>
-                                                                    </div>
-                                                                </div>
-                                                            </td>
-
-                                                            <td>
-                                                                <div class="d-flex px-2 py-1">
-                                                                    <span
-                                                                        class="text-secondary text-xs font-weight-bold"></span>
-                                                            </td>
-
-
-
-
-                                                            <td class="align-middle">
-                                                                <div class="form-check form-switch">
-                                                                    <input class="form-check-input" type="checkbox"
-                                                                        id="rememberMe">
-                                                                </div>
-                                                            </td>
-                                                        </tr>
-
-
-                                                        <tr>
-                                                            <td>
-                                                                <div class="d-flex px-2 py-1">
-
-                                                                    <div
-                                                                        class="d-flex flex-column justify-content-center">
-                                                                        <h6 class="mb-0 text-sm">ทีมขายเก่ง</h6>
-                                                                        <!-- <p class="text-xs text-secondary mb-0">alexa@creative-tim.com</p> -->
-                                                                    </div>
-                                                                </div>
-                                                            </td>
-                                                            <td>
-                                                                <p class="text-xs font-weight-bold mb-0"> 50 $E </p>
-
-                                                            </td>
-
-                                                            <td>
-                                                                <div class="d-flex px-2 py-1">
-
-                                                                    <div
-                                                                        class="d-flex flex-column justify-content-center">
-                                                                        <p class="text-xs text-secondary mb-0"></p>
-                                                                    </div>
-                                                                </div>
-                                                            </td>
-
-                                                            <td>
-                                                                <div class="d-flex px-2 py-1">
-                                                                    <span
-                                                                        class="text-secondary text-xs font-weight-bold"></span>
-                                                            </td>
-
-
-
-
-                                                            <td class="align-middle">
-                                                                <div class="form-check form-switch">
-                                                                    <input class="form-check-input" type="checkbox"
-                                                                        id="rememberMe">
-                                                                </div>
-                                                            </td>
-                                                        </tr>
-
+                                                    <tbody id="table_2022-04-08">
 
                                                     </tbody>
                                                 </table>
@@ -626,11 +403,11 @@
                                         </div>
                                     </div>
 
-
+<!-- 
                                     <div class="d-flex align-items-center" style="margin-top : 20px;">
                                         <p class="mb-0"> </p>
                                         <button class="btn btn-primary btn-sm ms-auto"> Save</button>
-                                    </div>
+                                    </div> -->
                                 </div>
 
                             </div>
@@ -646,7 +423,7 @@
                                                     <p class="mb-0"> Saturday 09 April 2022</p>
                                                 </div>
                                             </div>
-                                            <div class="card-body">
+                                            <div class="card-body" >
 
                                                 <table class="table align-items-center mb-0">
                                                     <thead>
@@ -666,133 +443,8 @@
                                                             <th class="text-secondary opacity-7"></th>
                                                         </tr>
                                                     </thead>
-                                                    <tbody>
-                                                        <tr>
-                                                            <td>
-                                                                <div class="d-flex px-2 py-1">
+                                                    <tbody id="table_2022-04-09">
 
-                                                                    <div
-                                                                        class="d-flex flex-column justify-content-center">
-                                                                        <h6 class="mb-0 text-sm">Best Team</h6>
-                                                                        <!-- <p class="text-xs text-secondary mb-0">alexa@creative-tim.com</p> -->
-                                                                    </div>
-                                                                </div>
-                                                            </td>
-                                                            <td>
-                                                                <p class="text-xs font-weight-bold mb-0"> 100 $E </p>
-
-                                                            </td>
-
-                                                            <td>
-                                                                <div class="d-flex px-2 py-1">
-
-                                                                    <div
-                                                                        class="d-flex flex-column justify-content-center">
-                                                                        <p class="text-xs text-secondary mb-0"></p>
-                                                                    </div>
-                                                                </div>
-                                                            </td>
-
-                                                            <td>
-                                                                <div class="d-flex px-2 py-1">
-                                                                    <span
-                                                                        class="text-secondary text-xs font-weight-bold"></span>
-                                                            </td>
-                                                            <td class="align-middle">
-                                                                <div class="form-check form-switch">
-                                                                    <input class="form-check-input" type="checkbox"
-                                                                        id="rememberMe">
-                                                                </div>
-                                                            </td>
-                                                        </tr>
-
-                                                        <tr>
-                                                            <td>
-                                                                <div class="d-flex px-2 py-1">
-
-                                                                    <div
-                                                                        class="d-flex flex-column justify-content-center">
-                                                                        <h6 class="mb-0 text-sm">ทีมพี่เลี้ยงหน้าตาดี
-                                                                        </h6>
-                                                                        <!-- <p class="text-xs text-secondary mb-0">alexa@creative-tim.com</p> -->
-                                                                    </div>
-                                                                </div>
-                                                            </td>
-                                                            <td>
-                                                                <p class="text-xs font-weight-bold mb-0"> 999 $E </p>
-
-                                                            </td>
-
-                                                            <td>
-                                                                <div class="d-flex px-2 py-1">
-
-                                                                    <div
-                                                                        class="d-flex flex-column justify-content-center">
-                                                                        <p class="text-xs text-secondary mb-0"></p>
-                                                                    </div>
-                                                                </div>
-                                                            </td>
-
-                                                            <td>
-                                                                <div class="d-flex px-2 py-1">
-                                                                    <span
-                                                                        class="text-secondary text-xs font-weight-bold"></span>
-                                                            </td>
-
-
-
-
-                                                            <td class="align-middle">
-                                                                <div class="form-check form-switch">
-                                                                    <input class="form-check-input" type="checkbox"
-                                                                        id="rememberMe">
-                                                                </div>
-                                                            </td>
-                                                        </tr>
-
-
-                                                        <tr>
-                                                            <td>
-                                                                <div class="d-flex px-2 py-1">
-
-                                                                    <div
-                                                                        class="d-flex flex-column justify-content-center">
-                                                                        <h6 class="mb-0 text-sm">ทีมขายเก่ง</h6>
-                                                                        <!-- <p class="text-xs text-secondary mb-0">alexa@creative-tim.com</p> -->
-                                                                    </div>
-                                                                </div>
-                                                            </td>
-                                                            <td>
-                                                                <p class="text-xs font-weight-bold mb-0"> 50 $E </p>
-
-                                                            </td>
-
-                                                            <td>
-                                                                <div class="d-flex px-2 py-1">
-
-                                                                    <div
-                                                                        class="d-flex flex-column justify-content-center">
-                                                                        <p class="text-xs text-secondary mb-0"></p>
-                                                                    </div>
-                                                                </div>
-                                                            </td>
-
-                                                            <td>
-                                                                <div class="d-flex px-2 py-1">
-                                                                    <span
-                                                                        class="text-secondary text-xs font-weight-bold"></span>
-                                                            </td>
-
-
-
-
-                                                            <td class="align-middle">
-                                                                <div class="form-check form-switch">
-                                                                    <input class="form-check-input" type="checkbox"
-                                                                        id="rememberMe">
-                                                                </div>
-                                                            </td>
-                                                        </tr>
 
 
                                                     </tbody>
@@ -815,7 +467,7 @@
                                                     <p class="mb-0"> Sunday 10 April 2022</p>
                                                 </div>
                                             </div>
-                                            <div class="card-body">
+                                            <div class="card-body" id="table_2022-04-10">
 
                                                 <table class="table align-items-center mb-0">
                                                     <thead>
@@ -835,133 +487,8 @@
                                                             <th class="text-secondary opacity-7"></th>
                                                         </tr>
                                                     </thead>
-                                                    <tbody>
-                                                        <tr>
-                                                            <td>
-                                                                <div class="d-flex px-2 py-1">
+                                                    <tbody id="table_2022-04-10">
 
-                                                                    <div
-                                                                        class="d-flex flex-column justify-content-center">
-                                                                        <h6 class="mb-0 text-sm">Best Team</h6>
-                                                                        <!-- <p class="text-xs text-secondary mb-0">alexa@creative-tim.com</p> -->
-                                                                    </div>
-                                                                </div>
-                                                            </td>
-                                                            <td>
-                                                                <p class="text-xs font-weight-bold mb-0"> 100 $E </p>
-
-                                                            </td>
-
-                                                            <td>
-                                                                <div class="d-flex px-2 py-1">
-
-                                                                    <div
-                                                                        class="d-flex flex-column justify-content-center">
-                                                                        <p class="text-xs text-secondary mb-0"></p>
-                                                                    </div>
-                                                                </div>
-                                                            </td>
-
-                                                            <td>
-                                                                <div class="d-flex px-2 py-1">
-                                                                    <span
-                                                                        class="text-secondary text-xs font-weight-bold"></span>
-                                                            </td>
-                                                            <td class="align-middle">
-                                                                <div class="form-check form-switch">
-                                                                    <input class="form-check-input" type="checkbox"
-                                                                        id="rememberMe">
-                                                                </div>
-                                                            </td>
-                                                        </tr>
-
-                                                        <tr>
-                                                            <td>
-                                                                <div class="d-flex px-2 py-1">
-
-                                                                    <div
-                                                                        class="d-flex flex-column justify-content-center">
-                                                                        <h6 class="mb-0 text-sm">ทีมพี่เลี้ยงหน้าตาดี
-                                                                        </h6>
-                                                                        <!-- <p class="text-xs text-secondary mb-0">alexa@creative-tim.com</p> -->
-                                                                    </div>
-                                                                </div>
-                                                            </td>
-                                                            <td>
-                                                                <p class="text-xs font-weight-bold mb-0"> 999 $E </p>
-
-                                                            </td>
-
-                                                            <td>
-                                                                <div class="d-flex px-2 py-1">
-
-                                                                    <div
-                                                                        class="d-flex flex-column justify-content-center">
-                                                                        <p class="text-xs text-secondary mb-0"></p>
-                                                                    </div>
-                                                                </div>
-                                                            </td>
-
-                                                            <td>
-                                                                <div class="d-flex px-2 py-1">
-                                                                    <span
-                                                                        class="text-secondary text-xs font-weight-bold"></span>
-                                                            </td>
-
-
-
-
-                                                            <td class="align-middle">
-                                                                <div class="form-check form-switch">
-                                                                    <input class="form-check-input" type="checkbox"
-                                                                        id="rememberMe">
-                                                                </div>
-                                                            </td>
-                                                        </tr>
-
-
-                                                        <tr>
-                                                            <td>
-                                                                <div class="d-flex px-2 py-1">
-
-                                                                    <div
-                                                                        class="d-flex flex-column justify-content-center">
-                                                                        <h6 class="mb-0 text-sm">ทีมขายเก่ง</h6>
-                                                                        <!-- <p class="text-xs text-secondary mb-0">alexa@creative-tim.com</p> -->
-                                                                    </div>
-                                                                </div>
-                                                            </td>
-                                                            <td>
-                                                                <p class="text-xs font-weight-bold mb-0"> 50 $E </p>
-
-                                                            </td>
-
-                                                            <td>
-                                                                <div class="d-flex px-2 py-1">
-
-                                                                    <div
-                                                                        class="d-flex flex-column justify-content-center">
-                                                                        <p class="text-xs text-secondary mb-0"></p>
-                                                                    </div>
-                                                                </div>
-                                                            </td>
-
-                                                            <td>
-                                                                <div class="d-flex px-2 py-1">
-                                                                    <span
-                                                                        class="text-secondary text-xs font-weight-bold"></span>
-                                                            </td>
-
-
-
-
-                                                            <td class="align-middle">
-                                                                <div class="form-check form-switch">
-                                                                    <input class="form-check-input" type="checkbox"
-                                                                        id="rememberMe">
-                                                                </div>
-                                                            </td>
-                                                        </tr>
 
 
                                                     </tbody>
@@ -974,10 +501,11 @@
                                     </div>
 
 
-                                    <div class="d-flex align-items-center" style="margin-top : 20px;">
+                                    <!-- <div class="d-flex align-items-center" style="margin-top : 20px;">
                                         <p class="mb-0"> </p>
                                         <button class="btn btn-primary btn-sm ms-auto"> Save</button>
-                                    </div>
+                                    </div> -->
+
                                 </div>
 
 
@@ -993,9 +521,9 @@
                                                     <p class="mb-0"> Monday 11 April 2022</p>
                                                 </div>
                                             </div>
-                                            <div class="card-body">
+                                            <div class="card-body" >
 
-                                                <table class="table align-items-center mb-0">
+                                                <table class="table align-items-center mb-0" id="myTable">
                                                     <thead>
                                                         <tr>
                                                             <th
@@ -1013,133 +541,8 @@
                                                             <th class="text-secondary opacity-7"></th>
                                                         </tr>
                                                     </thead>
-                                                    <tbody>
-                                                        <tr>
-                                                            <td>
-                                                                <div class="d-flex px-2 py-1">
+                                                    <tbody id="table_2022-04-11">
 
-                                                                    <div
-                                                                        class="d-flex flex-column justify-content-center">
-                                                                        <h6 class="mb-0 text-sm">Best Team</h6>
-                                                                        <!-- <p class="text-xs text-secondary mb-0">alexa@creative-tim.com</p> -->
-                                                                    </div>
-                                                                </div>
-                                                            </td>
-                                                            <td>
-                                                                <p class="text-xs font-weight-bold mb-0"> 100 $E </p>
-
-                                                            </td>
-
-                                                            <td>
-                                                                <div class="d-flex px-2 py-1">
-
-                                                                    <div
-                                                                        class="d-flex flex-column justify-content-center">
-                                                                        <p class="text-xs text-secondary mb-0"></p>
-                                                                    </div>
-                                                                </div>
-                                                            </td>
-
-                                                            <td>
-                                                                <div class="d-flex px-2 py-1">
-                                                                    <span
-                                                                        class="text-secondary text-xs font-weight-bold"></span>
-                                                            </td>
-                                                            <td class="align-middle">
-                                                                <div class="form-check form-switch">
-                                                                    <input class="form-check-input" type="checkbox"
-                                                                        id="rememberMe">
-                                                                </div>
-                                                            </td>
-                                                        </tr>
-
-                                                        <tr>
-                                                            <td>
-                                                                <div class="d-flex px-2 py-1">
-
-                                                                    <div
-                                                                        class="d-flex flex-column justify-content-center">
-                                                                        <h6 class="mb-0 text-sm">ทีมพี่เลี้ยงหน้าตาดี
-                                                                        </h6>
-                                                                        <!-- <p class="text-xs text-secondary mb-0">alexa@creative-tim.com</p> -->
-                                                                    </div>
-                                                                </div>
-                                                            </td>
-                                                            <td>
-                                                                <p class="text-xs font-weight-bold mb-0"> 999 $E </p>
-
-                                                            </td>
-
-                                                            <td>
-                                                                <div class="d-flex px-2 py-1">
-
-                                                                    <div
-                                                                        class="d-flex flex-column justify-content-center">
-                                                                        <p class="text-xs text-secondary mb-0"></p>
-                                                                    </div>
-                                                                </div>
-                                                            </td>
-
-                                                            <td>
-                                                                <div class="d-flex px-2 py-1">
-                                                                    <span
-                                                                        class="text-secondary text-xs font-weight-bold"></span>
-                                                            </td>
-
-
-
-
-                                                            <td class="align-middle">
-                                                                <div class="form-check form-switch">
-                                                                    <input class="form-check-input" type="checkbox"
-                                                                        id="rememberMe">
-                                                                </div>
-                                                            </td>
-                                                        </tr>
-
-
-                                                        <tr>
-                                                            <td>
-                                                                <div class="d-flex px-2 py-1">
-
-                                                                    <div
-                                                                        class="d-flex flex-column justify-content-center">
-                                                                        <h6 class="mb-0 text-sm">ทีมขายเก่ง</h6>
-                                                                        <!-- <p class="text-xs text-secondary mb-0">alexa@creative-tim.com</p> -->
-                                                                    </div>
-                                                                </div>
-                                                            </td>
-                                                            <td>
-                                                                <p class="text-xs font-weight-bold mb-0"> 50 $E </p>
-
-                                                            </td>
-
-                                                            <td>
-                                                                <div class="d-flex px-2 py-1">
-
-                                                                    <div
-                                                                        class="d-flex flex-column justify-content-center">
-                                                                        <p class="text-xs text-secondary mb-0"></p>
-                                                                    </div>
-                                                                </div>
-                                                            </td>
-
-                                                            <td>
-                                                                <div class="d-flex px-2 py-1">
-                                                                    <span
-                                                                        class="text-secondary text-xs font-weight-bold"></span>
-                                                            </td>
-
-
-
-
-                                                            <td class="align-middle">
-                                                                <div class="form-check form-switch">
-                                                                    <input class="form-check-input" type="checkbox"
-                                                                        id="rememberMe">
-                                                                </div>
-                                                            </td>
-                                                        </tr>
 
 
                                                     </tbody>
@@ -1182,134 +585,8 @@
                                                             <th class="text-secondary opacity-7"></th>
                                                         </tr>
                                                     </thead>
-                                                    <tbody>
-                                                        <tr>
-                                                            <td>
-                                                                <div class="d-flex px-2 py-1">
+                                                    <tbody id="table_2022-04-12">
 
-                                                                    <div
-                                                                        class="d-flex flex-column justify-content-center">
-                                                                        <h6 class="mb-0 text-sm">Best Team</h6>
-                                                                        <!-- <p class="text-xs text-secondary mb-0">alexa@creative-tim.com</p> -->
-                                                                    </div>
-                                                                </div>
-                                                            </td>
-                                                            <td>
-                                                                <p class="text-xs font-weight-bold mb-0"> 100 $E </p>
-
-                                                            </td>
-
-                                                            <td>
-                                                                <div class="d-flex px-2 py-1">
-
-                                                                    <div
-                                                                        class="d-flex flex-column justify-content-center">
-                                                                        <p class="text-xs text-secondary mb-0"></p>
-                                                                    </div>
-                                                                </div>
-                                                            </td>
-
-                                                            <td>
-                                                                <div class="d-flex px-2 py-1">
-                                                                    <span
-                                                                        class="text-secondary text-xs font-weight-bold"></span>
-                                                            </td>
-                                                            <td class="align-middle">
-                                                                <div class="form-check form-switch">
-                                                                    <input class="form-check-input" type="checkbox"
-                                                                        id="rememberMe">
-                                                                </div>
-                                                            </td>
-                                                        </tr>
-
-                                                        <tr>
-                                                            <td>
-                                                                <div class="d-flex px-2 py-1">
-
-                                                                    <div
-                                                                        class="d-flex flex-column justify-content-center">
-                                                                        <h6 class="mb-0 text-sm">ทีมพี่เลี้ยงหน้าตาดี
-                                                                        </h6>
-                                                                        <!-- <p class="text-xs text-secondary mb-0">alexa@creative-tim.com</p> -->
-                                                                    </div>
-                                                                </div>
-                                                            </td>
-                                                            <td>
-                                                                <p class="text-xs font-weight-bold mb-0"> 999 $E </p>
-
-                                                            </td>
-
-                                                            <td>
-                                                                <div class="d-flex px-2 py-1">
-
-                                                                    <div
-                                                                        class="d-flex flex-column justify-content-center">
-                                                                        <p class="text-xs text-secondary mb-0"></p>
-                                                                    </div>
-                                                                </div>
-                                                            </td>
-
-                                                            <td>
-                                                                <div class="d-flex px-2 py-1">
-                                                                    <span
-                                                                        class="text-secondary text-xs font-weight-bold"></span>
-                                                            </td>
-
-
-
-
-                                                            <td class="align-middle">
-                                                                <div class="form-check form-switch">
-                                                                    <input class="form-check-input" type="checkbox"
-                                                                        id="rememberMe">
-                                                                </div>
-                                                            </td>
-                                                        </tr>
-
-
-                                                        <tr>
-                                                            <td>
-                                                                <div class="d-flex px-2 py-1">
-
-                                                                    <div
-                                                                        class="d-flex flex-column justify-content-center">
-                                                                        <h6 class="mb-0 text-sm">ทีมขายเก่ง</h6>
-                                                                        <!-- <p class="text-xs text-secondary mb-0">alexa@creative-tim.com</p> -->
-                                                                    </div>
-                                                                </div>
-                                                            </td>
-                                                            <td>
-                                                                <p class="text-xs font-weight-bold mb-0"> 50 $E </p>
-
-                                                            </td>
-
-                                                            <td>
-                                                                <div class="d-flex px-2 py-1">
-
-                                                                    <div
-                                                                        class="d-flex flex-column justify-content-center">
-                                                                        <p class="text-xs text-secondary mb-0"></p>
-                                                                    </div>
-                                                                </div>
-                                                            </td>
-
-                                                            <td>
-                                                                <div class="d-flex px-2 py-1">
-                                                                    <span
-                                                                        class="text-secondary text-xs font-weight-bold"></span>
-                                                            </td>
-
-
-
-
-
-                                                            <td class="align-middle">
-                                                                <div class="form-check form-switch">
-                                                                    <input class="form-check-input" type="checkbox"
-                                                                        id="rememberMe">
-                                                                </div>
-                                                            </td>
-                                                        </tr>
 
 
                                                     </tbody>
@@ -1322,10 +599,10 @@
                                     </div>
 
 
-                                    <div class="d-flex align-items-center" style="margin-top : 20px;">
+                                    <!-- <div class="d-flex align-items-center" style="margin-top : 20px;">
                                         <p class="mb-0"> </p>
                                         <button class="btn btn-primary btn-sm ms-auto"> Save</button>
-                                    </div>
+                                    </div> -->
                                 </div>
 
 
@@ -1353,83 +630,306 @@
 
     </div>
 </div>
-<div class="fixed-plugin">
-    <a class="fixed-plugin-button text-dark position-fixed px-3 py-2">
-        <i class="fa fa-cog py-2"> </i>
-    </a>
-    <div class="card shadow-lg">
-        <div class="card-header pb-0 pt-3 ">
-            <div class="float-start">
-                <h5 class="mt-3 mb-0">Argon Configurator</h5>
-                <p>See our dashboard options.</p>
-            </div>
-            <div class="float-end mt-4">
-                <button class="btn btn-link text-dark p-0 fixed-plugin-close-button">
-                    <i class="fa fa-close"></i>
-                </button>
-            </div>
-            <!-- End Toggle Button -->
-        </div>
-        <hr class="horizontal dark my-1">
-        <div class="card-body pt-sm-3 pt-0 overflow-auto">
-            <!-- Sidebar Backgrounds -->
-            <div>
-                <h6 class="mb-0">Sidebar Colors</h6>
-            </div>
-            <a href="javascript:void(0)" class="switch-trigger background-color">
-                <div class="badge-colors my-2 text-start">
-                    <span class="badge filter bg-gradient-primary active" data-color="primary"
-                        onclick="sidebarColor(this)"></span>
-                    <span class="badge filter bg-gradient-dark" data-color="dark" onclick="sidebarColor(this)"></span>
-                    <span class="badge filter bg-gradient-info" data-color="info" onclick="sidebarColor(this)"></span>
-                    <span class="badge filter bg-gradient-success" data-color="success"
-                        onclick="sidebarColor(this)"></span>
-                    <span class="badge filter bg-gradient-warning" data-color="warning"
-                        onclick="sidebarColor(this)"></span>
-                    <span class="badge filter bg-gradient-danger" data-color="danger"
-                        onclick="sidebarColor(this)"></span>
-                </div>
-            </a>
-            <!-- Sidenav Type -->
-            <div class="mt-3">
-                <h6 class="mb-0">Sidenav Type</h6>
-                <p class="text-sm">Choose between 2 different sidenav types.</p>
-            </div>
-            <div class="d-flex">
-                <button class="btn bg-gradient-primary w-100 px-3 mb-2 active me-2" data-class="bg-white"
-                    onclick="sidebarType(this)">White</button>
-                <button class="btn bg-gradient-primary w-100 px-3 mb-2" data-class="bg-default"
-                    onclick="sidebarType(this)">Dark</button>
-            </div>
-            <p class="text-sm d-xl-none d-block mt-2">You can change the sidenav type just on desktop view.</p>
-            <!-- Navbar Fixed -->
-            <hr class="horizontal dark my-sm-4">
-            <div class="mt-2 mb-5 d-flex">
-                <h6 class="mb-0">Light / Dark</h6>
-                <div class="form-check form-switch ps-0 ms-auto my-auto">
-                    <input class="form-check-input mt-1 ms-auto" type="checkbox" id="dark-version"
-                        onclick="darkMode(this)">
-                </div>
-            </div>
-            <a class="btn bg-gradient-dark w-100" href="https://www.creative-tim.com/product/argon-dashboard">Free
-                Download</a>
-            <a class="btn btn-outline-dark w-100"
-                href="https://www.creative-tim.com/learning-lab/bootstrap/license/argon-dashboard">View
-                documentation</a>
-            <div class="w-100 text-center">
-                <a class="github-button" href="https://github.com/creativetimofficial/argon-dashboard"
-                    data-icon="octicon-star" data-size="large" data-show-count="true"
-                    aria-label="Star creativetimofficial/argon-dashboard on GitHub">Star</a>
-                <h6 class="mt-3">Thank you for sharing!</h6>
-                <a href="https://twitter.com/intent/tweet?text=Check%20Argon%20Dashboard%20made%20by%20%40CreativeTim%20%23webdesign%20%23dashboard%20%23bootstrap5&amp;url=https%3A%2F%2Fwww.creative-tim.com%2Fproduct%2Fargon-dashboard"
-                    class="btn btn-dark mb-0 me-2" target="_blank">
-                    <i class="fab fa-twitter me-1" aria-hidden="true"></i> Tweet
-                </a>
-                <a href="https://www.facebook.com/sharer/sharer.php?u=https://www.creative-tim.com/product/argon-dashboard"
-                    class="btn btn-dark mb-0 me-2" target="_blank">
-                    <i class="fab fa-facebook-square me-1" aria-hidden="true"></i> Share
-                </a>
-            </div>
-        </div>
-    </div>
-</div>
+
+
+<script>
+
+$(document).ready(function() {
+    get_activity_cluster();
+    // $('.table').DataTable();
+});
+
+
+function get_activity_cluster() {
+
+    cluster_id = <?php echo $cluster_id ?>;
+
+    $.ajax({
+        type: 'post',
+        url: "<?php echo site_url() . '/SqlController/get_activity_cluster_ajax'; ?>",
+        data: {
+            'cluster_id' : cluster_id,
+        },
+        dataType: 'json',
+        success: function(data) {
+            console.log('get_channel : ', data);
+            for (let index = 7; index <= 9; index++) {
+                $('#table_2022-04-0'+index).html('');
+            }
+            for (let index = 10; index <= 14; index++) {
+                $('#table_2022-04-'+index).html('');
+            }
+
+
+            create_checklist(data['jason_channel']);
+            plus_score();
+            $('#cluster_image').attr('src','<?php echo base_url().'uploads/cluster'.$cluster_id.'.jpg'?>');
+            
+
+        }
+    })
+
+    
+
+}
+
+
+    /*
+    * create_table
+    * ตารางแสดงข้อมูลฟอร์มรับสมัครงาน
+    * @input 	arr_form
+    * @output   -
+    * @Author   62160011 Supawit Niramonpanich
+    * @Create Date 2564-08-13	
+    */
+    function create_checklist(arr_form){
+
+        let html_code = ''; //html_code : string for add elements
+
+        
+
+        // for (let index = 0; index < arr_form.length; index++) {
+        //     html_code =''; 
+        //     console.log('frame');
+        //     html_code += '    <tr>';
+        //     html_code += '        <td>';
+        //     html_code += '            <div class="d-flex px-2 py-1">';
+        //     html_code += '                <div';
+        //     html_code += '                    class="d-flex flex-column justify-content-center">';
+        //     html_code += '                    <h6 class="mb-0 text-sm">Best Team</h6>';
+        //     html_code += '                    <!-- <p class="text-xs text-secondary mb-0">alexa@creative-tim.com</p> -->';
+        //     html_code += '                </div>';
+        //     html_code += '             </div>';
+        //     html_code += '         </td>';
+        //     html_code += '         <td>';
+        //     html_code += '             <p class="text-xs font-weight-bold mb-0"> ' +  (index +1) + ' $E </p>';
+        //     html_code += '        </td>';
+        //     html_code += '        <td>';
+        //     html_code += '            <div class="d-flex px-2 py-1">';
+        //     html_code += '                <div';
+        //     html_code += '                    class="d-flex flex-column justify-content-center">';
+        //     html_code += '                     <p class="text-xs text-secondary mb-0"></p>';
+        //     html_code += '                </div>';
+        //     html_code += '             </div>';
+        //     html_code += '        </td>';
+        //     html_code += '        <td>';
+        //     html_code += '            <div class="d-flex px-2 py-1">';
+        //     html_code += '                     <span class="text-secondary text-xs font-weight-bold"></span>';
+        //     html_code += '         </td>';
+        //     html_code += '        <td class="align-middle">';
+        //     html_code += '           <div class="form-check form-switch">';
+        //     html_code += '               <input class="form-check-input" type="checkbox"';
+        //     html_code += '                    id="rememberMe">';
+        //     html_code += '            </div>';
+        //     html_code += '        </td>';
+        //     html_code += '    </tr>';
+            
+        //     $('#table_2022-04-07').append(html_code);
+            
+        // }
+
+
+
+        arr_form.forEach((row_form, index_form) => {
+            html_code =''; 
+            console.log('frame');
+            html_code += '    <tr>';
+            html_code += '        <td>';
+            html_code += '            <div class="d-flex px-2 py-1">';
+            html_code += '                <div';
+            html_code += '                    class="d-flex flex-column justify-content-center">';
+            html_code += '                    <p class="text-xs  font-weight-bold mb-0 "> ' + row_form['activity_name']  + ' </p>';
+            html_code += '                    <!-- <p class="text-xs text-secondary mb-0">alexa@creative-tim.com</p> -->';
+            html_code += '                </div>';
+            html_code += '             </div>';
+            html_code += '         </td>';
+            html_code += '         <td>';
+            html_code += '         <input type="hidden" name="score" value="' + row_form['activity_score']  + '">';
+            html_code += '             <p class="text-xs font-weight-bold mb-0 score" > ' + row_form['activity_score']  + ' $E </p>';
+            html_code += '        </td>';
+            html_code += '        <td>';
+            html_code += '            <div class="d-flex px-2 py-1">';
+            html_code += '                <div';
+            html_code += '                    class="d-flex flex-column justify-content-center">';
+            if( row_form['date_update'] != '0000-00-00'){
+                html_code += '                     <p class="text-xs text-secondary mb-0"> ' + row_form['date_update']  + ' </p>';
+            }else{
+                html_code += '                     <p class="text-xs text-secondary mb-0"></p>';
+            }
+            html_code += '                </div>';
+            html_code += '             </div>';
+            html_code += '        </td>';
+            html_code += '        <td>';
+            html_code += '            <div class="d-flex px-2 py-1">';
+            if( row_form['date_update'] != '0000-00-00'){
+                html_code += '                     <span class="text-secondary text-xs font-weight-bold"> ' + row_form['user_name'] + ' '+ row_form['user_lastname'][0] + '. </span>';
+            }else{
+                html_code += '                     <span class="text-secondary text-xs font-weight-bold"></span>';
+            }
+            html_code += '         </td>';
+            html_code += '        <td class="align-middle">';
+            html_code += '           <div class="form-check form-switch">';
+            html_code += '               <input class="form-check-input" name="checkbox" id="status' + row_form['activity_cluster_id'] + '" onclick="cheack_activity(' + row_form['activity_cluster_id'] + ')" type="checkbox"';
+            
+            if( row_form['activity_cluster_status'] == 1 ){
+                html_code += '      checked       >';
+            }else{
+                html_code += '                    >';
+            }
+
+            html_code += '            </div>';
+            html_code += '        </td>';
+            html_code += '    </tr>';
+            
+            $('#table_' + row_form['activity_cluster_day'] ).append(html_code);
+        });
+
+
+
+
+
+
+    //     arr_form.forEach((row_form, index_form) => {
+    //     html_code += '   <tr> ';
+    //     html_code += '   <td class="text-center">  ' +  (index_form +1) + '  </td> ';
+
+
+    //     html_code += '  <td style="padding-left:19px">' + row_form['form_name']  + '</td> ';
+    //     html_code += '  <td class="text-center">' + row_form['create_first'] + " " + row_form['create_last'][0] + ".<br>" + convert_date(row_form['date_create']) + ' </td> ';
+    //     /* Start data have update first and update last */
+    //     if(row_form['update_first'] != null){
+    //     html_code += '  <td class="text-center"> ' + row_form['update_first'] + " " + row_form['update_last'][0] + ".<br>" + convert_date(row_form['date_update']) +'</td>';
+    //     }
+    //     /* End data have update first and update last */
+    //     /* Start data don't have update first and update last */
+    //     else{
+    //     html_code += '  <td class="text-center"> - </td> ';
+    //     }        
+    //     /* End data don't have update first and update last */
+
+
+
+    //     html_code += ' <td class="text-center"> ';
+    //     html_code += ' <a type="button" class="btn btn-default" href="<?php echo site_url().'/Form/Form_manage/show_form_info/'?>' + row_form['form_id'] + '<?php ; ?>"title="View"> ';
+    //     html_code += '  <i class="fas fa-search"></i> ';
+    //     html_code += '  </a> ';
+    //     html_code += '<a style="margin-right:3px;" type="button" title="Duplicate" class="btn btn-default" href="<?php echo site_url().'/Form/Form_manage/show_form_duplicate/'?>' + row_form['form_id'] + '<?php ; ?>">';
+    //     html_code += '<i class="fas fa-clone"></i>';
+    //     html_code += '</a>';
+    //     html_code +=' <a type="button" class="btn btn-default" href="<?php echo site_url().'/Form/Form_manage/show_form_edit/'?>' + row_form['form_id'] + '<?php ; ?>" title="Edit">';
+    //     html_code +=' <i class="fas fa-edit" ></i>' ;
+    //     html_code +=' </a>' ;
+    //     html_code += '  <button type="button" class="btn btn-default" onclick="delete_form('+row_form['form_id']+')" title="Delete"> ';
+    //     html_code += '  <i class="fas fa-trash-alt"></i> '; 
+    //     html_code += '  </button> '    ;
+    //     html_code += '  </a> ';
+    //     html_code += '  </td> ';
+    //     html_code += '  </tr> ' ;
+    //     });
+
+    //     html_code += '  </tbody> ';
+    //     html_code += '  </table> ';
+
+    //     $('#create_table').html(html_code);
+
+    }
+
+
+
+
+
+  </script>
+
+
+
+<script>
+
+
+function plus_score(){
+
+    arr_score = $('#cheacklist').find('input[name="score"]');
+    arr_checkbox = $('#cheacklist').find('input[name="checkbox"]');
+
+
+    console.log( arr_score );
+
+    total_score = 0;
+
+    for (let index = 0; index < arr_score.length; index++) {
+
+        if( arr_checkbox[index].checked ){
+            console.log( 'Score: '+ arr_score[index].value  );
+            total_score = total_score + Number(arr_score[index].value);
+        }
+        // total_score = total_score + Number(arr_score[index].value);
+    }
+    $('#score_total').html('Total Score : ' + total_score + ' $E')
+    // $('#total_score').text('Total '+ total_score + ' Points');
+    // $('#total_score').attr('value',total_score)
+
+}
+
+
+function cheack_activity(activity_id) {
+
+
+    console.log(activity_id);
+
+    if( document.getElementById('status' + activity_id).checked == true ){
+        activity_status = 1;
+        console.log('true');
+        document.getElementById('status' + activity_id).checked = false
+    }else{
+        activity_status = 0;
+        console.log('false');
+        document.getElementById('status' + activity_id).checked = true
+
+    }
+
+
+    Swal.fire({
+        title: 'Do you want to change <br> status activity ?',
+        icon: 'warning',
+        type: 'warning',
+        showCancelButton: true,
+        confirmButtonColor: '#5e72e4',
+        cancelButtonColor: ' white ',
+        confirmButtonText: 'Yes',
+        cancelButtonText:  '<Font color=black> No <Font>',
+        reverseButtons: true
+    }).then((result) => {
+        /* Start Change status */
+        if (result.value) {
+            $.ajax({
+                type: 'post',
+                url: "<?php echo site_url() . '/SqlController/change_status_ajax'; ?>",
+                data: {
+                    'activity_id': activity_id,
+                    'activity_status': activity_status
+                },
+                dataType: 'json',
+                success: function(data) {
+                    /* Start Alert Change status success */
+                    if (data['message'] == 'Success') {
+                        Swal.fire({
+                            icon: 'success',
+                            title: 'Change status success',
+                            type: 'success',
+                            showConfirmButton: false,
+                            timer: 2000
+                        });
+                        get_activity_cluster();
+                    }
+                }
+            });
+        }
+        /* End Change status */
+    })
+    $(".swal2-cancel").css("border", "1px solid #A79E9E");
+
+}
+
+
+</script>
+
+

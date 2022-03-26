@@ -111,4 +111,53 @@ class SqlController extends UserController
 		$this->item->delete();
 		redirect('SqlController/show_item_manage');
 	}
+
+
+	
+    public function get_activity_cluster_ajax() {
+		$this->load->model('M_scs_activity_cluster','mcha');
+		$cluster_id = $this->input->post('cluster_id');
+
+		$data['jason_channel'] = $this->mcha->get_cluster_by_id($cluster_id)->result();
+        $data['json_message'] = 'success : get_channel_ajax';
+
+
+		// echo'<pre>';
+        // print_r( $data['jason_channel'] );
+        // echo'<pre>';
+
+        echo json_encode($data);
+    }
+
+	public function change_status_ajax() {
+		$this->load->model('M_scs_activity_cluster','activity');
+		$this->activity->activity_cluster_id = $this->input->post('activity_id');
+		$this->activity->activity_cluster_status = $this->input->post('activity_status');
+		$this->activity->update_user = 1;
+		$this->activity->date_update = date("Y-m-d");
+
+        $this->activity->change_status();
+        $data['message'] = 'Success';
+
+        echo json_encode($data);
+    }
+
+	function show_item_shop()
+	{
+		$this->output('v_item_shop');
+	}
+
+	public function get_item_ajax() {
+		$this->load->model('M_item_list', 'item');
+		$data['jason_channel'] = $this->item->get_item_all()->result();
+        $data['json_message'] = 'success : get_channel_ajax';
+
+
+		// echo'<pre>';
+        // print_r( $data['jason_channel'] );
+        // echo'<pre>';
+
+        echo json_encode($data);
+    }
+
 }
