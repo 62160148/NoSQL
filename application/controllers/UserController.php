@@ -65,19 +65,23 @@ class UserController extends CI_Controller
 
 		if ($data['users']) {
 			foreach ($data['users'] as $user) {
+				// echo $user->username;
+				// echo $user->password;
+				// echo '<br>';
 				if ($user->username == $username && $user->password == $password) {
 					if ($user->role == 1) {
-						redirect('SqlController/show_item_manage', 'refresh');
+						redirect('SqlController/show_dashboard', 'refresh');
 					} else if ($user->role == 2) {
-						redirect('SqlController/show_item_manage', 'refresh');
+						redirect('SqlController/show_dashboard', 'refresh');
 					} else if ($user->role == 3) {
 						redirect('UserController/show_item_manage', 'refresh');
 					}
-				} else {
-					$message = "invalid user !!";
-					echo "<script type='text/javascript'>alert('$message');</script>";
-					redirect('UserController/show_login', 'refresh');
 				}
+				// } else {
+				// 	$message = "invalid user !!";
+				// 	echo "<script type='text/javascript'>alert('$message');</script>";
+				// 	redirect('UserController/show_login', 'refresh');
+				// }
 			}
 		}
 	}
