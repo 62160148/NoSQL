@@ -45,7 +45,10 @@ class UserController extends CI_Controller
 
 	function show_cluster_detail($_id)
 	{
-		$this->output('v_cluster_detail');
+		$this->load->model('M_cluster_list', 'cls');
+		$data['arr_cls'] = $this->cls->get_cluster($_id)->result();
+		// print_r($data);
+		$this->output('v_cluster_detail', $data);
 	}
 
 	function show_login()

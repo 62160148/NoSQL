@@ -199,16 +199,17 @@
                 <div class="col-auto">
 
                     <div class="avatar avatar-xl position-relative">
-                        <img id="cluster_image" src="<?php echo base_url().'/uploads/image_demo.jpg' ?>" alt="profile_image" class="w-100 border-radius-lg shadow-sm">
+                        <img id="cluster_image" src="<?php echo base_url() . '/uploads/image_demo.jpg' ?>"
+                            alt="profile_image" class="w-100 border-radius-lg shadow-sm">
                     </div>
                 </div>
                 <div class="col-auto my-auto">
                     <div class="h-100">
                         <h5 class="mb-1">
-                            <?php echo 'Cluster '.$cluster_id ?>
+                            <?php echo 'Cluster ' . $cluster_id ?>
                         </h5>
                         <p class="mb-0 font-weight-bold text-sm" id="score_total">
-                            
+
                         </p>
                     </div>
                 </div>
@@ -216,19 +217,20 @@
 
                 <div class="col-auto my-auto">
                     <!-- <div class="h-100"> -->
-                        <a href="<?php echo site_url() . '/UserController/show_cluster_detail/1'; ?>">
+                    <a href="<?php echo site_url() . '/UserController/show_cluster_detail/' . $cluster_id; ?>">
 
-                            <button class="btn" type="button" style="margin-bottom: 0px;" >
+                        <button class="btn" type="button" style="margin-bottom: 0px;">
                             <i class="fa fa-users"></i> challenger
-                            </button>
-                        </a>
+                        </button>
+                    </a>
                     <!-- </div> -->
                 </div>
 
 
                 <div class="col-auto my-auto">
                     <div class="dropdown">
-                        <button class="btn dropdown-toggle" type="button" style="margin-bottom: 0px;" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
+                        <button class="btn dropdown-toggle" type="button" style="margin-bottom: 0px;"
+                            id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
                             Choose Cluster
                         </button>
                         <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
@@ -247,7 +249,7 @@
                     </div>
                 </div>
 
-                
+
 
 
 
@@ -328,7 +330,7 @@
                                                     <p class="mb-0"> Thursday 07 April 2022</p>
                                                 </div>
                                             </div>
-                                            <div class="card-body" >
+                                            <div class="card-body">
 
                                                 <table class="table align-items-center mb-0">
                                                     <thead>
@@ -372,7 +374,7 @@
                                                     <p class="mb-0"> Friday 08 April 2022</p>
                                                 </div>
                                             </div>
-                                            <div class="card-body" >
+                                            <div class="card-body">
 
                                                 <table class="table align-items-center mb-0">
                                                     <thead>
@@ -403,7 +405,7 @@
                                         </div>
                                     </div>
 
-<!-- 
+                                    <!-- 
                                     <div class="d-flex align-items-center" style="margin-top : 20px;">
                                         <p class="mb-0"> </p>
                                         <button class="btn btn-primary btn-sm ms-auto"> Save</button>
@@ -423,7 +425,7 @@
                                                     <p class="mb-0"> Saturday 09 April 2022</p>
                                                 </div>
                                             </div>
-                                            <div class="card-body" >
+                                            <div class="card-body">
 
                                                 <table class="table align-items-center mb-0">
                                                     <thead>
@@ -521,7 +523,7 @@
                                                     <p class="mb-0"> Monday 11 April 2022</p>
                                                 </div>
                                             </div>
-                                            <div class="card-body" >
+                                            <div class="card-body">
 
                                                 <table class="table align-items-center mb-0" id="myTable">
                                                     <thead>
@@ -633,7 +635,6 @@
 
 
 <script>
-
 $(document).ready(function() {
     get_activity_cluster();
     // $('.table').DataTable();
@@ -648,141 +649,149 @@ function get_activity_cluster() {
         type: 'post',
         url: "<?php echo site_url() . '/SqlController/get_activity_cluster_ajax'; ?>",
         data: {
-            'cluster_id' : cluster_id,
+            'cluster_id': cluster_id,
         },
         dataType: 'json',
         success: function(data) {
             console.log('get_channel : ', data);
             for (let index = 7; index <= 9; index++) {
-                $('#table_2022-04-0'+index).html('');
+                $('#table_2022-04-0' + index).html('');
             }
             for (let index = 10; index <= 14; index++) {
-                $('#table_2022-04-'+index).html('');
+                $('#table_2022-04-' + index).html('');
             }
 
 
             create_checklist(data['jason_channel']);
             plus_score();
-            $('#cluster_image').attr('src','<?php echo base_url().'uploads/cluster'.$cluster_id.'.jpg'?>');
-            
+            $('#cluster_image').attr('src',
+                '<?php echo base_url() . 'uploads/cluster' . $cluster_id . '.jpg' ?>');
+
 
         }
     })
 
-    
+
 
 }
 
 
-    /*
-    * create_table
-    * ตารางแสดงข้อมูลฟอร์มรับสมัครงาน
-    * @input 	arr_form
-    * @output   -
-    * @Author   62160011 Supawit Niramonpanich
-    * @Create Date 2564-08-13	
-    */
-    function create_checklist(arr_form){
+/*
+ * create_table
+ * ตารางแสดงข้อมูลฟอร์มรับสมัครงาน
+ * @input 	arr_form
+ * @output   -
+ * @Author   62160011 Supawit Niramonpanich
+ * @Create Date 2564-08-13	
+ */
+function create_checklist(arr_form) {
 
-        let html_code = ''; //html_code : string for add elements
-
-        
-
-        // for (let index = 0; index < arr_form.length; index++) {
-        //     html_code =''; 
-        //     console.log('frame');
-        //     html_code += '    <tr>';
-        //     html_code += '        <td>';
-        //     html_code += '            <div class="d-flex px-2 py-1">';
-        //     html_code += '                <div';
-        //     html_code += '                    class="d-flex flex-column justify-content-center">';
-        //     html_code += '                    <h6 class="mb-0 text-sm">Best Team</h6>';
-        //     html_code += '                    <!-- <p class="text-xs text-secondary mb-0">alexa@creative-tim.com</p> -->';
-        //     html_code += '                </div>';
-        //     html_code += '             </div>';
-        //     html_code += '         </td>';
-        //     html_code += '         <td>';
-        //     html_code += '             <p class="text-xs font-weight-bold mb-0"> ' +  (index +1) + ' $E </p>';
-        //     html_code += '        </td>';
-        //     html_code += '        <td>';
-        //     html_code += '            <div class="d-flex px-2 py-1">';
-        //     html_code += '                <div';
-        //     html_code += '                    class="d-flex flex-column justify-content-center">';
-        //     html_code += '                     <p class="text-xs text-secondary mb-0"></p>';
-        //     html_code += '                </div>';
-        //     html_code += '             </div>';
-        //     html_code += '        </td>';
-        //     html_code += '        <td>';
-        //     html_code += '            <div class="d-flex px-2 py-1">';
-        //     html_code += '                     <span class="text-secondary text-xs font-weight-bold"></span>';
-        //     html_code += '         </td>';
-        //     html_code += '        <td class="align-middle">';
-        //     html_code += '           <div class="form-check form-switch">';
-        //     html_code += '               <input class="form-check-input" type="checkbox"';
-        //     html_code += '                    id="rememberMe">';
-        //     html_code += '            </div>';
-        //     html_code += '        </td>';
-        //     html_code += '    </tr>';
-            
-        //     $('#table_2022-04-07').append(html_code);
-            
-        // }
+    let html_code = ''; //html_code : string for add elements
 
 
 
-        arr_form.forEach((row_form, index_form) => {
-            html_code =''; 
-            console.log('frame');
-            html_code += '    <tr>';
-            html_code += '        <td>';
-            html_code += '            <div class="d-flex px-2 py-1">';
-            html_code += '                <div';
-            html_code += '                    class="d-flex flex-column justify-content-center">';
-            html_code += '                    <p class="text-xs  font-weight-bold mb-0 "> ' + row_form['activity_name']  + ' </p>';
-            html_code += '                    <!-- <p class="text-xs text-secondary mb-0">alexa@creative-tim.com</p> -->';
-            html_code += '                </div>';
-            html_code += '             </div>';
-            html_code += '         </td>';
-            html_code += '         <td>';
-            html_code += '         <input type="hidden" name="score" value="' + row_form['activity_score']  + '">';
-            html_code += '             <p class="text-xs font-weight-bold mb-0 score" > ' + row_form['activity_score']  + ' $E </p>';
-            html_code += '        </td>';
-            html_code += '        <td>';
-            html_code += '            <div class="d-flex px-2 py-1">';
-            html_code += '                <div';
-            html_code += '                    class="d-flex flex-column justify-content-center">';
-            if( row_form['date_update'] != '0000-00-00'){
-                html_code += '                     <p class="text-xs text-secondary mb-0"> ' + row_form['date_update']  + ' </p>';
-            }else{
-                html_code += '                     <p class="text-xs text-secondary mb-0"></p>';
-            }
-            html_code += '                </div>';
-            html_code += '             </div>';
-            html_code += '        </td>';
-            html_code += '        <td>';
-            html_code += '            <div class="d-flex px-2 py-1">';
-            if( row_form['date_update'] != '0000-00-00'){
-                html_code += '                     <span class="text-secondary text-xs font-weight-bold"> ' + row_form['user_name'] + ' '+ row_form['user_lastname'][0] + '. </span>';
-            }else{
-                html_code += '                     <span class="text-secondary text-xs font-weight-bold"></span>';
-            }
-            html_code += '         </td>';
-            html_code += '        <td class="align-middle">';
-            html_code += '           <div class="form-check form-switch">';
-            html_code += '               <input class="form-check-input" name="checkbox" id="status' + row_form['activity_cluster_id'] + '" onclick="cheack_activity(' + row_form['activity_cluster_id'] + ')" type="checkbox"';
-            
-            if( row_form['activity_cluster_status'] == 1 ){
-                html_code += '      checked       >';
-            }else{
-                html_code += '                    >';
-            }
+    // for (let index = 0; index < arr_form.length; index++) {
+    //     html_code =''; 
+    //     console.log('frame');
+    //     html_code += '    <tr>';
+    //     html_code += '        <td>';
+    //     html_code += '            <div class="d-flex px-2 py-1">';
+    //     html_code += '                <div';
+    //     html_code += '                    class="d-flex flex-column justify-content-center">';
+    //     html_code += '                    <h6 class="mb-0 text-sm">Best Team</h6>';
+    //     html_code += '                    <!-- <p class="text-xs text-secondary mb-0">alexa@creative-tim.com</p> -->';
+    //     html_code += '                </div>';
+    //     html_code += '             </div>';
+    //     html_code += '         </td>';
+    //     html_code += '         <td>';
+    //     html_code += '             <p class="text-xs font-weight-bold mb-0"> ' +  (index +1) + ' $E </p>';
+    //     html_code += '        </td>';
+    //     html_code += '        <td>';
+    //     html_code += '            <div class="d-flex px-2 py-1">';
+    //     html_code += '                <div';
+    //     html_code += '                    class="d-flex flex-column justify-content-center">';
+    //     html_code += '                     <p class="text-xs text-secondary mb-0"></p>';
+    //     html_code += '                </div>';
+    //     html_code += '             </div>';
+    //     html_code += '        </td>';
+    //     html_code += '        <td>';
+    //     html_code += '            <div class="d-flex px-2 py-1">';
+    //     html_code += '                     <span class="text-secondary text-xs font-weight-bold"></span>';
+    //     html_code += '         </td>';
+    //     html_code += '        <td class="align-middle">';
+    //     html_code += '           <div class="form-check form-switch">';
+    //     html_code += '               <input class="form-check-input" type="checkbox"';
+    //     html_code += '                    id="rememberMe">';
+    //     html_code += '            </div>';
+    //     html_code += '        </td>';
+    //     html_code += '    </tr>';
 
-            html_code += '            </div>';
-            html_code += '        </td>';
-            html_code += '    </tr>';
-            
-            $('#table_' + row_form['activity_cluster_day'] ).append(html_code);
-        });
+    //     $('#table_2022-04-07').append(html_code);
+
+    // }
+
+
+
+    arr_form.forEach((row_form, index_form) => {
+        html_code = '';
+        console.log('frame');
+        html_code += '    <tr>';
+        html_code += '        <td>';
+        html_code += '            <div class="d-flex px-2 py-1">';
+        html_code += '                <div';
+        html_code += '                    class="d-flex flex-column justify-content-center">';
+        html_code += '                    <p class="text-xs  font-weight-bold mb-0 "> ' + row_form[
+            'activity_name'] + ' </p>';
+        html_code +=
+            '                    <!-- <p class="text-xs text-secondary mb-0">alexa@creative-tim.com</p> -->';
+        html_code += '                </div>';
+        html_code += '             </div>';
+        html_code += '         </td>';
+        html_code += '         <td>';
+        html_code += '         <input type="hidden" name="score" value="' + row_form['activity_score'] + '">';
+        html_code += '             <p class="text-xs font-weight-bold mb-0 score" > ' + row_form[
+            'activity_score'] + ' $E </p>';
+        html_code += '        </td>';
+        html_code += '        <td>';
+        html_code += '            <div class="d-flex px-2 py-1">';
+        html_code += '                <div';
+        html_code += '                    class="d-flex flex-column justify-content-center">';
+        if (row_form['date_update'] != '0000-00-00') {
+            html_code += '                     <p class="text-xs text-secondary mb-0"> ' + row_form[
+                'date_update'] + ' </p>';
+        } else {
+            html_code += '                     <p class="text-xs text-secondary mb-0"></p>';
+        }
+        html_code += '                </div>';
+        html_code += '             </div>';
+        html_code += '        </td>';
+        html_code += '        <td>';
+        html_code += '            <div class="d-flex px-2 py-1">';
+        if (row_form['date_update'] != '0000-00-00') {
+            html_code += '                     <span class="text-secondary text-xs font-weight-bold"> ' +
+                row_form['user_name'] + ' ' + row_form['user_lastname'][0] + '. </span>';
+        } else {
+            html_code += '                     <span class="text-secondary text-xs font-weight-bold"></span>';
+        }
+        html_code += '         </td>';
+        html_code += '        <td class="align-middle">';
+        html_code += '           <div class="form-check form-switch">';
+        html_code += '               <input class="form-check-input" name="checkbox" id="status' + row_form[
+                'activity_cluster_id'] + '" onclick="cheack_activity(' + row_form['activity_cluster_id'] +
+            ')" type="checkbox"';
+
+        if (row_form['activity_cluster_status'] == 1) {
+            html_code += '      checked       >';
+        } else {
+            html_code += '                    >';
+        }
+
+        html_code += '            </div>';
+        html_code += '        </td>';
+        html_code += '    </tr>';
+
+        $('#table_' + row_form['activity_cluster_day']).append(html_code);
+    });
 
 
 
@@ -810,13 +819,13 @@ function get_activity_cluster() {
 
 
     //     html_code += ' <td class="text-center"> ';
-    //     html_code += ' <a type="button" class="btn btn-default" href="<?php echo site_url().'/Form/Form_manage/show_form_info/'?>' + row_form['form_id'] + '<?php ; ?>"title="View"> ';
+    //     html_code += ' <a type="button" class="btn btn-default" href="<?php echo site_url() . '/Form/Form_manage/show_form_info/' ?>' + row_form['form_id'] + '<?php; ?>"title="View"> ';
     //     html_code += '  <i class="fas fa-search"></i> ';
     //     html_code += '  </a> ';
-    //     html_code += '<a style="margin-right:3px;" type="button" title="Duplicate" class="btn btn-default" href="<?php echo site_url().'/Form/Form_manage/show_form_duplicate/'?>' + row_form['form_id'] + '<?php ; ?>">';
+    //     html_code += '<a style="margin-right:3px;" type="button" title="Duplicate" class="btn btn-default" href="<?php echo site_url() . '/Form/Form_manage/show_form_duplicate/' ?>' + row_form['form_id'] + '<?php; ?>">';
     //     html_code += '<i class="fas fa-clone"></i>';
     //     html_code += '</a>';
-    //     html_code +=' <a type="button" class="btn btn-default" href="<?php echo site_url().'/Form/Form_manage/show_form_edit/'?>' + row_form['form_id'] + '<?php ; ?>" title="Edit">';
+    //     html_code +=' <a type="button" class="btn btn-default" href="<?php echo site_url() . '/Form/Form_manage/show_form_edit/' ?>' + row_form['form_id'] + '<?php; ?>" title="Edit">';
     //     html_code +=' <i class="fas fa-edit" ></i>' ;
     //     html_code +=' </a>' ;
     //     html_code += '  <button type="button" class="btn btn-default" onclick="delete_form('+row_form['form_id']+')" title="Delete"> ';
@@ -832,33 +841,26 @@ function get_activity_cluster() {
 
     //     $('#create_table').html(html_code);
 
-    }
-
-
-
-
-
-  </script>
+}
+</script>
 
 
 
 <script>
-
-
-function plus_score(){
+function plus_score() {
 
     arr_score = $('#cheacklist').find('input[name="score"]');
     arr_checkbox = $('#cheacklist').find('input[name="checkbox"]');
 
 
-    console.log( arr_score );
+    console.log(arr_score);
 
     total_score = 0;
 
     for (let index = 0; index < arr_score.length; index++) {
 
-        if( arr_checkbox[index].checked ){
-            console.log( 'Score: '+ arr_score[index].value  );
+        if (arr_checkbox[index].checked) {
+            console.log('Score: ' + arr_score[index].value);
             total_score = total_score + Number(arr_score[index].value);
         }
         // total_score = total_score + Number(arr_score[index].value);
@@ -875,11 +877,11 @@ function cheack_activity(activity_id) {
 
     console.log(activity_id);
 
-    if( document.getElementById('status' + activity_id).checked == true ){
+    if (document.getElementById('status' + activity_id).checked == true) {
         activity_status = 1;
         console.log('true');
         document.getElementById('status' + activity_id).checked = false
-    }else{
+    } else {
         activity_status = 0;
         console.log('false');
         document.getElementById('status' + activity_id).checked = true
@@ -895,7 +897,7 @@ function cheack_activity(activity_id) {
         confirmButtonColor: '#5e72e4',
         cancelButtonColor: ' white ',
         confirmButtonText: 'Yes',
-        cancelButtonText:  '<Font color=black> No <Font>',
+        cancelButtonText: '<Font color=black> No <Font>',
         reverseButtons: true
     }).then((result) => {
         /* Start Change status */
@@ -928,8 +930,4 @@ function cheack_activity(activity_id) {
     $(".swal2-cancel").css("border", "1px solid #A79E9E");
 
 }
-
-
 </script>
-
-
