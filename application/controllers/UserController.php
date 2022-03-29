@@ -59,4 +59,15 @@ class UserController extends CI_Controller
 		$data['arr_item'] = $this->item->get_item_all()->result();
 		$this->output('v_item_manage', $data);
 	}
+
+	public function output2($view, $data = null)
+	{
+		$this->load->view('template/header');
+		$this->load->view('template/javascript');
+		// $this->load->view('template/crs_template/crs_css');
+		// $this->load->view('template/crs_template/crs_js');
+		$this->load->view('template/sidebar_member');
+		$this->load->view($view, $data);
+		$this->load->view('template/footer');
+	}
 }

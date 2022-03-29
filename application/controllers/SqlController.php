@@ -144,7 +144,7 @@ class SqlController extends UserController
 
 	function show_item_shop()
 	{
-		$this->output('v_item_shop');
+		$this->output2('v_item_shop');
 	}
 
 	public function get_item_ajax() {
@@ -159,5 +159,29 @@ class SqlController extends UserController
 
         echo json_encode($data);
     }
+
+
+	function show_dashboard()
+	{
+		$this->output2('v_dashboard');
+	}
+
+	/*
+	* get_clster_ajax
+	* เรียกข้อมูลของมกุล
+	* @input 	เรียกข้อมูลของมกุล
+	* @output 	ข้อมูลมกุล
+    * @Author 	62160011 Supawit Niramonpanich
+	* @Create Date 2565-03-08
+	*/
+	public function get_cluster_ajax(){
+		$this->load->model('M_cluster','vsc');
+		$data['json_cluster'] = $this->vsc->get_cluster_all()->result();
+		$data['json_message'] = 'success : get_cluster_ajax';
+		
+		echo json_encode($data);
+	}
+
+
 
 }
