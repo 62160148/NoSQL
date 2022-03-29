@@ -211,7 +211,7 @@
                 </div>
                 <div class="col-auto my-auto">
                     <div class="h-100">
-                            <h2> Dashboard  </h2>
+                            <h2> Dashboard2  </h2>
                     
                     </div>
                 </div>
