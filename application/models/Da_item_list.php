@@ -26,4 +26,12 @@ class Da_item_list extends scs_model
             WHERE item_id=?";
 		$this->db->query($sql, array($this->item_id));
 	}
+
+	public function change_num_item() {
+		$sql = "UPDATE scs_database.scs_item
+        SET item_num = ?
+        WHERE item_id = ?";
+
+		$this->db->query($sql, array($this->item_num,$this->item_id));
+	}
 }

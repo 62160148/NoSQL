@@ -182,6 +182,21 @@ class SqlController extends UserController
 		echo json_encode($data);
 	}
 
+	public function buy_item_ajax() {
+		$this->load->model('M_item_list', 'item');
+		$this->item->item_id = $this->input->post('item_id');
+		$this->item->item_num = $this->input->post('item_num') -1;
+
+		// $this->activity->activity_cluster_status = $this->input->post('activity_status');
+		// $this->activity->update_user = 1;
+		// $this->activity->date_update = date("Y-m-d");
+
+        $this->item->change_num_item();
+        $data['message'] = 'Success';
+
+        echo json_encode($data);
+    }
+
 
 
 }
