@@ -205,7 +205,7 @@
                 <div class="col-auto my-auto">
                     <div class="h-100">
                         <h5 class="mb-1">
-                            <?php echo 'Cluster ' ?>
+                            <?php echo 'Cluster 1 ' ?>
                         </h5>
                         <p class="mb-0 font-weight-bold text-sm" id="score_total">
                             
@@ -316,8 +316,12 @@ function get_item_ajax() {
             html_code += '                 </p>';
 
             html_code += '                 <div class="author align-items-center">';
-            html_code += '                 <div class="text-gradient text-primary text-uppercase text-xs font-weight-bold my-2">จำนวนคงเหลือ : ' + row_form['item_num'] + ' ชิ้น</div>';
-            html_code += '                     <button class="btn btn-primary btn-sm ms-auto" onclick="buy_item(' + row_form['item_id'] + ')"> BUY </button>';
+            if( row_form['item_num'] == 0 ){
+                html_code += '                 <div class="text-gradient text-danger text-uppercase text-xs font-weight-bold my-2  mr-auto"> สิ้นค้าหมด </div>';
+            }else{
+                html_code += '                 <div class="text-gradient text-primary text-uppercase text-xs font-weight-bold my-2">จำนวนคงเหลือ : ' + row_form['item_num'] + ' ชิ้น</div>';
+                html_code += '                     <button class="btn btn-primary btn-sm ms-auto" onclick="buy_item(' + row_form['item_id'] + ',' + row_form['item_num'] + ')"> BUY </button>';
+            }
             html_code += '                 </div>';
             html_code += '             </div>';
             html_code += '         </div>';
@@ -344,13 +348,13 @@ function get_item_ajax() {
 
 
 
-function buy_item(activity_id) {
+function buy_item(item_id,item_num) {
 
-
-    console.log(activity_id);
+    cluster_id = 1;
+    console.log(item_id);
 
     Swal.fire({
-        title: 'Do you want to change <br> status activity ?',
+        title: 'Do you want to buy <br> this item ?',
         icon: 'warning',
         type: 'warning',
         showCancelButton: true,
@@ -364,10 +368,11 @@ function buy_item(activity_id) {
         if (result.value) {
             $.ajax({
                 type: 'post',
-                url: "<?php echo site_url() . '/SqlController/change_status_ajax'; ?>",
+                url: "<?php echo site_url() . '/SqlController/buy_item_ajax'; ?>",
                 data: {
-                    'activity_id': activity_id,
-                    'activity_status': activity_status
+                    'item_id': item_id,
+                    'cluster_id': cluster_id,
+                    'item_num':item_num
                 },
                 dataType: 'json',
                 success: function(data) {
@@ -380,7 +385,7 @@ function buy_item(activity_id) {
                             showConfirmButton: false,
                             timer: 2000
                         });
-                        get_activity_cluster();
+                        get_item_ajax();
                     }
                 }
             });
