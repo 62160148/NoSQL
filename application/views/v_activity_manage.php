@@ -206,11 +206,11 @@
 
                                         <div class="mb-3">
                                             <label for="focusedinput" class="form-label">Activity Name </label>
-                                            <input type="text" id="name1">
+                                            <input type="text" id="name1" required>
                                         </div>
                                         <div class="mb-3">
                                             <label for="focusedinput" class="form-label">Activity Score</label>
-                                            <input type="number" id="score1" min="0">
+                                            <input type="number" id="score1" min="0" required>
                                         </div>
                                     </div>
                                     <div class="modal-footer">
@@ -319,7 +319,8 @@
                                                                         hidden>
                                                                     <input type="text"
                                                                         id="name_<?php echo $arr_act[$i]->activity_id ?>"
-                                                                        value="<?php echo $arr_act[$i]->activity_name ?>">
+                                                                        value="<?php echo $arr_act[$i]->activity_name ?>"
+                                                                        required>
                                                                 </div>
                                                                 <div class="mb-3">
                                                                     <label for="focusedinput"
@@ -327,7 +328,8 @@
                                                                     <input type="number"
                                                                         id="price_<?php echo $arr_act[$i]->activity_id ?>"
                                                                         min="0"
-                                                                        value="<?php echo $arr_act[$i]->activity_score ?>">
+                                                                        value="<?php echo $arr_act[$i]->activity_score ?>"
+                                                                        required>
                                                                 </div>
 
 
@@ -559,8 +561,11 @@ $(document).ready(function() {
 </script>
 <script>
 function add_activity() {
-    var activity_name = document.getElementById('name1').value;
-    var activity_score = document.getElementById("score1").value;
+    var a
+    ctivi
+ty_name = document.getElementById('name1').value;
+    var a
+    ctivity_score = document.getElementById("score1").value;
     // document.getElementById('name1').value = null;
     // document.getElementById("price1").value = null;
     // document.getElementById("num1").value = null;

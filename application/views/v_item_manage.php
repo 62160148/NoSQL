@@ -206,15 +206,15 @@
                                         <!-- <form action="<?php echo site_url() . '/SqlController/add_item/' ?> " method="post" enctype="multipart/form-data"> -->
                                         <div class="mb-3">
                                             <label for="focusedinput" class="form-label">Item Name </label>
-                                            <input type="text" id="name1">
+                                            <input type="text" id="name1" required>
                                         </div>
                                         <div class="mb-3">
                                             <label for="focusedinput" class="form-label">Item Price</label>
-                                            <input type="number" id="price1" min="0">
+                                            <input type="number" id="price1" min="0" required>
                                         </div>
                                         <div class="mb-3">
                                             <label for="focusedinput" class="form-label">Item amount</label>
-                                            <input type="number" id="num1">
+                                            <input type="number" id="num1" required>
                                         </div>
                                     </div>
                                     <div class="modal-footer">
@@ -303,7 +303,7 @@
 
                                                 <!-- Modal -->
                                                 <div class="modal fade" id="edit_modal<?php echo $i ?>" tabindex="-1"
-                                                    role="dialog" aria-labelledby="exampleModalCenterTitle"
+                                                    required role="dialog" aria-labelledby="exampleModalCenterTitle"
                                                     aria-hidden="true">
                                                     <div class="modal-dialog modal-dialog-centered" role="document">
                                                         <div class="modal-content">
@@ -328,7 +328,7 @@
                                                                     <input type="text"
                                                                         id="name_<?php echo $arr_item[$i]->item_id ?>"
                                                                         value="<?php echo $arr_item[$i]->item_name ?>"
-                                                                        placeholder="ชื่อ item">
+                                                                        placeholder="ชื่อ item" required>
                                                                 </div>
                                                                 <div class="mb-3">
                                                                     <label for="focusedinput" class="form-label">Item
@@ -337,7 +337,7 @@
                                                                         id="price_<?php echo $arr_item[$i]->item_id ?>"
                                                                         min="0"
                                                                         value="<?php echo $arr_item[$i]->item_price ?>"
-                                                                        placeholder="ราคา item">
+                                                                        placeholder="ราคา item" required>
                                                                 </div>
                                                                 <div class="mb-3">
                                                                     <label for="focusedinput" class="form-label">Item
@@ -345,7 +345,7 @@
                                                                     <input type="number"
                                                                         id="num_<?php echo $arr_item[$i]->item_id ?>"
                                                                         value="<?php echo $arr_item[$i]->item_num ?>"
-                                                                        placeholder="จำนวน item คงเหลือ">
+                                                                        placeholder="จำนวน item คงเหลือ" required>
                                                                 </div>
 
 
@@ -584,7 +584,10 @@ function add_item() {
     // document.getElementById("num1").value = null;
     console.log(item_name)
     console.log(item_price)
-    console.log(item_num)
+    conso
+    le.lo
+    g(ite
+ m_num)
 
 
 
