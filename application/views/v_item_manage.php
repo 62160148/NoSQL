@@ -34,13 +34,13 @@
 <div class="main-content position-relative max-height-vh-100 h-100">
     <!-- Navbar -->
 
-    <div class="card shadow-lg mx-4 card-profile-bottom bg-primary">
+    <div class="card shadow-lg mx-4 card-profile-bottom ">
         <div class="card-body p-3">
             <div class="row gx-4">
 
                 <div class="col-auto my-auto">
                     <div class="h-100">
-                        <h2 class="mb-1" style="color:white">
+                        <h2 class="mb-1" >
                             Item Management
                         </h2>
                     </div>

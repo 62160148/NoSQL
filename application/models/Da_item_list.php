@@ -34,4 +34,19 @@ class Da_item_list extends scs_model
 
 		$this->db->query($sql, array($this->item_num,$this->item_id));
 	}
+
+	public function change_status() {
+		$sql = "UPDATE scs_database.scs_item_cluster
+        SET item_cluster_status = ?
+        WHERE item_cluster_id = ?";
+
+		$this->db->query($sql, array($this->item_cluster_status,$this->item_cluster_id));
+	}
+
+	public function add_item()
+	{
+		$sql = "INSERT INTO scs_database.scs_item_cluster(item_cluster_cluster_id,item_cluster_item_id) 
+                VALUES (?,?)";
+		$this->db->query($sql, array($this->item_cluster_cluster_id, $this->item_cluster_item_id));
+	}
 }

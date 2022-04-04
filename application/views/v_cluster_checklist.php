@@ -62,7 +62,7 @@
 </aside>
 
 
-<div class="main-content position-relative max-height-vh-100 h-100" id="cheacklist">
+<div class="main-content position-relative max-height-vh-100 h-100 " id="cheacklist">
     <!-- Navbar -->
     <nav
         class="navbar navbar-main navbar-expand-lg bg-transparent shadow-none position-absolute px-4 w-100 z-index-2 mt-n11">
@@ -193,7 +193,7 @@
         </div>
     </nav>
     <!-- End Navbar -->
-    <div class="card shadow-lg mx-4 card-profile-bottom">
+    <div class="card shadow-lg mx-4 card-profile-bottom ">
         <div class="card-body p-3">
             <div class="row gx-4">
                 <div class="col-auto">
@@ -208,8 +208,8 @@
                         <h5 class="mb-1">
                             <?php echo 'Cluster ' . $cluster_id ?>
                         </h5>
-                        <p class="mb-0 font-weight-bold text-sm" id="score_total">
-
+                        <p class="mb-0 font-weight-bold text-sm" id="cluster_score">
+                        <?php echo 'Totle Score '.$arr_cluster[ $cluster_id ]->cluster_score.' $E' ?>
                         </p>
                     </div>
                 </div>
@@ -316,8 +316,8 @@
 </li>
 </ul>
 </div> -->
-                    <div class="card-body">
-                        <div class="tab-content" id="custom-tabs-one-tabContent">
+                    <div class="card-body ">
+                        <div class="tab-content " id="custom-tabs-one-tabContent">
                             <div class="tab-pane fade show active" id="custom-tabs-one-home" role="tabpanel"
                                 aria-labelledby="custom-tabs-one-home-tab">
 
@@ -469,7 +469,7 @@
                                                     <p class="mb-0"> Sunday 10 April 2022</p>
                                                 </div>
                                             </div>
-                                            <div class="card-body" id="table_2022-04-10">
+                                            <div class="card-body">
 
                                                 <table class="table align-items-center mb-0">
                                                     <thead>
@@ -635,6 +635,7 @@
 
 
 <script>
+
 $(document).ready(function() {
     get_activity_cluster();
     // $('.table').DataTable();
@@ -690,48 +691,6 @@ function create_checklist(arr_form) {
 
 
 
-    // for (let index = 0; index < arr_form.length; index++) {
-    //     html_code =''; 
-    //     console.log('frame');
-    //     html_code += '    <tr>';
-    //     html_code += '        <td>';
-    //     html_code += '            <div class="d-flex px-2 py-1">';
-    //     html_code += '                <div';
-    //     html_code += '                    class="d-flex flex-column justify-content-center">';
-    //     html_code += '                    <h6 class="mb-0 text-sm">Best Team</h6>';
-    //     html_code += '                    <!-- <p class="text-xs text-secondary mb-0">alexa@creative-tim.com</p> -->';
-    //     html_code += '                </div>';
-    //     html_code += '             </div>';
-    //     html_code += '         </td>';
-    //     html_code += '         <td>';
-    //     html_code += '             <p class="text-xs font-weight-bold mb-0"> ' +  (index +1) + ' $E </p>';
-    //     html_code += '        </td>';
-    //     html_code += '        <td>';
-    //     html_code += '            <div class="d-flex px-2 py-1">';
-    //     html_code += '                <div';
-    //     html_code += '                    class="d-flex flex-column justify-content-center">';
-    //     html_code += '                     <p class="text-xs text-secondary mb-0"></p>';
-    //     html_code += '                </div>';
-    //     html_code += '             </div>';
-    //     html_code += '        </td>';
-    //     html_code += '        <td>';
-    //     html_code += '            <div class="d-flex px-2 py-1">';
-    //     html_code += '                     <span class="text-secondary text-xs font-weight-bold"></span>';
-    //     html_code += '         </td>';
-    //     html_code += '        <td class="align-middle">';
-    //     html_code += '           <div class="form-check form-switch">';
-    //     html_code += '               <input class="form-check-input" type="checkbox"';
-    //     html_code += '                    id="rememberMe">';
-    //     html_code += '            </div>';
-    //     html_code += '        </td>';
-    //     html_code += '    </tr>';
-
-    //     $('#table_2022-04-07').append(html_code);
-
-    // }
-
-
-
     arr_form.forEach((row_form, index_form) => {
         html_code = '';
         console.log('frame');
@@ -777,8 +736,7 @@ function create_checklist(arr_form) {
         html_code += '        <td class="align-middle">';
         html_code += '           <div class="form-check form-switch">';
         html_code += '               <input class="form-check-input" name="checkbox" id="status' + row_form[
-                'activity_cluster_id'] + '" onclick="cheack_activity(' + row_form['activity_cluster_id'] +
-            ')" type="checkbox"';
+            'activity_cluster_id'] + '" onclick="cheack_activity(' + row_form['activity_cluster_id'] +','+ row_form['activity_score'] +')" type="checkbox"';
 
         if (row_form['activity_cluster_status'] == 1) {
             html_code += '      checked       >';
@@ -793,53 +751,6 @@ function create_checklist(arr_form) {
         $('#table_' + row_form['activity_cluster_day']).append(html_code);
     });
 
-
-
-
-
-
-    //     arr_form.forEach((row_form, index_form) => {
-    //     html_code += '   <tr> ';
-    //     html_code += '   <td class="text-center">  ' +  (index_form +1) + '  </td> ';
-
-
-    //     html_code += '  <td style="padding-left:19px">' + row_form['form_name']  + '</td> ';
-    //     html_code += '  <td class="text-center">' + row_form['create_first'] + " " + row_form['create_last'][0] + ".<br>" + convert_date(row_form['date_create']) + ' </td> ';
-    //     /* Start data have update first and update last */
-    //     if(row_form['update_first'] != null){
-    //     html_code += '  <td class="text-center"> ' + row_form['update_first'] + " " + row_form['update_last'][0] + ".<br>" + convert_date(row_form['date_update']) +'</td>';
-    //     }
-    //     /* End data have update first and update last */
-    //     /* Start data don't have update first and update last */
-    //     else{
-    //     html_code += '  <td class="text-center"> - </td> ';
-    //     }        
-    //     /* End data don't have update first and update last */
-
-
-
-    //     html_code += ' <td class="text-center"> ';
-    //     html_code += ' <a type="button" class="btn btn-default" href="<?php echo site_url() . '/Form/Form_manage/show_form_info/' ?>' + row_form['form_id'] + '<?php; ?>"title="View"> ';
-    //     html_code += '  <i class="fas fa-search"></i> ';
-    //     html_code += '  </a> ';
-    //     html_code += '<a style="margin-right:3px;" type="button" title="Duplicate" class="btn btn-default" href="<?php echo site_url() . '/Form/Form_manage/show_form_duplicate/' ?>' + row_form['form_id'] + '<?php; ?>">';
-    //     html_code += '<i class="fas fa-clone"></i>';
-    //     html_code += '</a>';
-    //     html_code +=' <a type="button" class="btn btn-default" href="<?php echo site_url() . '/Form/Form_manage/show_form_edit/' ?>' + row_form['form_id'] + '<?php; ?>" title="Edit">';
-    //     html_code +=' <i class="fas fa-edit" ></i>' ;
-    //     html_code +=' </a>' ;
-    //     html_code += '  <button type="button" class="btn btn-default" onclick="delete_form('+row_form['form_id']+')" title="Delete"> ';
-    //     html_code += '  <i class="fas fa-trash-alt"></i> '; 
-    //     html_code += '  </button> '    ;
-    //     html_code += '  </a> ';
-    //     html_code += '  </td> ';
-    //     html_code += '  </tr> ' ;
-    //     });
-
-    //     html_code += '  </tbody> ';
-    //     html_code += '  </table> ';
-
-    //     $('#create_table').html(html_code);
 
 }
 </script>
@@ -865,29 +776,19 @@ function plus_score() {
         }
         // total_score = total_score + Number(arr_score[index].value);
     }
-    $('#score_total').html('Total Score : ' + total_score + ' $E')
+    // $('#score_total').html('Total Score : ' + total_score + ' $E')
     // $('#total_score').text('Total '+ total_score + ' Points');
     // $('#total_score').attr('value',total_score)
 
 }
 
+cluster_score = <?php echo json_encode( $arr_cluster[$cluster_id]->cluster_score )  ?>
+// cluster_id2 =  <?php  echo  $cluster_id  ?>
 
-function cheack_activity(activity_id) {
-
+function cheack_activity(activity_id,activity_score) {
 
     console.log(activity_id);
-
-    if (document.getElementById('status' + activity_id).checked == true) {
-        activity_status = 1;
-        console.log('true');
-        document.getElementById('status' + activity_id).checked = false
-    } else {
-        activity_status = 0;
-        console.log('false');
-        document.getElementById('status' + activity_id).checked = true
-
-    }
-
+    cluster_id2 =   <?php  echo  $cluster_id  ?>
 
     Swal.fire({
         title: 'Do you want to change <br> status activity ?',
@@ -901,13 +802,32 @@ function cheack_activity(activity_id) {
         reverseButtons: true
     }).then((result) => {
         /* Start Change status */
+
+        if (document.getElementById('status' + activity_id).checked == true) {
+            activity_status = 1;
+            console.log('true');
+            cluster_score = parseInt(cluster_score) + parseInt(activity_score);
+            document.getElementById('status' + activity_id).checked = false
+        } else {
+            activity_status = 0;
+            console.log('false');
+            cluster_score = parseInt(cluster_score) - parseInt(activity_score);
+            document.getElementById('status' + activity_id).checked = true
+
+        }
+
+
+
+
         if (result.value) {
             $.ajax({
                 type: 'post',
                 url: "<?php echo site_url() . '/SqlController/change_status_ajax'; ?>",
                 data: {
                     'activity_id': activity_id,
-                    'activity_status': activity_status
+                    'activity_status': activity_status,
+                    'cluster_id': cluster_id2,
+                    'cluster_score': cluster_score
                 },
                 dataType: 'json',
                 success: function(data) {
@@ -921,6 +841,8 @@ function cheack_activity(activity_id) {
                             timer: 2000
                         });
                         get_activity_cluster();
+                        $('#cluster_score').html('Totle Score '+cluster_score+' $E')
+
                     }
                 }
             });

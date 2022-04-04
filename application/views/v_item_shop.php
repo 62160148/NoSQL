@@ -199,30 +199,19 @@
                 <div class="col-auto">
 
                     <div class="avatar avatar-xl position-relative">
-                        <img id="cluster_image" src="<?php echo base_url().'/uploads/image_demo.jpg' ?>" alt="profile_image" class="w-100 border-radius-lg shadow-sm">
+                        <img id="cluster_image" src="<?php echo base_url().'/uploads/cluster'.$cluster_id.'.jpg' ?>" alt="profile_image" class="w-100 border-radius-lg shadow-sm">
                     </div>
                 </div>
                 <div class="col-auto my-auto">
                     <div class="h-100">
                         <h5 class="mb-1">
-                            <?php echo 'Cluster 1 ' ?>
+                            <?php echo 'Cluster '.$cluster_id ?>
                         </h5>
-                        <p class="mb-0 font-weight-bold text-sm" id="score_total">
-                            
+                        <p class="mb-0 font-weight-bold text-sm"  id="cluster_score">
+                        <?php echo 'Totle Score '.$arr_cluster[ $cluster_id ]->cluster_score.' $E' ?>
                         </p>
                     </div>
                 </div>
-
-
-
-                
-
-
-
-
-
-
-
 
             </div>
         </div>
@@ -232,26 +221,51 @@
     <div class="container-fluid py-4">
 
     <div class="row">
-        <div class="col-md-12">
-          <div class="card">
-            <div class="card-header pb-0">
-              <div class="d-flex align-items-center">
-                <p class="mb-0">ITEM SHOP</p>
-              </div>
-            </div>
-            <div class="card-body">
+                <div class="col-md-6">
+                    <div class="card">
+                        <div class="card-header pb-0">
+                        <div class="d-flex align-items-center">
+                            <p class="mb-0">ITEM SHOP</p>
+                        </div>
+                        
+                        </div>
+                        <div class="card-body">
+                            
 
-            <div class="row" id="item_list">
+                        <div class="row" id="item_list">
 
-            </div>
-
-
+                        </div>
 
 
 
-            </div>
-          </div>
-        </div>
+
+
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-6">
+                    <div class="card h-100">
+                        <div class="card-header pb-0">
+                        <div class="d-flex align-items-center">
+                            <p class="mb-0">Inventory of Cluster 0 </p>
+                            
+                        </div>
+                       
+                        </div>
+                        <div class="card-body">
+
+                        <div class="row" id="item_cluster_list">
+
+                        </div>
+
+
+
+
+
+                        </div>
+                    </div>
+                </div>
 
       </div>
 
@@ -268,6 +282,7 @@
 $(document).ready(function() {
     get_item_ajax();
     // $('.table').DataTable();
+    create_checklist2( <?php echo json_encode($arr_item) ?>);
 });
 
 
@@ -305,7 +320,7 @@ function get_item_ajax() {
             // html_code += '                    <p class="text-xs  font-weight-bold mb-0 "> ' + row_form['activity_name']  + ' </p>';
 
 
-            html_code += ' <div class="col-md-4">';
+            html_code += ' <div class="col-md-12">';
             html_code += '         <div class="card">';
             html_code += '             <div class="card-body pb-2">';
             html_code += '                 <a href="javascript:;" class="card-title h5 d-block text-darker">';
@@ -320,12 +335,12 @@ function get_item_ajax() {
                 html_code += '                 <div class="text-gradient text-danger text-uppercase text-xs font-weight-bold my-2  mr-auto"> สิ้นค้าหมด </div>';
             }else{
                 html_code += '                 <div class="text-gradient text-primary text-uppercase text-xs font-weight-bold my-2">จำนวนคงเหลือ : ' + row_form['item_num'] + ' ชิ้น</div>';
-                html_code += '                     <button class="btn btn-primary btn-sm ms-auto" onclick="buy_item(' + row_form['item_id'] + ',' + row_form['item_num'] + ')"> BUY </button>';
+                html_code += '                     <button class="btn btn-primary btn-sm ms-auto" onclick="buy_item(\'' + row_form['item_name'] + '\',' + row_form['item_id'] + ',' + row_form['item_num'] + ',' + row_form['item_price'] + ')"> BUY </button>';
             }
             html_code += '                 </div>';
             html_code += '             </div>';
             html_code += '         </div>';
-            html_code += '      </div>';
+            html_code += '      </div><br>';
 
 
             
@@ -334,6 +349,53 @@ function get_item_ajax() {
 
 
     }
+
+
+        /*
+    * create_table
+    * ตารางแสดงข้อมูลฟอร์มรับสมัครงาน
+    * @input 	arr_form
+    * @output   -
+    * @Author   62160011 Supawit Niramonpanich
+    * @Create Date 2564-08-13	
+    */
+    function create_checklist2(arr_form){
+
+        let html_code = ''; //html_code : string for add elements
+
+        arr_form.forEach((row_form, index_form) => {
+
+            // html_code += '                    <p class="text-xs  font-weight-bold mb-0 "> ' + row_form['activity_name']  + ' </p>';
+
+
+            html_code += ' <div class="col-md-12">';
+            html_code += '         <div class="card">';
+            html_code += '             <div class="card-body pb-2">';
+            html_code += '                 <a href="javascript:;" class="card-title h5 d-block text-darker">';
+            html_code += '                    ' + row_form['item_name'] + ' ราคา ' + row_form['item_price'] + ' $E';
+            html_code += '                 </a>';
+
+
+            html_code += '                 <div class="author align-items-center">';
+            if( row_form['item_cluster_status'] == 0 ){
+                html_code += '                 <div class="text-gradient text-warning text-uppercase text-xs font-weight-bold my-2  mr-auto"> รอการอนุมัติ </div>';
+            }else if(  row_form['item_cluster_status'] == 1){
+                html_code += '                 <div class="text-gradient text-success text-uppercase text-xs font-weight-bold my-2  mr-auto"> ผ่านการอนุมัติ </div>';
+            }else{
+                html_code += '                 <div class="text-gradient text-danger text-uppercase text-xs font-weight-bold my-2  mr-auto"> ไม่ผ่านการอนุมัติ  </div>';
+            }
+            html_code += '                 </div>';
+            html_code += '             </div>';
+            html_code += '         </div>';
+            html_code += '      </div><br>';
+
+
+            
+        });
+        $('#item_cluster_list').html(html_code);
+
+
+        }
 
 
 
@@ -346,14 +408,32 @@ function get_item_ajax() {
 <script>
 
 
+cluster_score = <?php echo json_encode( $arr_item[0]->cluster_score )  ?>
 
 
-function buy_item(item_id,item_num) {
+function buy_item(item_name,item_id,item_num,item_price) {
 
-    cluster_id = 1;
-    console.log(item_id);
+    message = 'ture';
+    cluster_id = 0;
+    console.log( 'Score '+cluster_score );
+    if(cluster_score < item_price){
+        message = 'false';
+    }
 
-    Swal.fire({
+
+
+    if (message == 'false') {
+        Swal.fire({
+            icon: 'warning',
+            title: 'the amount is not enough.',
+            text: "",
+            type: 'error',
+            confirmButtonColor: '#3177ce',
+            confirmButtonText: 'OK'
+        });
+    }else{
+
+        Swal.fire({
         title: 'Do you want to buy <br> this item ?',
         icon: 'warning',
         type: 'warning',
@@ -365,6 +445,9 @@ function buy_item(item_id,item_num) {
         reverseButtons: true
     }).then((result) => {
         /* Start Change status */
+        
+        cluster_score = cluster_score - item_price;
+
         if (result.value) {
             $.ajax({
                 type: 'post',
@@ -372,7 +455,8 @@ function buy_item(item_id,item_num) {
                 data: {
                     'item_id': item_id,
                     'cluster_id': cluster_id,
-                    'item_num':item_num
+                    'item_num':item_num,
+                    'cluster_score':cluster_score
                 },
                 dataType: 'json',
                 success: function(data) {
@@ -386,6 +470,30 @@ function buy_item(item_id,item_num) {
                             timer: 2000
                         });
                         get_item_ajax();
+                        $('#cluster_score').html('Totle Score '+cluster_score+' $E')
+
+
+                        let html_code = ''; //html_code : string for add elements
+
+                        html_code += ' <div class="col-md-12">';
+                        html_code += '         <div class="card">';
+                        html_code += '             <div class="card-body pb-2">';
+                        html_code += '                 <a href="javascript:;" class="card-title h5 d-block text-darker">';
+                        html_code += '                    ' + item_name + ' ราคา ' + item_price + ' $E';
+                        html_code += '                 </a>';
+
+
+                        html_code += '                 <div class="author align-items-center">';
+                        html_code += '                 <div class="text-gradient text-warning text-uppercase text-xs font-weight-bold my-2  mr-auto"> รอการอนุมัติ </div>';
+                        html_code += '                 </div>';
+                        html_code += '             </div>';
+                        html_code += '         </div>';
+                        html_code += '      </div><br>';
+
+                        $('#item_cluster_list').append(html_code);
+
+
+
                     }
                 }
             });
@@ -393,6 +501,13 @@ function buy_item(item_id,item_num) {
         /* End Change status */
     })
     $(".swal2-cancel").css("border", "1px solid #A79E9E");
+
+
+
+    }
+
+
+
 
 }
 

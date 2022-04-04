@@ -21,9 +21,11 @@ class Da_scs_activity_cluster extends scs_model
 
 	public function insert()
 	{
-		$sql = "INSERT INTO scs_database.scs_activity_cluster
+		$sql = "INSERT INTO scs_database.scs_activity_cluster(activity_cluster_cluster_id,activity_cluster_activity_id,activity_cluster_status,activity_cluster_day,activity_cluster_sprint) 
                 VALUES (?,?,?,?,?)";
 		$this->db->query($sql, array($this->activity_cluster_cluster_id, $this->activity_cluster_activity_id, $this->activity_cluster_status, $this->	activity_cluster_day, $this->activity_cluster_sprint));
 	}
+
+
 
 }

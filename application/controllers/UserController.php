@@ -61,11 +61,7 @@ class UserController extends CI_Controller
 		$this->load->view('template/footer');
 	}
 
-	function show_cluster_checklist($_id)
-	{
-		$data['cluster_id'] = $_id;
-		$this->output('v_cluster_checklist', $data);
-	}
+
 
 	function show_cluster_detail($_id)
 	{

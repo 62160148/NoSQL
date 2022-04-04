@@ -9,11 +9,12 @@
             <span class="ms-1 font-weight-bold"> Scrum</span>
         </a>
     </div>
-    <hr class="horizontal dark mt-0">
+    <hr>
+
     <div class="collapse navbar-collapse  w-auto " id="sidenav-collapse-main">
         <ul class="navbar-nav">
             <li class="nav-item">
-                <a class="nav-link active" href="../../SqlController/show_dashboard">
+                <a class="nav-link " href="<?php echo site_url() . '/SqlController/show_dashboard/' ?>">
                     <div class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
                         <i class="ni ni-tv-2 text-primary text-dark  text-sm opacity-10"></i>
                     </div>
@@ -22,14 +23,14 @@
             </li>
 
             <li class="nav-item">
-                <a class="nav-link " href="../SqlController/show_item_shop/">
+                <a class="nav-link " href=" <?php echo site_url() . '/SqlController/show_item_shop/0' ?>">
                     <div class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
                         <i class="ni ni-single-02 text-dark text-sm opacity-10"></i>
                     </div>
                     <span class="nav-link-text ms-1"> Item Shop</span>
                 </a>
             </li>
-
+            <hr>
             <li class="nav-item">
                 <a class="nav-link " href="../UserController/show_login">
                     <div class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
