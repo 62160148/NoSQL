@@ -24,7 +24,7 @@ class SqlController extends UserController
 	{
 		$this->load->model('M_item_list', 'item');
 		$data['arr_item'] = $this->item->get_item_all()->result();
-		$this->output('v_item_manage', $data);
+		$this->output3('v_item_manage', $data);
 	}
 
 	function show_activity_manage()
@@ -45,6 +45,16 @@ class SqlController extends UserController
 		$this->act->insert();
 		$this->load->model('M_activity_list', 'acl');
 		$data['arr_act'] = $this->acl->get_activity_all()->result();
+
+
+		$this->load->model('M_scs_activity_cluster','activity');
+		for ($i=0; $i < 6; $i++) { 
+
+		}
+
+
+
+
 		echo json_encode($data);
 	}
 	function edit_activity()

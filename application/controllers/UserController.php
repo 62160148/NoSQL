@@ -23,9 +23,34 @@ class UserController extends CI_Controller
 		$this->load->view('template/javascript');
 		// $this->load->view('template/crs_template/crs_css');
 		// $this->load->view('template/crs_template/crs_js');
+		$this->load->view('template/main');
 		$this->load->view('template/sidebar');
 		$this->load->view($view, $data);
 		$this->load->view('template/footer');
+	}
+	
+	public function output2($view, $data = null)
+	{
+		$this->load->view('template/header');
+		$this->load->view('template/javascript');
+		// $this->load->view('template/crs_template/crs_css');
+		// $this->load->view('template/crs_template/crs_js');
+		$this->load->view('template/sidebar_member');
+		$this->load->view($view, $data);
+		$this->load->view('template/footer');
+	}
+
+
+	public function output3($view, $data = null)
+	{
+		$this->load->view('template/header');
+		$this->load->view('template/javascript');
+		// $this->load->view('template/crs_template/crs_css');
+		// $this->load->view('template/crs_template/crs_js');
+		$this->load->view('template/sidebar');
+		$this->load->view('template/main');
+		$this->load->view($view, $data);
+
 	}
 
 	public function output_login($view, $data = null)
@@ -147,14 +172,5 @@ class UserController extends CI_Controller
 		$this->output('v_item_manage', $data);
 	}
 
-	public function output2($view, $data = null)
-	{
-		$this->load->view('template/header');
-		$this->load->view('template/javascript');
-		// $this->load->view('template/crs_template/crs_css');
-		// $this->load->view('template/crs_template/crs_js');
-		$this->load->view('template/sidebar_member');
-		$this->load->view($view, $data);
-		$this->load->view('template/footer');
-	}
+
 }

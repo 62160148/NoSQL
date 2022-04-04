@@ -162,13 +162,13 @@
         </div>
     </nav>
     <!-- End Navbar -->
-    <div class="card shadow-lg mx-4 card-profile-bottom">
+    <div class="card shadow-lg mx-4 card-profile-bottom bg-primary">
         <div class="card-body p-3">
             <div class="row gx-4">
 
-                <div class="col-auto my-auto">
+                <div class="col-auto my-auto " >
                     <div class="h-100">
-                        <h2 class="mb-1">
+                        <h2 class="mb-1" style="color:white">
                             Activity Management
                         </h2>
                     </div>
@@ -188,29 +188,25 @@
                 <div class="card">
                     <div class="col text">
                         <br>
-                        <button id="add_item" class="btn btn-primary float-end" data-toggle="modal"
-                            data-target="#exampleModalCenter">Add Activity</button>
+
                         <!-- Modal -->
                         <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog"
                             aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
                             <div class="modal-dialog modal-dialog-centered" role="document">
                                 <div class="modal-content">
-                                    <div class="modal-header">
-                                        <h5 class="modal-title" id="exampleModalLongTitle">เพิ่มข้อมูล Activity</h5>
-                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                            <span aria-hidden="true">&times;</span>
-                                        </button>
+                                    <div class="modal-header" >
+                                        <h5 class="modal-title" id="exampleModalLongTitle">Add activity</h5>
                                     </div>
 
                                     <div class="modal-body">
 
                                         <div class="mb-3">
                                             <label for="focusedinput" class="form-label">Activity Name </label>
-                                            <input type="text" id="name1" required>
+                                            <input type="text" class="form-control" id="name1" required>
                                         </div>
                                         <div class="mb-3">
                                             <label for="focusedinput" class="form-label">Activity Score</label>
-                                            <input type="number" id="score1" min="0" required>
+                                            <input type="number" class="form-control" id="score1" min="0" required>
                                         </div>
                                     </div>
                                     <div class="modal-footer">
@@ -228,7 +224,22 @@
                         <div class="col-12">
                             <div class="card mb-4">
                                 <div class="card-header pb-0">
-                                    <h4>Activity List</h4>
+
+                                    <row>
+                                        <h4>Activity List
+                                        <button id="add_item" class="btn btn-primary float-end" data-toggle="modal"
+                                            data-target="#exampleModalCenter" style="margin-bottom:-70px">Add Activity
+                                        </button>
+
+                                        </h4>
+
+                                    </row>
+
+
+
+                                
+                                    <hr>
+
                                 </div>
                                 <div class="card-body px-0 pt-0 pb-2">
                                     <div class="table-responsive p-0">
@@ -552,11 +563,29 @@
 
 <script>
 $(document).ready(function() {
-    $('#myTable').DataTable();
-    $("#myTable_length").css('margin-left', '20px');
-    $("#myTable_info").css('margin-left', '20px');
-    $("#myTable_filter").css('margin-right', '20px');
-    $('#myTable').after('<br>');
+    // $('#myTable').DataTable();
+    // $("#myTable_length").css('margin-left', '20px');
+    // $("#myTable_info").css('margin-left', '20px');
+    // $("#myTable_filter").css('margin-right', '20px');
+    // $('#myTable').after('<br>');
+    $('#myTable').DataTable({
+                "pagingType": "full_numbers",
+                "lengthMenu": [
+                    [10, 20, 30, -1], //-1 = show all
+                    [10, 20, 30, "ทั้งหมด"]
+                ],
+                // responsive: true,
+                language: {
+                    infoFiltered: "",
+                    paginate: {
+                        "first": "",
+                        "last": "",
+                        "next": ">",
+                        "previous": "<"
+                    },
+                },
+            });
+            $('#member_table_wrapper').addClass('p-0');
 });
 </script>
 <script>
