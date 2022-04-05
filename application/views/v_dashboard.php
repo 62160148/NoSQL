@@ -417,7 +417,7 @@
             height: 450,
         },
         title: {
-            text: 'OSSD SE#10'
+            text: 'OSSD#10 $E Report'
         },
         subtitle: {
             // text: 'OSSD SE#10'
