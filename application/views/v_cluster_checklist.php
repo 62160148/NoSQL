@@ -337,7 +337,7 @@
                                                         <tr>
                                                             <th
                                                                 class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
-                                                                Ativity </th>
+                                                                Activity </th>
                                                             <th
                                                                 class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">
                                                                 Score</th>
@@ -381,7 +381,7 @@
                                                         <tr>
                                                             <th
                                                                 class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
-                                                                Ativity </th>
+                                                                Activity </th>
                                                             <th
                                                                 class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">
                                                                 Score</th>
@@ -432,7 +432,7 @@
                                                         <tr>
                                                             <th
                                                                 class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
-                                                                Ativity </th>
+                                                                Activity </th>
                                                             <th
                                                                 class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">
                                                                 Score</th>
@@ -476,7 +476,7 @@
                                                         <tr>
                                                             <th
                                                                 class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
-                                                                Ativity </th>
+                                                                Activity </th>
                                                             <th
                                                                 class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">
                                                                 Score</th>
@@ -530,7 +530,7 @@
                                                         <tr>
                                                             <th
                                                                 class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
-                                                                Ativity </th>
+                                                                Activity </th>
                                                             <th
                                                                 class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">
                                                                 Score</th>
@@ -574,7 +574,7 @@
                                                         <tr>
                                                             <th
                                                                 class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
-                                                                Ativity </th>
+                                                                Activity </th>
                                                             <th
                                                                 class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">
                                                                 Score</th>
