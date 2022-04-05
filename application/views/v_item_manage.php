@@ -201,11 +201,11 @@
                                                                 <div class="mb-3">
                                                                     <label for="focusedinput" class="form-label">Item
                                                                         Name </label>
-                                                                    <input type="text"
+                                                                    <input type="text" class="form-control"
                                                                         id="id_<?php echo $arr_item[$i]->item_id ?>"
                                                                         value="<?php echo $arr_item[$i]->item_id ?>"
                                                                         placeholder="ชื่อ item" hidden>
-                                                                    <input type="text"
+                                                                    <input type="text" class="form-control"
                                                                         id="name_<?php echo $arr_item[$i]->item_id ?>"
                                                                         value="<?php echo $arr_item[$i]->item_name ?>"
                                                                         placeholder="ชื่อ item" required>
@@ -213,7 +213,7 @@
                                                                 <div class="mb-3">
                                                                     <label for="focusedinput" class="form-label">Item
                                                                         Price</label>
-                                                                    <input type="number"
+                                                                    <input type="number" class="form-control"
                                                                         id="price_<?php echo $arr_item[$i]->item_id ?>"
                                                                         min="0"
                                                                         value="<?php echo $arr_item[$i]->item_price ?>"
@@ -222,7 +222,7 @@
                                                                 <div class="mb-3">
                                                                     <label for="focusedinput" class="form-label">Item
                                                                         amount</label>
-                                                                    <input type="number"
+                                                                    <input type="number" class="form-control"
                                                                         id="num_<?php echo $arr_item[$i]->item_id ?>"
                                                                         value="<?php echo $arr_item[$i]->item_num ?>"
                                                                         placeholder="จำนวน item คงเหลือ" required>

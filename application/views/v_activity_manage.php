@@ -197,11 +197,11 @@
                                                                 <div class="mb-3">
                                                                     <label for="focusedinput"
                                                                         class="form-label">Activity Name</label>
-                                                                    <input type="text"
+                                                                    <input type="text" class="form-control"
                                                                         id="id_<?php echo $arr_act[$i]->activity_id ?>"
                                                                         value="<?php echo $arr_act[$i]->activity_id ?>"
                                                                         hidden>
-                                                                    <input type="text"
+                                                                    <input type="text" class="form-control"
                                                                         id="name_<?php echo $arr_act[$i]->activity_id ?>"
                                                                         value="<?php echo $arr_act[$i]->activity_name ?>"
                                                                         required>
@@ -209,7 +209,7 @@
                                                                 <div class="mb-3">
                                                                     <label for="focusedinput"
                                                                         class="form-label">Activity Score</label>
-                                                                    <input type="number"
+                                                                    <input type="number" class="form-control"
                                                                         id="price_<?php echo $arr_act[$i]->activity_id ?>"
                                                                         min="0"
                                                                         value="<?php echo $arr_act[$i]->activity_score ?>"
