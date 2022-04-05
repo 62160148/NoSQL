@@ -464,7 +464,7 @@ function buy_item(item_name,item_id,item_num,item_price) {
                     if (data['message'] == 'Success') {
                         Swal.fire({
                             icon: 'success',
-                            title: 'Change status success',
+                            title: 'Buy Item Success',
                             type: 'success',
                             showConfirmButton: false,
                             timer: 2000
