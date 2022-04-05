@@ -435,12 +435,12 @@
         yAxis: {
 			min: 0,
 			title: {
-				text: '<b>จำนวนเงิน ($E)<b>'
+				text: '<b>Total $E<b>'
 			}
 		},
         tooltip: {
 			headerFormat: '<span style="font-size:15px"> <b>{point.key}</b></span>',
-			pointFormat: '<br> จำนวนเงิน : {point.y:,.2f} $E',
+			pointFormat: '<br> Total $E : {point.y:,.2f} $E',
 			shared: true,
 			useHTML: true
 		},
@@ -515,7 +515,7 @@
 		yAxis: {
 			min: 0,
 			title: {
-				text: 'จำนวนเงิน ($E)'
+				text: 'Total $E'
 			}
 		},
 		tooltip: {
