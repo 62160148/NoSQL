@@ -9,6 +9,7 @@ class UserController extends CI_Controller
 
 		parent::__construct();
 		$this->load->model('UserModel', 'userModel');
+		$this->load->library('form_validation');
 	}
 
 	function index()
@@ -62,7 +63,6 @@ class UserController extends CI_Controller
 	}
 
 
-
 	function show_cluster_detail($_id)
 	{
 		$this->load->model('M_cluster_list', 'cls');
@@ -71,6 +71,70 @@ class UserController extends CI_Controller
 		//print_r($data);
 		$this->output('v_cluster_detail', $data);
 	}
+
+
+	function show_user_manage()
+	{
+		$data['users'] = $this->userModel->get_user_list();
+		$this->output('v_user_manage', $data);
+	}
+
+	function create_user()
+    {
+        if ($this->input->post('submit')) {
+            $this->form_validation->set_rules('name', 'User Name', 'required');
+            $this->form_validation->set_rules('cluster', 'User Cluster', 'required');
+            $this->form_validation->set_rules('role', 'User Role', 'required');
+
+            if ($this->form_validation->run() !== FALSE) {
+                $result = $this->userModel->create_user($this->input->post('name'), $this->input->post('cluster'), $this->input->post('role'));
+                if ($result === TRUE) {
+                    redirect('/UserController/show_user_manage');
+                } else {
+                    $data['error'] = 'Error occurred during updating data';
+                    $this->output('v_add_user', $data);
+                }
+            } else {
+                $data['error'] = 'เกิดข้อขัดข้องในการบันทึกข้อมูล กรุณาตรวจสอบ !!!';
+                $this->output('v_add_user', $data);
+            }
+        } else {
+            $this->output('v_add_user');
+        }
+    }
+
+    function update_user($_id)
+    {
+        if ($this->input->post('submit')) {
+			$this->form_validation->set_rules('name', 'User Name', 'required');
+            $this->form_validation->set_rules('cluster', 'User Cluster', 'required');
+            $this->form_validation->set_rules('role', 'User Role', 'required');
+
+            if ($this->form_validation->run() !== FALSE) {
+                $result = $this->userModel->update_user($_id, $this->input->post('name'), $this->input->post('cluster'), $this->input->post('role'));
+                if ($result === TRUE) {
+                    redirect('/UserController/show_user_manage');
+                } else {
+                    $data['error'] = 'Error occurred during updating data';
+                    $this->output('v_edit_user', $data);
+                }
+            } else {
+                $data['error'] = 'เกิดปัญหา กรุณาตรวจสอบข้อมูลที่บันทึก !!!';
+                $this->output('v_edit_user', $data);
+            }
+        } else {
+            $data['user'] = $this->userModel->get_user($_id);
+            $this->output('v_edit_user', $data);
+        }
+    }
+
+    function delete_user($_id)
+    {
+        if ($_id) {
+            $this->userModel->delete_user($_id);
+        }
+        redirect('/UserController/show_user_manage');
+    }
 
 	function show_login()
 	{
@@ -94,9 +158,7 @@ class UserController extends CI_Controller
 					if ($user->role == 1) {
 						redirect('SqlController/show_dashboard', 'refresh');
 					} else if ($user->role == 2) {
-						redirect('SqlController/show_dashboard', 'refresh');
-					} else if ($user->role == 3) {
-						redirect('UserController/show_item_manage', 'refresh');
+						redirect('SqlController/show_cluster_checklist/0', 'refresh');
 					}
 				}
 				// } else {
