@@ -32,7 +32,7 @@
             </li>
             <hr>
             <li class="nav-item">
-                <a class="nav-link " href="../../UserController/show_login">
+                <a class="nav-link " href="<?php echo site_url() . '/UserController/show_login' ?>">
                     <div class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
                         <i class="ni ni-user-run text-dark text-sm opacity-10"></i>
                     </div>
