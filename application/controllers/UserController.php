@@ -82,20 +82,22 @@ class UserController extends CI_Controller
 	function create_user()
     {
         if ($this->input->post('submit')) {
+            $this->form_validation->set_rules('username', 'Username', 'trim|required');
+            $this->form_validation->set_rules('password', 'Password', 'trim|required');
+            $this->form_validation->set_rules('role', 'Role', 'trim|required');
             $this->form_validation->set_rules('name', 'Name', 'trim|required');
             $this->form_validation->set_rules('cluster', 'Cluster', 'trim|required');
-            $this->form_validation->set_rules('role', 'Role', 'trim|required');
 
             if ($this->form_validation->run() !== FALSE) {
-                $result = $this->userModel->create_user($this->input->post('name'), $this->input->post('cluster'), $this->input->post('role'));
+                $result = $this->userModel->create_user($this->input->post('username'), $this->input->post('password'), $this->input->post('role'), $this->input->post('name'), $this->input->post('cluster'));
                 if ($result === TRUE) {
                     redirect('/UserController/show_user_manage');
                 } else {
-                    $data['error'] = 'Error occurred during updating data';
+                    $data['error'] = '      Error occurred during updating data';
                     $this->output('v_add_user', $data);
                 }
             } else {
-                $data['error'] = 'เกิดข้อขัดข้องในการบันทึกข้อมูล กรุณาตรวจสอบ !!!';
+                $data['error'] = '      เกิดข้อขัดข้องในการบันทึกข้อมูล กรุณาตรวจสอบ !!!';
                 $this->output('v_add_user', $data);
             }
         } else {
@@ -106,20 +108,22 @@ class UserController extends CI_Controller
     function update_user($_id)
     {
         if ($this->input->post('submit')) {
-			$this->form_validation->set_rules('name', 'User Name', 'required');
-            $this->form_validation->set_rules('cluster', 'User Cluster', 'required');
-            $this->form_validation->set_rules('role', 'User Role', 'required');
+			$this->form_validation->set_rules('username', 'Username', 'trim|required');
+            $this->form_validation->set_rules('password', 'Password', 'trim|required');
+            $this->form_validation->set_rules('role', 'Role', 'trim|required');
+            $this->form_validation->set_rules('name', 'Name', 'trim|required');
+            $this->form_validation->set_rules('cluster', 'Cluster', 'trim|required');
 
             if ($this->form_validation->run() !== FALSE) {
-                $result = $this->userModel->update_user($_id, $this->input->post('name'), $this->input->post('cluster'), $this->input->post('role'));
+                $result = $this->userModel->update_user($_id, $this->input->post('username'),$this->input->post('password'),$this->input->post('role'), $this->input->post('name'), $this->input->post('cluster'));
                 if ($result === TRUE) {
                     redirect('/UserController/show_user_manage');
                 } else {
-                    $data['error'] = 'Error occurred during updating data';
+                    $data['error'] = '      Error occurred during updating data';
                     $this->output('v_edit_user', $data);
                 }
             } else {
-                $data['error'] = 'เกิดปัญหา กรุณาตรวจสอบข้อมูลที่บันทึก !!!';
+                $data['error'] = '      เกิดปัญหา กรุณาตรวจสอบข้อมูลที่บันทึก !!!';
                 $this->output('v_edit_user', $data);
             }
         } else {

@@ -92,6 +92,21 @@
                                     ?>
 
                                     <div class="col-4">
+                                        <h5>Username</h5>
+                                        <input type="text" name="username" class="form-control" placeholder="Username" value="<?php echo set_value('username'); ?>" size="50" />
+                                    </div>
+                                    <br>
+                                    <div class="col-4">
+                                        <h5>Password</h5>
+                                        <input type="password" name="password" class="form-control" placeholder="Password" value="<?php echo set_value('password'); ?>" size="50" />
+                                    </div>
+                                    <br>
+                                    <div class="col-2">
+                                        <h5>Role</h5>
+                                        <input type="number" name="role" class="form-control" placeholder="Role User" value="<?php echo set_value('role'); ?>" size="50" />
+                                    </div>
+                                    <br>
+                                    <div class="col-4">
                                         <h5>Name</h5>
                                         <input type="text" name="name" class="form-control" placeholder="Firstname & Lastname" value="<?php echo set_value('name'); ?>" size="50" />
                                     </div>
@@ -99,12 +114,6 @@
                                     <div class="col-2">
                                         <h5>Cluster</h5>
                                         <input type="number" name="clsuter" class="form-control" placeholder="Cluster Number" value="<?php echo set_value('cluster'); ?>" size="50" />
-                                    </div>
-                                    <br>
-
-                                    <div class="col-2">
-                                        <h5>Role</h5>
-                                        <input type="number" name="role" class="form-control" placeholder="Role User" value="<?php echo set_value('role'); ?>" size="50" />
                                     </div>
                                     <br>
 

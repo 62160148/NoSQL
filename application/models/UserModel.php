@@ -67,13 +67,15 @@ class UserModel extends CI_Model
 
 
 	/* Creating a new user. */
-	function create_user($name, $cluster, $role)
+	function create_user($username, $password, $role, $name, $cluster)
 	{
 		try {
 			$user = array(
+				'username' => $username,
+				'password' => $password,
+				'role' => $role,
 				'name' => $name,
-				'cluster' => $cluster,
-				'role' => $role
+				'cluster' => $cluster
 			);
 
 			$query = new MongoDB\Driver\BulkWrite();
@@ -91,11 +93,11 @@ class UserModel extends CI_Model
 	}
 
 
-	function update_user($_id, $name, $cluster, $role)
+	function update_user($_id, $username, $password, $role, $name, $cluster)
 	{
 		try {
 			$query = new MongoDB\Driver\BulkWrite();
-			$query->update(['_id' => new MongoDB\BSON\ObjectId($_id)], ['$set' => array('name' => $name, 'cluster' => $cluster, 'role' => $role)]);
+			$query->update(['_id' => new MongoDB\BSON\ObjectId($_id)], ['$set' => array('username' => $username, 'password' => $password, 'role' => $role, 'name' => $name, 'cluster' => $cluster)]);
 
 			$result = $this->conn->executeBulkWrite($this->database . '.' . $this->collection, $query);
 

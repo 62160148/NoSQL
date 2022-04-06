@@ -89,6 +89,24 @@
                                     ?>
 
                                     <div class="col-4">
+                                        <h5>Username</h5>
+                                        <input type="text" name="username" class="form-control" value="<?php echo isset($user) ? $user->username : set_value('username'); ?>" size="50" />
+                                    </div>
+                                    <br>
+
+                                    <div class="col-4">
+                                        <h5>Password</h5>
+                                        <input type="password" name="password" class="form-control" value="<?php echo isset($user) ? $user->password : set_value('password'); ?>" size="50" />
+                                    </div>
+                                    <br>
+
+                                    <div class="col-2">
+                                        <h5>Role</h5>
+                                        <input type="number" name="role" class="form-control" value="<?php echo isset($user) ? $user->role : set_value('role'); ?>" size="50" />
+                                    </div>
+                                    <br>
+
+                                    <div class="col-4">
                                         <h5>Name</h5>
                                         <input type="text" name="name" class="form-control" value="<?php echo isset($user) ? $user->name : set_value('name'); ?>" size="50" />
                                     </div>
@@ -96,15 +114,11 @@
 
                                     <div class="col-2">
                                         <h5>Cluster</h5>
-                                        <input type="number" name="name" class="form-control" value="<?php echo isset($user) ? $user->cluster : set_value('cluster'); ?>" size="50" />
+                                        <input type="number" name="clsuter" class="form-control" value="<?php echo isset($user) ? $user->cluster : set_value('cluster'); ?>" size="50" />
                                     </div>
                                     <br>
 
-                                    <div class="col-2">
-                                        <h5>Role</h5>
-                                        <input type="number" name="name" class="form-control" value="<?php echo isset($user) ? $user->role : set_value('role'); ?>" size="50" />
-                                    </div>
-                                    <br>
+
                                     <br>
 
                                     <p><input type="submit" name="submit" class="btn btn-success" value="Submit" /></p>
