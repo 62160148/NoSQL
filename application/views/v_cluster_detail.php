@@ -230,7 +230,7 @@
                         </p>
                     </div>
                 </div>
-                <div class="col align-self-end">
+                <!-- <div class="col align-self-end">
                     <div class="h-100">
                         <a href="<?php echo site_url() . '/UserController/show_cluster_checklist/1'; ?>">
                             <button type="button" class="btn btn-default btn-sm">
@@ -239,6 +239,17 @@
                         </a>
 
                     </div>
+                </div> -->
+
+                <div class="col-auto my-auto">
+                    <!-- <div class="h-100"> -->
+                    <a href="<?php echo site_url() . '/SqlController/show_cluster_checklist/' . $arr_cls[0]->user_cluster_id; ?>">
+
+                        <button class="btn" type="button" style="margin-bottom: 0px;">
+                            <i class="fa fa-home"></i>
+                        </button>
+                    </a>
+                    <!-- </div> -->
                 </div>
 
 

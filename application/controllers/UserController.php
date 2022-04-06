@@ -82,9 +82,9 @@ class UserController extends CI_Controller
 	function create_user()
     {
         if ($this->input->post('submit')) {
-            $this->form_validation->set_rules('name', 'User Name', 'required');
-            $this->form_validation->set_rules('cluster', 'User Cluster', 'required');
-            $this->form_validation->set_rules('role', 'User Role', 'required');
+            $this->form_validation->set_rules('name', 'Name', 'trim|required');
+            $this->form_validation->set_rules('cluster', 'Cluster', 'trim|required');
+            $this->form_validation->set_rules('role', 'Role', 'trim|required');
 
             if ($this->form_validation->run() !== FALSE) {
                 $result = $this->userModel->create_user($this->input->post('name'), $this->input->post('cluster'), $this->input->post('role'));
